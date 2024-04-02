@@ -10,6 +10,8 @@ runs:
 
     - name: Annotate Code Linting Results
       uses: ataylorme/eslint-annotate-action@2.2.0
+      # see https://github.com/ataylorme/eslint-annotate-action/issues/49
+      if: ${{ github.actor != 'dependabot[bot]' }}
       continue-on-error: true
       with:
         repo-token: "${{ github.token }}"
