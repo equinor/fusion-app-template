@@ -9,11 +9,12 @@ runs:
       run: pnpm lint:report
 
     - name: Annotate Code Linting Results
-      uses: ataylorme/eslint-annotate-action@1.1.2
+      uses: ataylorme/eslint-annotate-action@2.2.0
       continue-on-error: true
       with:
         repo-token: "${{ github.token }}"
         report-json: "eslint.report.json"
+        markdown-report-on-step-summary: true
 
     - name: Upload ESLint report
       uses: actions/upload-artifact@v2

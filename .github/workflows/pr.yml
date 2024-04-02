@@ -11,17 +11,15 @@ on:
 concurrency:
   group: pr-${{ github.event.pull_request.id }}
   cancel-in-progress: true
-
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
   
 jobs:
   code-quality:
     name: Check Code
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
 
       - uses: actions/checkout@v4
