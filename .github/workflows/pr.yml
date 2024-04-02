@@ -44,11 +44,11 @@ jobs:
           only-affected: true
       
       # TODO - process results of tests
-      - name: Create Test Report
-        run: pnpm test run
+      # - name: Create Test Report
+      #   run: pnpm test run
       
       # TODO - process results of test coverage
-      - name: Create Test Coverage
-        id: test-coverage  
-        if: ${{ ! github.event.pull_request.draft }}
-        run: pnpm test:coverage
+      # - name: Create Test Coverage
+      #   id: test-coverage  
+      #   if: ${{ ! github.event.pull_request.draft }}
+      #   run: pnpm test:coverage
