@@ -1,0 +1,20 @@
+name: Build code base
+Description: Workflow action to build the code base
+
+inputs:
+  only-affected:
+    default: false
+
+runs:
+  using: composite
+  steps:
+
+    - name: Build project [all]
+      if: ${{ inputs.only-affected == 'false' }}
+      shell: bash
+      run: pnpm build
+
+    - name: Build project [affected]
+      if: ${{ inputs.only-affected == 'true' }}
+      shell: bash
+      run: pnpm turbo run build --filter=...[origin/${{ github.base_ref }}]

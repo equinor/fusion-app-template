@@ -1,0 +1,24 @@
+{
+    "name": "@equinor/bare",
+    "version": "0.0.0",
+    "description": "React application using Fusion Framework",
+    "private": true,
+    "main": "src/index.tsx",
+    "scripts": {
+        "build": "fusion-framework-cli app build",
+        "dev": "fusion-framework-cli app dev"
+    },
+    "author": "demo@equinor.com",
+    "license": "ISC",
+    "dependencies": {
+        "@equinor/fusion-framework-cli": "^9.10.1",
+        "@equinor/fusion-framework-react-app": "^5.0.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^5.4.2"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.50",
+        "@types/react-dom": "^18.0.8"
+    }
+}

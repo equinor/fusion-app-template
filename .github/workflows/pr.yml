@@ -1,0 +1,54 @@
+name: PR
+
+on: 
+  pull_request: 
+    types: 
+      - ready_for_review
+      - opened
+      - reopened
+      - synchronize
+
+concurrency:
+  group: pr-${{ github.event.pull_request.id }}
+  cancel-in-progress: true
+
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  
+jobs:
+  code-quality:
+    name: Check Code
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.merge_commit_sha }}"
+          fetch-depth: 0
+      
+      - name: Setup node and install deps
+        uses: ./.github/workflows/actions/node-setup
+
+      # TODO - process results of linting
+      - name: Lint packages
+        id: lint
+        uses: ./.github/workflows/actions/eslint
+
+      - name: Build affected packages
+        id: build
+        uses: ./.github/workflows/actions/build-packages
+        with: 
+          only-affected: true
+      
+      # TODO - process results of tests
+      - name: Create Test Report
+        run: pnpm test run
+      
+      # TODO - process results of test coverage
+      - name: Create Test Coverage
+        id: test-coverage  
+        if: ${{ ! github.event.pull_request.draft }}
+        run: pnpm test:coverage

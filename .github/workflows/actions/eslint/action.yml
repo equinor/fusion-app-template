@@ -1,0 +1,22 @@
+name: Run eslint and annotate
+Description: Lint source files
+
+runs:
+  using: composite
+  steps:
+    - name: Run eslint
+      shell: bash
+      run: pnpm lint:report
+
+    - name: Annotate Code Linting Results
+      uses: ataylorme/eslint-annotate-action@1.1.2
+      continue-on-error: true
+      with:
+        repo-token: "${{ github.token }}"
+        report-json: "eslint-report.log.json"
+
+    - name: Upload ESLint report
+      uses: actions/upload-artifact@v2
+      with:
+        name: eslint-report.log.json
+        path: eslint-report.log.json

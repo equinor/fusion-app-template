@@ -1,0 +1,21 @@
+name: Setup Node
+Description: General setup of node
+inputs:
+  node-version:  
+    default: 20
+
+runs:
+  using: composite
+  steps:
+
+    - uses: pnpm/action-setup@v3
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'pnpm'
+
+    - name: install
+      shell: bash
+      run: pnpm install
+        
