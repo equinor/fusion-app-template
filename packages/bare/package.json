@@ -12,7 +12,7 @@
     "license": "ISC",
     "dependencies": {
         "@equinor/fusion-framework-cli": "^9.12.4",
-        "@equinor/fusion-framework-react-app": "^5.0.4",
+        "@equinor/fusion-framework-react-app": "^5.0.11",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "typescript": "^5.4.3"
