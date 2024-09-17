@@ -11,14 +11,14 @@
     "author": "demo@equinor.com",
     "license": "ISC",
     "dependencies": {
-        "@equinor/fusion-framework-cli": "^9.12.4",
-        "@equinor/fusion-framework-react-app": "^5.0.4",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "typescript": "^5.4.3"
+        "@equinor/fusion-framework-cli": "^9.12.14",
+        "@equinor/fusion-framework-react-app": "^5.2.7",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "typescript": "^5.6.2"
     },
     "devDependencies": {
-        "@types/react": "^18.2.50",
-        "@types/react-dom": "^18.2.23"
+        "@types/react": "^18.3.7",
+        "@types/react-dom": "^18.3.0"
     }
 }
