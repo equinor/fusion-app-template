@@ -7,7 +7,7 @@ import { useContextProvider } from '@equinor/fusion-framework-react-app/context'
 import { validateContextId } from '../utils/validate-context-id';
 
 interface ContextRouteProps {
-    fallbackElement?: React.ReactNode;
+    readonly fallbackElement?: React.ReactNode;
 }
 
 /**
@@ -38,26 +38,28 @@ export const ContextRoute = (props: ContextRouteProps) => {
         throw Error('Invalid contextId, make sure router has :contextId in path');
     }
 
-    // check if the contextId is valid
-    if (!validateContextId(contextId)) {
-        // return the fallback component if the contextId is invalid or display an error message
-        return props.fallbackElement || <p>Invalid context id</p>;
-    }
-
+    const hasValidContextId = validateContextId(contextId);
     // execute the effect when the contextId changes
     useEffect(() => {
         // if the contextId is different from the current context id
         // set the current context by contextId
         if (contextProvider.currentContext?.id !== contextId) {
             // create a subscription to the current context
-            const subscription = contextProvider.setCurrentContextById(contextId).subscribe(() => {
-                navigate(`/${contextId}`, { replace: true });
-            });
-            // cancel the subscription when the component is unmounted
-            return () => subscription.unsubscribe();
+
+            // check if the contextId is valid
+            if (hasValidContextId) {
+                const subscription = contextProvider
+                    .setCurrentContextById(contextId)
+                    .subscribe(() => {
+                        navigate(`/${contextId}`, { replace: true });
+                    });
+
+                // cancel the subscription when the component is unmounted
+                return () => subscription.unsubscribe();
+            }
         }
-    }, [currentContextId, contextId]);
+    }, [currentContextId, contextId, hasValidContextId, contextProvider, navigate]);
 
     // render the nested routes
-    return <Outlet />;
+    return hasValidContextId ? <Outlet /> : props.fallbackElement || <p>Invalid context id</p>;
 };

@@ -8,7 +8,7 @@ import { Observable } from '@equinor/fusion-observable';
 
 interface ContextSideSheetProps {
     // An observable that emits the current context item
-    context$: Observable<ContextItem | null>;
+    readonly context$: Observable<ContextItem | null>;
 }
 
 /**
