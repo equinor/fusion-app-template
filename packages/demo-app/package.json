@@ -4,6 +4,7 @@
     "description": "React example application for the Fusion Framework",
     "private": true,
     "main": "src/index.ts",
+    "type": "module",
     "scripts": {
         "pre-build": "tsc -b",
         "build": "fusion-framework-cli app build",
