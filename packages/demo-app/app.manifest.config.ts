@@ -1,7 +1,7 @@
-import { defineAppManifest, mergeManifests } from '@equinor/fusion-framework-cli';
+import { defineAppManifest } from '@equinor/fusion-framework-cli';
 
-export default defineAppManifest((_env, { base }) => {
-    return mergeManifests(base, {
-        key: 'demo-app',
-    });
+export default defineAppManifest(() => {
+    return {
+        appKey: 'demo-apps', // if you need a custom appKey other than package.json.name (cli wil strip out domain from .name @equinor/demo-apps -> demo-apps)
+    };
 });
