@@ -20,7 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.8",
+    "@changesets/cli": "^2.27.9",
     "@equinor/eslint-config-fusion-react": "^2.1.1",
     "eslint": "^8.57.1",
     "eslint-plugin-rxjs": "^5.0.3",
