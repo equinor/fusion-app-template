@@ -12,10 +12,10 @@
     "author": "demo@equinor.com",
     "license": "ISC",
     "dependencies": {
-        "@equinor/fusion-framework-app": "9.1.9-alpha-2314d2a20694c74464e41982c9a12a49403a3c96",
-        "@equinor/fusion-framework-cli": "10.0.0-alpha-2314d2a20694c74464e41982c9a12a49403a3c96",
-        "@equinor/fusion-framework-module-app": "6.0.0-alpha-2314d2a20694c74464e41982c9a12a49403a3c96",
-        "@equinor/fusion-framework-react-app": "5.2.9-alpha-2314d2a20694c74464e41982c9a12a49403a3c96",
+        "@equinor/fusion-framework-app": "9.1.10",
+        "@equinor/fusion-framework-cli": "10.0.0",
+        "@equinor/fusion-framework-module-app": "6.0.0",
+        "@equinor/fusion-framework-react-app": "5.2.10",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "typescript": "^5.6.2"
