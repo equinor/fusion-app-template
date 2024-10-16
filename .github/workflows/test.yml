@@ -5,11 +5,8 @@ on:
 
 jobs:
   test:
-    name: Test the app
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/workflows/publish.yml
-        with:
-          working_directory: 'apps/demo-app'
-          tag: 'preview'
+    uses: ./.github/workflows/publish.yml
+    secrets: inherit
+    with:
+      working-directory: 'apps/demo-app'
+      tag: 'preview'
