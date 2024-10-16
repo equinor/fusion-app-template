@@ -8,8 +8,8 @@ jobs:
     name: Test the app
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: ./.github/workflows/publish.yml
+      - uses: actions/checkout@v4
+      - uses: ./.github/workflows/publish.yml
         with:
           working_directory: 'apps/demo-app'
           tag: 'preview'
