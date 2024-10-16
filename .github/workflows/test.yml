@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - feat/fusion-framework/app-alpha
+
+jobs:
+  test:
+    name: Test the app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: ./.github/workflows/publish
+        with:
+          working_directory: 'apps/demo-app'
+          tag: 'preview'
