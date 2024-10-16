@@ -8,5 +8,5 @@ jobs:
     uses: ./.github/workflows/publish.yml
     secrets: inherit
     with:
-      working-directory: 'apps/demo-app'
+      working-directory: 'packages/demo-app'
       tag: 'preview'
