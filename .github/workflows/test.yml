@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: ./.github/workflows/publish
+        uses: ./.github/workflows/publish.yml
         with:
           working_directory: 'apps/demo-app'
           tag: 'preview'
