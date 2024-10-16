@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 on:
-  workflow_dispatch: 
+  workflow_call:  
     inputs:
       working-directory:
         description: 'Working directory for the app'
