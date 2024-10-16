@@ -1,6 +1,6 @@
 {
     "name": "@equinor/fusion-core-demo-template-app",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "React example application for the Fusion Framework",
     "keywords": [
         "fusion-framework",
