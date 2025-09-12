@@ -1,21 +1,17 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "module": "ESNext",
-        "target": "ES6",
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "sourceMap": true,
-        "moduleResolution": "Bundler",
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "stripInternal": true,
-        "skipLibCheck": true,
-        "jsx": "react-jsx",
-        "lib": [
-            "esnext",
-            "dom",
-            "dom.iterable"
-        ]
-    }
+	"compilerOptions": {
+		"strict": true,
+		"module": "ESNext",
+		"target": "ES6",
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"moduleResolution": "Bundler",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"stripInternal": true,
+		"skipLibCheck": true,
+		"jsx": "react-jsx",
+		"lib": ["esnext", "dom", "dom.iterable"]
+	}
 }

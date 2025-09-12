@@ -1,20 +1,71 @@
-name: Build code base
-Description: Workflow action to build the code base
+# Build Packages Action
+# This action builds the codebase using pnpm, with support for both full builds and
+# affected-only builds. It's designed to work with monorepos and can optimize build
+# times by only building packages that have changed.
+#
+# Features:
+# - Full build: Builds all packages in the workspace
+# - Affected build: Only builds packages that have changed since the main branch
+# - Monorepo support: Works with pnpm workspaces
+# - Conditional execution: Automatically chooses the right build strategy
+#
+# Example usage in a workflow:
+#
+# steps:
+#   - name: Checkout code
+#     uses: actions/checkout@v4
+#     with:
+#       fetch-depth: 0  # Required for affected builds
+#   
+#   - name: Setup Node.js
+#     uses: ./.github/workflows/actions/node-setup
+#   
+#   - name: Build all packages
+#     uses: ./.github/workflows/actions/build-packages
+#     with:
+#       only-affected: false
+#   
+#   - name: Build only affected packages
+#     uses: ./.github/workflows/actions/build-packages
+#     with:
+#       only-affected: true
+#
+# Prerequisites:
+# - pnpm must be installed and configured
+# - package.json must have a "build" script
+# - For affected builds: full git history must be available (fetch-depth: 0)
+#
+# For more information about affected builds, see:
+# https://pnpm.io/filtering#changed-since
+
+name: Build Packages
+description: Builds the codebase with support for full or affected-only builds
 
 inputs:
   only-affected:
+    description: 'Whether to build only affected packages (requires full git history)'
+    required: false
     default: false
+    type: boolean
 
 runs:
   using: composite
   steps:
-
-    - name: Build project [all]
-      if: ${{ inputs.only-affected == 'false' }}
+    # Build all packages in the workspace
+    - name: Build all packages
+      if: ${{ inputs.only-affected == false }}
       shell: bash
-      run: pnpm build
+      run: |
+        echo "🔨 Building all packages..."
+        pnpm build
+        echo "✅ All packages built successfully"
 
-    - name: Build project [affected]
-      if: ${{ inputs.only-affected == 'true' }}
+    # Build only packages that have changed since main branch
+    - name: Build affected packages
+      if: ${{ inputs.only-affected == true }}
       shell: bash
-      run: pnpm --filter "...[origin/main]" build 
+      run: |
+        echo "🔍 Building only affected packages..."
+        echo "Checking for changes since origin/main..."
+        pnpm --filter "...[origin/main]" build
+        echo "✅ Affected packages built successfully" 
