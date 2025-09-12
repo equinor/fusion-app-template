@@ -55,10 +55,12 @@ runs:
     - name: Check if PR is draft
       id: check-draft
       shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
       run: |
         PR_NUMBER="${{ inputs.pr-number }}"
         
-        # Get PR details using GitHub CLI
+        # Get PR details using GitHub CLI with proper authentication
         PR_INFO=$(gh pr view $PR_NUMBER --json isDraft)
         IS_DRAFT=$(echo $PR_INFO | jq -r '.isDraft')
         

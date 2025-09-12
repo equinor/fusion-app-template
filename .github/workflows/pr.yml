@@ -43,6 +43,8 @@ jobs:
       - name: Check if PR is draft
         id: draft-check
         uses: ./.github/workflows/actions/check-draft
+        env:
+          GH_TOKEN: ${{ github.token }}
       
       # Setup Node.js and install dependencies
       - name: Setup node and install deps
