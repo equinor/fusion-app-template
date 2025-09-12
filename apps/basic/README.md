@@ -49,7 +49,7 @@ pnpm build
 ## 📁 Project Structure
 
 ```
-packages/basic/
+apps/basic/
 ├── src/
 │   ├── App.tsx                    # Main application component with React Query setup
 │   ├── Router.tsx                 # Application routing configuration

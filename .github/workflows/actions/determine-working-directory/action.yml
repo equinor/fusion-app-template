@@ -6,7 +6,7 @@ inputs:
     required: true
 outputs:
   working-directory:
-    description: 'The working directory path (packages/package-name or .)'
+    description: 'The working directory path (apps/app-name or .)'
     value: ${{ steps.detect.outputs.working-directory }}
   project-structure:
     description: 'The detected project structure (monorepo or single-package)'
@@ -18,10 +18,10 @@ runs:
       id: detect
       shell: bash
       run: |
-        if [ -d "packages/${{ inputs.package-name }}" ]; then
-          echo "working-directory=packages/${{ inputs.package-name }}" >> $GITHUB_OUTPUT
+        if [ -d "apps/${{ inputs.package-name }}" ]; then
+          echo "working-directory=apps/${{ inputs.package-name }}" >> $GITHUB_OUTPUT
           echo "project-structure=monorepo" >> $GITHUB_OUTPUT
-          echo "Project structure: Monorepo (packages/${{ inputs.package-name }})"
+          echo "Project structure: Monorepo (apps/${{ inputs.package-name }})"
         elif [ -f "package.json" ] && [ -f "app.manifest.ts" ]; then
           echo "working-directory=." >> $GITHUB_OUTPUT
           echo "project-structure=single-package" >> $GITHUB_OUTPUT
@@ -29,7 +29,7 @@ runs:
         else
           echo "Error: Could not determine project structure"
           echo "Expected either:"
-          echo "  - Monorepo: packages/${{ inputs.package-name }}/ directory"
+          echo "  - Monorepo: apps/${{ inputs.package-name }}/ directory"
           echo "  - Single package: package.json and app.manifest.ts in root"
           exit 1
         fi

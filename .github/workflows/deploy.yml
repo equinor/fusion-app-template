@@ -13,7 +13,7 @@
 # - `fusion-framework-cli app config --publish`: Deploys environment configuration
 #
 # Project Structure Detection:
-# - Monorepo: packages/{package-name}/ directory
+# - Monorepo: apps/{app-name}/ directory
 # - Single package: package.json and app.manifest.ts in root
 
 name: Deploy Application

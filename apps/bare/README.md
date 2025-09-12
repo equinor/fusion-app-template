@@ -38,7 +38,7 @@ pnpm build
 ## 📁 Project Structure
 
 ```
-packages/bare/
+apps/bare/
 ├── src/
 │   ├── App.tsx          # Main application component with welcome page
 │   ├── config.ts        # Application configuration and module setup
