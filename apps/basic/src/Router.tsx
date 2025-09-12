@@ -8,7 +8,6 @@
 
 import {
 	RouterProvider,
-	createBrowserRouter,
 	type RouteObject,
 } from 'react-router-dom';
 
@@ -86,7 +85,7 @@ export const Router = () => {
 	// Create router instance using Fusion Framework's navigation module
 	// This provides context-aware navigation and integration with other modules
 	// @ts-expect-error - fix fusion-framework-react-app types
-	const router = useRouter(createBrowserRouter(routes));
+	const router = useRouter(routes);
 
 	// Provide the router to all child components
 	// This enables navigation throughout the application
