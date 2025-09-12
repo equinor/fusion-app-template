@@ -1,0 +1,125 @@
+# This GitHub Action authenticates with Azure using OpenID Connect (OIDC) and retrieves an access token for use with Fusion Framework CLI.
+#
+# - The Azure Login step uses the azure/login action to authenticate with Azure using OIDC (no secrets required).
+# - The Get Access Token step runs the Azure CLI to acquire an access token for the specified scope.
+#
+# The action provides the token in two ways:
+# - As an environment variable: FUSION_TOKEN (for immediate use in subsequent steps)
+# - As an output: token (for passing to other actions or steps)
+#
+# This makes the token available for publishing, deploying, or running Fusion CLI commands that require authentication.
+#
+# Example usage in a workflow:
+#
+# steps:
+#   - name: Acquire Fusion Token
+#     id: fusion-token
+#     uses: ./.github/actions/aquire-token
+#     with:
+#       client-id: ${{ vars.AZURE_CLIENT_ID }}
+#       tenant-id: ${{ vars.AZURE_TENANT_ID }}
+#       scope: ${{ vars.APP_PUBLISH_SCOPE }}
+#     # Note: Variables are automatically available from the environment
+#     # when the workflow job specifies an environment
+#   - name: Use token via environment variable
+#     run: fusion-framework-cli app check  # Uses FUSION_TOKEN automatically
+#   - name: Use token via output
+#     run: |
+#       echo "Using token: ${{ steps.fusion-token.outputs.token }}"
+#       fusion-framework-cli app check --token ${{ steps.fusion-token.outputs.token }}
+#   - name: Pass token to another action
+#     uses: some-action
+#     with:
+#       token: ${{ steps.fusion-token.outputs.token }}
+#
+# ---
+# How to set up Azure authentication for GitHub Actions using OpenID Connect (OIDC):
+#
+# OIDC is the recommended approach as it's more secure and doesn't require storing secrets.
+#
+# 1. Create an App Registration in Azure AD:
+#    - Go to Azure Portal > Azure Active Directory > App registrations > New registration
+#    - Name: "GitHub Actions - [Your App Name]"
+#    - Supported account types: Accounts in this organizational directory only
+#    - Redirect URI: Leave blank
+#
+# 2. Configure federated credentials for GitHub Actions:
+#    - In your App Registration, go to Certificates & secrets > Federated credentials
+#    - Add credential > GitHub Actions deploying Azure resources
+#    - Organization: Your GitHub organization name
+#    - Repository: Your repository name (or use wildcard for all repos)
+#    - Entity type: Branch, Tag, or Pull request (choose based on your needs)
+#    - Branch/Tag name: main (or your default branch)
+#    - Name: "github-actions"
+#
+# 3. Grant necessary permissions:
+#    - Go to API permissions > Add a permission
+#    - Add the required API permissions for your Fusion Framework scope
+#    - Grant admin consent for the permissions
+#
+# 4. Configure GitHub Environment variables:
+#    Go to Repository Settings > Environments > [Your Environment] > Environment variables
+#    - AZURE_CLIENT_ID: The Application (client) ID from step 1
+#    - AZURE_TENANT_ID: The Directory (tenant) ID from step 1
+#    - APP_PUBLISH_SCOPE: The API scope (e.g., https://your-api/.default)
+#
+# Note: This action uses `allow-no-subscriptions: true` which means the service principal
+# doesn't need subscription-level permissions, only the specific API scopes you're requesting.
+#
+# Benefits of using OIDC with Environment-specific configuration:
+# - No secrets to manage or rotate (more secure)
+# - Short-lived tokens (automatic expiration)
+# - Different values per environment (dev, staging, prod)
+# - Environment protection rules and approval workflows
+# - Better security isolation between environments
+# - Easier management of environment-specific settings
+# - Follows current security best practices
+#
+# For more details, see:
+# https://docs.github.com/en/actions/deployment/security/hardening-your-deployments/configuring-openid-connect-in-azure
+# https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
+# https://learn.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli
+#
+name: Azure Login and Get Access Token
+description: Authenticates with Azure and retrieves an access token
+inputs:
+  client-id:
+    description: >
+      The Azure AD Application (client) ID to use for authentication. This should correspond to an app registration with permissions to request the required scopes.
+    required: true
+  tenant-id:
+    description: >
+      The Azure AD Tenant ID (directory) to authenticate against. This identifies the Azure AD instance where the app is registered.
+    required: true
+  scope:
+    description: >
+      The scope(s) for the access token, typically the Application ID URI of the API you want to access, followed by /.default (e.g., https://my-api/.default). Multiple scopes can be space-separated.
+    required: true
+outputs:
+  token:
+    description: 'The Azure access token for use with Fusion Framework CLI'
+    value: ${{ steps.get-token.outputs.token }}
+runs:
+  using: composite
+  steps:
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        client-id: ${{ inputs.client-id }}
+        tenant-id: ${{ inputs.tenant-id }}
+        allow-no-subscriptions: true
+    - name: Get Access Token
+      id: get-token
+      shell: bash
+      run: |
+        # Get the access token
+        FUSION_TOKEN=$(az account get-access-token --scope ${{ inputs.scope }} --query accessToken --output tsv)
+        
+        # Set environment variable for immediate use
+        echo "FUSION_TOKEN=$FUSION_TOKEN" >> $GITHUB_ENV
+        
+        # Set output for use by other steps
+        echo "token=$FUSION_TOKEN" >> $GITHUB_OUTPUT
+        
+        # Log success (without exposing the actual token)
+        echo "✅ Azure access token acquired successfully"

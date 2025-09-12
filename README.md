@@ -1,31 +1,47 @@
-# NAME OF THE APPLICATION TEAM|AREA|APPLICATION
+# [YOUR APPLICATION NAME] - [TEAM/AREA]
+
+<!-- TODO: Replace with your actual application name and team/area -->
 
 ## Description
 
-<!-- what does this repo contain -->
-<!-- what does this repo solve -->
+<!-- TODO: Describe what this repository contains -->
+<!-- TODO: Explain what problem this application solves -->
+<!-- TODO: Add any relevant context about the application's purpose -->
 
-## Setup
+## Getting Started
 
-<!-- how to get things up an running -->
+For detailed setup and development instructions, see our [Getting Started Guide](./doc/getting-started.md).
+
+## Quick Start
 
 ```sh
-pnpm i
-cd packages/{APPLICATION_KEY}
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
 ```
 
 ## Build
 
-<!-- explain how to build the applications  -->
 ```sh
-pnpm i
-pnpm -r build
+# Install dependencies
+pnpm install
+
+# Build the application
+pnpm build
 ```
 
-## Deploy
-<!-- describe how to deploy applications  -->
+## Deployment
 
-## Contribute
+<!-- TODO: Add deployment instructions specific to your application -->
+<!-- TODO: Include environment-specific deployment steps if applicable -->
 
-<!-- how to contribute to the project -->
+## Contributing
+
+<!-- TODO: Add contribution guidelines specific to your project -->
+<!-- TODO: Include information about code style, testing requirements, etc. -->
+
+---
+
+**This application was created using the Fusion Framework CLI.** For complete setup instructions, see the [Getting Started Guide](./doc/getting-started.md).

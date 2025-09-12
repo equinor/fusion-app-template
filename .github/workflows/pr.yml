@@ -1,52 +1,81 @@
+# Pull Request Workflow
+# This workflow runs on every pull request to ensure code quality and build integrity.
+# It includes linting, building, and optional testing steps with different behaviors
+# for draft vs ready-for-review PRs.
+
 name: PR
 
+# Trigger on pull request events
 on: 
   pull_request: 
     types: 
-      - ready_for_review
-      - opened
-      - reopened
-      - synchronize
+      - ready_for_review  # When a draft PR is marked ready for review
+      - opened           # When a new PR is created
+      - reopened         # When a closed PR is reopened
+      - synchronize      # When new commits are pushed to the PR
 
+# Prevent multiple instances of this workflow running for the same PR
 concurrency:
   group: pr-${{ github.event.pull_request.id }}
   cancel-in-progress: true
   
 jobs:
   code-quality:
-    name: Check Code
+    name: Check Code Quality
     runs-on: ubuntu-latest
+    
+    # Required permissions for the workflow
     permissions:
-      contents: read
-      pages: write
-      id-token: write
+      contents: read          # Read repository contents
+      pages: write           # Write to GitHub Pages (if used)
+      id-token: write        # Generate OIDC tokens for authentication
+      pull-requests: read    # Read PR information for draft checking
     steps:
-
+      # Checkout the PR code
       - uses: actions/checkout@v4
         with:
+          # Use the merge commit to test the final state after merge
           ref: "${{ github.event.pull_request.merge_commit_sha }}"
+          # Fetch full history for proper change detection
           fetch-depth: 0
       
+      # Check if this is a draft PR to adjust behavior accordingly
+      - name: Check if PR is draft
+        id: draft-check
+        uses: ./.github/workflows/actions/check-draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+      
+      # Setup Node.js and install dependencies
       - name: Setup node and install deps
         uses: ./.github/workflows/actions/node-setup
 
-      # TODO - process results of linting
-      - name: Lint packages
-        id: lint
-        uses: ./.github/workflows/actions/eslint
+      # Lint source files with Biome
+      # Uses different reporters based on PR status:
+      # - Draft PRs: github-pr-check (less intrusive)
+      # - Ready PRs: github-pr-review (more visible)
+      - name: Lint source files
+        uses: mongolyy/reviewdog-action-biome@v1
+        with:
+          github_token: ${{ github.token }}
+          reporter: ${{ steps.draft-check.outputs.is-draft == 'true' && 'github-pr-check' || 'github-pr-review' }}
+          level: error
 
+      # Build only affected packages for efficiency
       - name: Build affected packages
         id: build
         uses: ./.github/workflows/actions/build-packages
         with: 
           only-affected: true
       
-      # TODO - process results of tests
-      # - name: Create Test Report
+      # TODO: Add your test steps here
+      # Uncomment and configure based on your testing setup
+      # - name: Run Tests
       #   run: pnpm test run
       
-      # TODO - process results of test coverage
-      # - name: Create Test Coverage
+      # TODO: Add test coverage reporting for non-draft PRs
+      # This helps maintain code quality standards
+      # - name: Generate Test Coverage Report
       #   id: test-coverage  
-      #   if: ${{ ! github.event.pull_request.draft }}
+      #   if: steps.draft-check.outputs.is-draft == 'false'
       #   run: pnpm test:coverage

@@ -1,8 +1,48 @@
+# Setup Node Action
+# This action sets up Node.js and pnpm for GitHub Actions workflows. It provides
+# a standardized way to configure the Node.js environment with pnpm package
+# manager and installs project dependencies.
+#
+# Features:
+# - Node.js setup: Configures Node.js with specified version (defaults to 22)
+# - pnpm integration: Sets up pnpm package manager for efficient monorepo support
+# - Dependency caching: Enables pnpm cache for faster subsequent runs
+# - Automatic installation: Installs all project dependencies
+# - Monorepo support: Works seamlessly with pnpm workspaces
+#
+# Example usage in a workflow:
+#
+# steps:
+#   - name: Checkout code
+#     uses: actions/checkout@v4
+#   
+#   - name: Setup Node.js and install dependencies
+#     uses: ./.github/workflows/actions/node-setup
+#     with:
+#       node-version: 22
+#   
+#   - name: Run tests
+#     run: pnpm test
+#   
+#   - name: Build packages
+#     run: pnpm build
+#
+# Prerequisites:
+# - pnpm-lock.yaml must exist in the repository root
+# - package.json must be present with valid dependencies
+# - Repository must be checked out before using this action
+#
+# Inputs:
+# - node-version: Node.js version to use (default: 22)
+#
+# For more information about pnpm, see:
+# https://pnpm.io/
+
 name: Setup Node
 Description: General setup of node
 inputs:
   node-version:  
-    default: 20
+    default: 22
 
 runs:
   using: composite

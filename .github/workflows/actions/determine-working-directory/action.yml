@@ -1,0 +1,35 @@
+name: 'Determine Working Directory'
+description: 'Detects project structure and determines working directory for monorepo or single package projects'
+inputs:
+  package-name:
+    description: 'Package name to check for in monorepo structure'
+    required: true
+outputs:
+  working-directory:
+    description: 'The working directory path (apps/app-name or .)'
+    value: ${{ steps.detect.outputs.working-directory }}
+  project-structure:
+    description: 'The detected project structure (monorepo or single-package)'
+    value: ${{ steps.detect.outputs.project-structure }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Detect project structure
+      id: detect
+      shell: bash
+      run: |
+        if [ -d "apps/${{ inputs.package-name }}" ]; then
+          echo "working-directory=apps/${{ inputs.package-name }}" >> $GITHUB_OUTPUT
+          echo "project-structure=monorepo" >> $GITHUB_OUTPUT
+          echo "Project structure: Monorepo (apps/${{ inputs.package-name }})"
+        elif [ -f "package.json" ] && [ -f "app.manifest.ts" ]; then
+          echo "working-directory=." >> $GITHUB_OUTPUT
+          echo "project-structure=single-package" >> $GITHUB_OUTPUT
+          echo "Project structure: Single package (root directory)"
+        else
+          echo "Error: Could not determine project structure"
+          echo "Expected either:"
+          echo "  - Monorepo: apps/${{ inputs.package-name }}/ directory"
+          echo "  - Single package: package.json and app.manifest.ts in root"
+          exit 1
+        fi

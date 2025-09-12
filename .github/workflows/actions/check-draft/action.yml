@@ -1,0 +1,73 @@
+# Check Draft PR Action
+# This action checks whether a GitHub pull request is in draft status and sets
+# a boolean output accordingly. It uses GitHub CLI to query PR details and
+# provides clear logging for workflow visibility.
+#
+# Features:
+# - Draft status detection: Determines if a PR is in draft state
+# - Boolean output: Sets 'is-draft' output as 'true' or 'false'
+# - GitHub CLI integration: Uses gh CLI for reliable PR data access
+# - Clear logging: Provides visual feedback about PR status
+# - Optional input: Uses current PR number by default if not specified
+#
+# Example usage in a workflow:
+#
+# steps:
+#   - name: Checkout code
+#     uses: actions/checkout@v4
+#   
+#   - name: Check if PR is draft
+#     uses: ./.github/workflows/actions/check-draft
+#     id: draft-check
+#     with:
+#       pr-number: ${{ github.event.pull_request.number }}
+#   
+#   - name: Skip CI for draft PRs
+#     if: steps.draft-check.outputs.is-draft == 'true'
+#     run: echo "Skipping CI for draft PR"
+#   
+#   - name: Run tests only for non-draft PRs
+#     if: steps.draft-check.outputs.is-draft == 'false'
+#     run: npm test
+#
+# Prerequisites:
+# - GitHub CLI (gh) must be available in the runner
+# - Appropriate permissions to read pull request data
+# - Valid pull request number (defaults to current PR if not specified)
+#
+# Outputs:
+# - is-draft: Boolean string ('true' or 'false') indicating draft status
+
+name: Check Draft PR
+description: 'Checks whether a GitHub pull request is in draft status and sets a boolean output'
+inputs:
+  pr-number:
+    description: 'Pull request number to check'
+    required: false
+    default: ${{ github.event.pull_request.number }}
+outputs:
+  is-draft:
+    description: 'Whether the pull request is a draft'
+    value: ${{ steps.check-draft.outputs.is-draft }}
+runs:
+  using: composite
+  steps:
+    - name: Check if PR is draft
+      id: check-draft
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        PR_NUMBER="${{ inputs.pr-number }}"
+        
+        # Get PR details using GitHub CLI with proper authentication
+        PR_INFO=$(gh pr view $PR_NUMBER --json isDraft)
+        IS_DRAFT=$(echo $PR_INFO | jq -r '.isDraft')
+        
+        echo "is-draft=$IS_DRAFT" >> $GITHUB_OUTPUT
+        
+        if [ "$IS_DRAFT" = "true" ]; then
+          echo "✅ Pull request #$PR_NUMBER is a draft"
+        else
+          echo "❌ Pull request #$PR_NUMBER is not a draft"
+        fi

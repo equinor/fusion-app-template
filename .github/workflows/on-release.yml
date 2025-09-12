@@ -1,0 +1,37 @@
+# Release Workflow
+# This workflow is triggered when a GitHub release is published.
+# It extracts the app key from the release tag and dispatches the publish workflow
+# to deploy the application to the appropriate environment.
+# 
+# Expected release tag format: ${APP_KEY}@${VERSION}
+# Example: "my-app@1.0.0" or "my-app@1.0.0-beta.1"
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  extract-package:
+    runs-on: ubuntu-latest
+    outputs:
+      package-name: ${{ steps.extract.outputs.package-name }}
+      package-version: ${{ steps.extract.outputs.package-version }}
+    steps:
+      - name: Extract package name and version
+        id: extract
+        run: |
+          echo "Extracting package name and version"
+          PACKAGE_NAME=$(echo ${{ github.ref }} | cut -d'@' -f1 | sed 's|refs/tags/||')
+          PACKAGE_VERSION=$(echo ${{ github.ref }} | cut -d'@' -f2)
+          echo "package-name=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+          echo "package-version=$PACKAGE_VERSION" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: extract-package
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    with:
+      package-name: ${{ needs.extract-package.outputs.package-name }}
+      package-version: ${{ needs.extract-package.outputs.package-version }}
+      tag: ${{ github.event.release.prerelease == true && 'preview' || 'latest' }}
