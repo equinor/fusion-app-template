@@ -7,7 +7,7 @@
 				{
 					"type": "dir",
 					"path": "apps/bare",
-					"target: ".",
+					"target": ".",
 					"recursive": true
 				},
 				{
@@ -21,10 +21,10 @@
 			"name": "basic",
 			"description": "A basic template for a Fusion Framework application",
 			"resources": [
-				{
+				{	
 					"type": "dir",
 					"path": "apps/basic",
-					"target: ".",
+					"target": ".",
 					"recursive": true
 				},
 				{
