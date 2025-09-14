@@ -1,0 +1,61 @@
+{
+	"temaplates": [
+		{
+			"name": "bare",
+			"description": "A barebones template for a Fusion Framework application",
+			"resources": [
+				{
+					"type": "dir",
+					"path": "apps/bare",
+					"recursive": true
+				},
+				{
+					"type": "file",
+					"path": "apps/bare/README.md",
+					"target": "TEMPLATE.md"
+				}
+			]
+		},
+		{
+			"name": "basic",
+			"description": "A basic template for a Fusion Framework application",
+			"resources": [
+				{
+					"type": "dir",
+					"path": "apps/basic",
+					"recursive": true
+				},
+				{
+					"type": "file",
+					"path": "apps/basic/README.md",
+					"target": "TEMPLATE.md"
+				}
+			]
+		}
+	],
+	"resources": [
+		{
+			"type": "dir",
+			"path": ".github",
+			"recursive": true
+		},
+		{
+			"type": "dir",
+			"path": ".changeset",
+			"recursive": true
+		},
+		{
+			"type": "dir",
+			"path": "docs",
+			"recursive": true
+		},
+		{
+			"type": "file",
+			"path": "README.md"
+		},
+		{
+			"type": "file",
+			"path": "SECURITY.md"
+		}
+	]
+}
