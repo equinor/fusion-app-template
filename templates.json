@@ -1,5 +1,5 @@
 {
-	"temaplates": [
+	"templates": [
 		{
 			"name": "bare",
 			"description": "A barebones template for a Fusion Framework application",
