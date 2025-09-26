@@ -15,15 +15,15 @@
 # steps:
 #   - name: Checkout code
 #     uses: actions/checkout@v4
-#   
+#
 #   - name: Setup Node.js and install dependencies
 #     uses: ./.github/workflows/actions/node-setup
 #     with:
 #       node-version: 22
-#   
+#
 #   - name: Run tests
 #     run: pnpm test
-#   
+#
 #   - name: Build packages
 #     run: pnpm build
 #
@@ -41,7 +41,7 @@
 name: Setup Node
 Description: General setup of node
 inputs:
-  node-version:  
+  node-version:
     default: 22
 
 runs:
@@ -57,5 +57,4 @@ runs:
 
     - name: install
       shell: bash
-      run: pnpm install
-        
+      run: pnpm install --frozen-lockfile
