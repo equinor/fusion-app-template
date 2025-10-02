@@ -53,27 +53,27 @@ import type { AppModuleInitiator } from '@equinor/fusion-framework-react-app';
  * @since 1.0.0
  */
 export const configure: AppModuleInitiator = async () => {
-	// TODO: Add your app configuration here
-	//
-	// This is a minimal template configuration. For production applications,
-	// you should configure the modules and services your app requires.
-	//
-	// Common configurations include:
-	// - HTTP client setup for API calls
-	// - Feature flags for environment-specific features
-	// - Navigation configuration for routing
-	// - Logging and monitoring setup
-	//
-	// Note: Authentication is handled by the Fusion Portal
-	// No additional authentication configuration is needed
-	//
-	// Example configurations:
-	//
-	// HTTP Client:
-	// configurator.configureHttpClient({
-	//   baseUri: process.env.API_BASE_URL,
-	//   defaultHeaders: {
-	//     'Content-Type': 'application/json'
-	//   }
-	// });
+  // TODO: Add your app configuration here
+  //
+  // This is a minimal template configuration. For production applications,
+  // you should configure the modules and services your app requires.
+  //
+  // Common configurations include:
+  // - HTTP client setup for API calls
+  // - Feature flags for environment-specific features
+  // - Navigation configuration for routing
+  // - Logging and monitoring setup
+  //
+  // Note: Authentication is handled by the Fusion Portal
+  // No additional authentication configuration is needed
+  //
+  // Example configurations:
+  //
+  // HTTP Client:
+  // configurator.configureHttpClient({
+  //   baseUri: process.env.API_BASE_URL,
+  //   defaultHeaders: {
+  //     'Content-Type': 'application/json'
+  //   }
+  // });
 };

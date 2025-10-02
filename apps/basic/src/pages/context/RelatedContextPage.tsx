@@ -20,15 +20,13 @@ import type { RelatedContextSchema } from '@/api/related-context/models';
 
 // Styled component for the related contexts grid layout
 const Styled = {
-	// Grid container for displaying related context items
-	// Uses a 2-column responsive grid with consistent spacing
-	RelatedContextsGrid: styled.div({
-		display: 'grid',
-		gridTemplateColumns: 'repeat(2, 1fr)',
-		gap: tokens.spacings.comfortable.small,
-		backgroundColor: tokens.colors.ui.background__medium.hex,
-		padding: tokens.spacings.comfortable.small,
-	}),
+  // Grid container for displaying related context items
+  // Uses a 2-column responsive grid with consistent spacing
+  RelatedContextsGrid: styled.div({
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: tokens.spacings.comfortable.medium,
+  }),
 };
 
 /**
@@ -42,55 +40,62 @@ const Styled = {
  * @component
  */
 export const RelatedContextPage = () => {
-	// Get current context and context setter from Fusion Framework
-	const { currentContext, setCurrentContext } = useCurrentContext();
+  // Get current context and context setter from Fusion Framework
+  const { currentContext, setCurrentContext } = useCurrentContext();
 
-	// Fetch related contexts using React Query hook
-	// This demonstrates data fetching with proper loading and error states
-	const { data, isLoading, error } = useRelatedContext(currentContext?.id);
+  // Fetch related contexts using React Query hook
+  // This demonstrates data fetching with proper loading and error states
+  const { data, isLoading, error } = useRelatedContext(currentContext?.id);
 
-	// State for the selected context in the detail side sheet
-	const [selectedContext, setSelectedContext] =
-		useState<RelatedContextSchema | null>(null);
+  // State for the selected context in the detail side sheet
+  const [selectedContext, setSelectedContext] =
+    useState<RelatedContextSchema | null>(null);
 
-	// Handle loading state
-	if (isLoading) return <div>Loading...</div>;
+  // Handle loading state
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-	// Handle error state
-	if (error) return <div>Error: {(error as Error).message}</div>;
+  // Handle error state
+  if (error) {
+    return <div>Error: {(error as Error).message}</div>;
+  }
 
-	// Handle no data state
-	if (!data) return <div>No data</div>;
-	return (
-		<AppPageContainer>
-			{/* Page header */}
-			<Typography variant="h2">Related Contexts</Typography>
+  // Handle no data state
+  if (!data) {
+    return <div>No data</div>;
+  }
 
-			{/* Side sheet for showing detailed context information */}
-			<ContextDetailSideSheet
-				context={selectedContext}
-				isOpen={!!selectedContext}
-				onClose={() => setSelectedContext(null)}
-			/>
+  return (
+    <AppPageContainer>
+      {/* Page header */}
+      <Typography variant="h2">Related Contexts</Typography>
 
-			{/* Grid layout for related context items */}
-			<Styled.RelatedContextsGrid>
-				{/* Render each related context as a card */}
-				{data.map((context) => (
-					<RelatedContextItem
-						key={context.id}
-						context={context}
-						// Handle setting this context as the current context
-						onClick={(context) => {
-							setCurrentContext(context.id);
-						}}
-						// Handle showing detailed information about this context
-						onShowDetails={(context) => {
-							setSelectedContext(context.$_raw);
-						}}
-					/>
-				))}
-			</Styled.RelatedContextsGrid>
-		</AppPageContainer>
-	);
+      {/* Side sheet for showing detailed context information */}
+      <ContextDetailSideSheet
+        context={selectedContext}
+        isOpen={!!selectedContext}
+        onClose={() => setSelectedContext(null)}
+      />
+
+      {/* Grid layout for related context items */}
+      <Styled.RelatedContextsGrid>
+        {/* Render each related context as a card */}
+        {data.map((context) => (
+          <RelatedContextItem
+            key={context.id}
+            context={context}
+            // Handle setting this context as the current context
+            onClick={(context) => {
+              setCurrentContext(context.id);
+            }}
+            // Handle showing detailed information about this context
+            onShowDetails={(context) => {
+              setSelectedContext(context.$_raw);
+            }}
+          />
+        ))}
+      </Styled.RelatedContextsGrid>
+    </AppPageContainer>
+  );
 };

@@ -16,10 +16,10 @@ import type { RelatedContextSchema } from './models';
  *
  */
 export interface RelatedContext {
-	id: string;
-	title: string;
-	type: string;
-	isActive: boolean;
-	displayName: string;
-	$_raw: RelatedContextSchema;
+  id: string;
+  title: string;
+  type: string;
+  isActive: boolean;
+  displayName: string;
+  $_raw: RelatedContextSchema;
 }

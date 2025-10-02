@@ -17,7 +17,7 @@ import { ContentContainer } from '@/components/ContentContainer';
 
 // Page header component - customize this for your app's branding
 const PageHeader = () => (
-	<Typography variant="h1">👋 Welcome to Basic App</Typography>
+  <Typography variant="h1">Welcome to Basic App</Typography>
 );
 
 /**
@@ -31,38 +31,38 @@ const PageHeader = () => (
  * @component
  */
 export const HomePage = () => {
-	// Get the current Fusion Framework context
-	// This will be null if no context is selected in the portal
-	const { currentContext } = useCurrentContext();
+  // Get the current Fusion Framework context
+  // This will be null if no context is selected in the portal
+  const { currentContext } = useCurrentContext();
 
-	// Show different content based on whether a context is selected
-	if (!currentContext) {
-		// No context selected - show instructions for getting started
-		return (
-			<AppPageContainer>
-				<PageHeader />
-				<ContentContainer>
-					<Typography variant="h3">No Context Selected</Typography>
-					<Typography variant="body_short">
-						Please select a context from the context selector to explore the app
-						features.
-					</Typography>
-				</ContentContainer>
-			</AppPageContainer>
-		);
-	}
+  // Show different content based on whether a context is selected
+  if (!currentContext) {
+    // No context selected - show instructions for getting started
+    return (
+      <AppPageContainer>
+        <PageHeader />
+        <ContentContainer>
+          <Typography variant="h3">No Context Selected</Typography>
+          <Typography variant="body_short">
+            Please select a context from the context selector to explore the app
+            features.
+          </Typography>
+        </ContentContainer>
+      </AppPageContainer>
+    );
+  }
 
-	// Context is selected - show context information and navigation
-	return (
-		<AppPageContainer>
-			<PageHeader />
-			<ContentContainer>
-				{/* Display current context with navigation link */}
-				<Typography variant="body_short">
-					You are currently in the context of{' '}
-					<Link to={`/${currentContext.id}`}>{currentContext.title}</Link>.
-				</Typography>
-			</ContentContainer>
-		</AppPageContainer>
-	);
+  // Context is selected - show context information and navigation
+  return (
+    <AppPageContainer>
+      <PageHeader />
+      <ContentContainer>
+        {/* Display current context with navigation link */}
+        <Typography variant="body_short">
+          You are currently in the context of{' '}
+          <Link to={`/${currentContext.id}`}>{currentContext.title}</Link>.
+        </Typography>
+      </ContentContainer>
+    </AppPageContainer>
+  );
 };

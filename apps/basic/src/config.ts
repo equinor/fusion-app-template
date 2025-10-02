@@ -7,9 +7,29 @@
  */
 
 import type { AppModuleInitiator } from '@equinor/fusion-framework-react-app';
-
 import { enableContext } from '@equinor/fusion-framework-react-app/context';
 import { enableNavigation } from '@equinor/fusion-framework-module-navigation';
+import { enableAgGrid } from '@equinor/fusion-framework-react-ag-grid';
+import {
+  CellStyleModule,
+  DateFilterModule,
+  TextFilterModule,
+  ClientSideRowModelModule,
+  NumberFilterModule,
+  RowSelectionModule,
+  PaginationModule,
+  ColumnAutoSizeModule,
+} from '@equinor/fusion-framework-react-ag-grid/community';
+import {
+  CellSelectionModule,
+  ClipboardModule,
+  ColumnsToolPanelModule,
+  ExcelExportModule,
+  FiltersToolPanelModule,
+  MenuModule,
+  SetFilterModule,
+  ValidationModule,
+} from '@equinor/fusion-framework-react-ag-grid/enterprise';
 
 /**
  * Application configuration function for context-aware Fusion Framework app.
@@ -27,21 +47,42 @@ import { enableNavigation } from '@equinor/fusion-framework-module-navigation';
  *
  */
 export const configure: AppModuleInitiator = async (configurator, { env }) => {
-	// Enable the context module with the orgchart context type
-	// This allows the app to work with user and organization context data
-	enableContext(configurator, async (builder) => {
-		// Set the context types that this application supports
-		// 'orgchart' provides access to organizational structure data
-		builder.setContextType(['orgchart']);
-	});
+  // Enable the context module with the orgchart context type
+  // This allows the app to work with user and organization context data
+  enableContext(configurator, async (builder) => {
+    // Set the context types that this application supports
+    // 'orgchart' provides access to organizational structure data
+    builder.setContextType(['orgchart']);
+  });
 
-	// Specify that the app should use the navigation module
-	// This enables routing and navigation capabilities with the provided basename
-	enableNavigation(configurator, env.basename);
+  // Specify that the app should use the navigation module
+  // This enables routing and navigation capabilities with the provided basename
+  enableNavigation(configurator, env.basename);
 
-	// Use the framework service clients for the context and people services
-	// These provide access to external APIs for context and user data
-	configurator.useFrameworkServiceClient('context');
+  // Use the framework service clients for the context and people services
+  // These provide access to external APIs for context and user data
+  configurator.useFrameworkServiceClient('context');
+
+  enableAgGrid(configurator, (builder) => {
+    builder.setModules([
+      CellSelectionModule,
+      ClientSideRowModelModule,
+      ColumnsToolPanelModule,
+      SetFilterModule,
+      ValidationModule,
+      FiltersToolPanelModule,
+      MenuModule,
+      ExcelExportModule,
+      ClipboardModule,
+      DateFilterModule,
+      NumberFilterModule,
+      TextFilterModule,
+      CellStyleModule,
+      RowSelectionModule,
+      PaginationModule,
+      ColumnAutoSizeModule,
+    ]);
+  });
 };
 
 export default configure;

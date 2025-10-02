@@ -6,17 +6,15 @@
  *
  */
 
-import {
-	RouterProvider,
-	type RouteObject,
-} from 'react-router-dom';
+import { RouterProvider, type RouteObject } from 'react-router-dom';
 
 import { useRouter } from '@equinor/fusion-framework-react-app/navigation';
 
 import { AppContainer } from '@/components/AppContainer';
 
 import { HomePage } from '@/pages/HomePage';
-import { GettingStartedPage } from '@/pages/AboutPage';
+import { GettingStartedPage } from '@/pages/GettingStartedPage';
+import { AGGridPage } from '@/pages/AGGrid';
 import { ContextLandingPage } from '@/pages/context/ContextLandingPage';
 import { RelatedContextPage } from '@/pages/context/RelatedContextPage';
 
@@ -31,39 +29,44 @@ import { RelatedContextPage } from '@/pages/context/RelatedContextPage';
  * @see {@link https://equinor.github.io/fusion-framework/modules/navigation/} for Fusion navigation
  */
 export const routes: RouteObject[] = [
-	{
-		id: 'root',
-		path: '/',
-		element: <AppContainer />,
-		children: [
-			{
-				id: 'home',
-				index: true,
-				element: <HomePage />,
-			},
-			{
-				id: 'getting-started',
-				path: 'getting-started',
-				element: <GettingStartedPage />,
-			},
-			{
-				id: 'context',
-				path: ':contextId',
-				children: [
-					{
-						id: 'context-home',
-						index: true,
-						element: <ContextLandingPage />,
-					},
-					{
-						id: 'context-related',
-						path: 'related',
-						element: <RelatedContextPage />,
-					},
-				],
-			},
-		],
-	},
+  {
+    id: 'root',
+    path: '/',
+    element: <AppContainer />,
+    children: [
+      {
+        id: 'home',
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        id: 'getting-started',
+        path: 'getting-started',
+        element: <GettingStartedPage />,
+      },
+      {
+        id: 'ag-grid',
+        path: 'ag-grid',
+        element: <AGGridPage />,
+      },
+      {
+        id: 'context',
+        path: ':contextId',
+        children: [
+          {
+            id: 'context-home',
+            index: true,
+            element: <ContextLandingPage />,
+          },
+          {
+            id: 'context-related',
+            path: 'related',
+            element: <RelatedContextPage />,
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 /**
@@ -82,13 +85,13 @@ export const routes: RouteObject[] = [
  * @component
  */
 export const Router = () => {
-	// Create router instance using Fusion Framework's navigation module
-	// This provides context-aware navigation and integration with other modules
-	// @ts-expect-error - fix fusion-framework-react-app types
-	const router = useRouter(routes);
+  // Create router instance using Fusion Framework's navigation module
+  // This provides context-aware navigation and integration with other modules
+  // @ts-expect-error - fix fusion-framework-react-app types
+  const router = useRouter(routes);
 
-	// Provide the router to all child components
-	// This enables navigation throughout the application
-	// @ts-expect-error - fix fusion-framework-react-app types
-	return <RouterProvider router={router} />;
+  // Provide the router to all child components
+  // This enables navigation throughout the application
+  // @ts-expect-error - fix fusion-framework-react-app types
+  return <RouterProvider router={router} />;
 };

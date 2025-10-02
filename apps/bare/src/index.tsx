@@ -28,8 +28,8 @@
 import { createRoot } from 'react-dom/client';
 
 import {
-	makeComponent,
-	type ComponentRenderArgs,
+  makeComponent,
+  type ComponentRenderArgs,
 } from '@equinor/fusion-framework-react-app';
 
 import { configure } from './config';
@@ -51,7 +51,7 @@ import { App } from './App';
  * @since 1.0.0
  */
 const createApp = (args: ComponentRenderArgs) =>
-	makeComponent(<App />, args, configure);
+  makeComponent(<App />, args, configure);
 
 /**
  * Main application bootstrap function.
@@ -76,19 +76,19 @@ const createApp = (args: ComponentRenderArgs) =>
  * @since 1.0.0
  */
 export default function (el: HTMLElement, args: ComponentRenderArgs) {
-	// Create a React 18 root for the app
-	// This enables concurrent features and better performance
-	const root = createRoot(el);
+  // Create a React 18 root for the app
+  // This enables concurrent features and better performance
+  const root = createRoot(el);
 
-	// Create the app component with Fusion Framework integration
-	// This includes all necessary providers and context
-	const App = createApp(args);
+  // Create the app component with Fusion Framework integration
+  // This includes all necessary providers and context
+  const App = createApp(args);
 
-	// Render the app on the React root
-	// The app will be mounted and ready for user interaction
-	root.render(<App />);
+  // Render the app on the React root
+  // The app will be mounted and ready for user interaction
+  root.render(<App />);
 
-	// Return cleanup function for proper unmounting
-	// This is called when the app needs to be removed from the DOM
-	return () => root.unmount();
+  // Return cleanup function for proper unmounting
+  // This is called when the app needs to be removed from the DOM
+  return () => root.unmount();
 }

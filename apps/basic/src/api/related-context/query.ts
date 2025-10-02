@@ -17,16 +17,16 @@ import { relatedContextResponseSelector } from './selectors';
  *
  */
 export const createRelatedContextQuery = (httpClient: IHttpClient) => {
-	// Return a function that can be called to fetch related contexts
-	return (contextId: string, filter?: string) => {
-		// Construct the API endpoint with optional filter parameter
-		// This follows the Fusion Framework API pattern for context relations
-		const endpoint = `/contexts/${contextId}/relations${filter ? `?$filter=${encodeURIComponent(filter)}` : ''}`;
+  // Return a function that can be called to fetch related contexts
+  return (contextId: string, filter?: string) => {
+    // Construct the API endpoint with optional filter parameter
+    // This follows the Fusion Framework API pattern for context relations
+    const endpoint = `/contexts/${contextId}/relations${filter ? `?$filter=${encodeURIComponent(filter)}` : ''}`;
 
-		// Make the HTTP request using the Fusion Framework HTTP client
-		// The selector transforms the raw API response into our application types
-		return httpClient.json(endpoint, {
-			selector: relatedContextResponseSelector,
-		});
-	};
+    // Make the HTTP request using the Fusion Framework HTTP client
+    // The selector transforms the raw API response into our application types
+    return httpClient.json(endpoint, {
+      selector: relatedContextResponseSelector,
+    });
+  };
 };
