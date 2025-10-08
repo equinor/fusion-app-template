@@ -7,6 +7,8 @@ import type {
   SideBarDef,
 } from '@equinor/fusion-framework-react-ag-grid/community';
 import styled from 'styled-components';
+import { Typography } from '@equinor/eds-core-react';
+import AppPageContainer from '@/components/AppPageContainer';
 
 interface Employee {
   id: number;
@@ -161,21 +163,49 @@ export const AGGridPage: React.FC = () => {
   }, []);
 
   return (
-    <Styled.AGContainer>
-      <AgGridReact
-        rowData={employees}
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
-        rowSelection={{
-          mode: 'multiRow',
-          enableClickSelection: true,
-        }}
-        pagination={true}
-        paginationPageSize={10}
-        sideBar={sideBar}
-        onGridReady={onGridReady}
-      />
-    </Styled.AGContainer>
+    <>
+      <AppPageContainer>
+        <Typography variant="h1">AG-Grid</Typography>
+        <Typography variant="body_short">
+          AG Grid is a powerful, enterprise-grade data table component for
+          Fusion applications, offering pre-configured theming and seamless
+          integration to build high-performance, feature-rich grids. It handles
+          large datasets with virtual scrolling, supports sorting, filtering,
+          search, and Excel export, and provides responsive design,
+          accessibility, and enterprise features like pivot tables and custom
+          renderers, all in an intuitive interface.
+        </Typography>
+
+        <Typography variant="body_short">
+          You can read more in the{' '}
+          <a
+            href="https://fusion-docs.fusion-dev.net/docs/developer/application/ag-grid"
+            target="_blank"
+            rel="noreferrer"
+          >
+            docs.
+          </a>
+        </Typography>
+
+        <Typography variant="body_short" />
+      </AppPageContainer>
+
+      <Styled.AGContainer $removeHeight={185}>
+        <AgGridReact
+          rowData={employees}
+          columnDefs={columnDefs}
+          defaultColDef={defaultColDef}
+          rowSelection={{
+            mode: 'multiRow',
+            enableClickSelection: true,
+          }}
+          pagination={true}
+          paginationPageSize={20}
+          sideBar={sideBar}
+          onGridReady={onGridReady}
+        />
+      </Styled.AGContainer>
+    </>
   );
 };
 
