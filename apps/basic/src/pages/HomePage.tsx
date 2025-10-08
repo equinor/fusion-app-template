@@ -7,17 +7,36 @@
  */
 
 import { Link } from 'react-router-dom';
-
-import { Typography } from '@equinor/eds-core-react';
-
+import { Icon, Typography } from '@equinor/eds-core-react';
 import { useCurrentContext } from '@equinor/fusion-framework-react-app/context';
-
-import { AppPageContainer } from '@/components/AppPageContainer';
 import { ContentContainer } from '@/components/ContentContainer';
+import styled from 'styled-components';
+import { arrow_up } from '@equinor/eds-icons';
+import { tokens } from '@equinor/eds-tokens';
+
+const Styled = {
+  SelectContextWrapper: styled.div`
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: ${tokens.spacings.comfortable.small};
+  `,
+  CenterWrapper: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  `,
+  ContentWrapper: styled.div`
+    max-width: 600px;
+  `,
+};
 
 // Page header component - customize this for your app's branding
 const PageHeader = () => (
-  <Typography variant="h1">Welcome to Basic App</Typography>
+  <Typography variant="h1">Welcome to App Template</Typography>
 );
 
 /**
@@ -39,30 +58,40 @@ export const HomePage = () => {
   if (!currentContext) {
     // No context selected - show instructions for getting started
     return (
-      <AppPageContainer>
-        <PageHeader />
-        <ContentContainer>
-          <Typography variant="h3">No Context Selected</Typography>
-          <Typography variant="body_short">
-            Please select a context from the context selector to explore the app
-            features.
-          </Typography>
-        </ContentContainer>
-      </AppPageContainer>
+      <>
+        <Styled.SelectContextWrapper>
+          <Icon data={arrow_up} size={32} />
+          Please select a project/task to get started
+        </Styled.SelectContextWrapper>
+        <Styled.CenterWrapper>
+          <PageHeader />
+          <ContentContainer>
+            <Styled.ContentWrapper>
+              <Typography variant="body_short">
+                This is an app to help your team getting started with the
+                development of your new application. You can use this as a
+                starting point for you and your team.
+              </Typography>
+            </Styled.ContentWrapper>
+          </ContentContainer>
+        </Styled.CenterWrapper>
+      </>
     );
   }
 
   // Context is selected - show context information and navigation
   return (
-    <AppPageContainer>
+    <Styled.CenterWrapper>
       <PageHeader />
       <ContentContainer>
-        {/* Display current context with navigation link */}
-        <Typography variant="body_short">
-          You are currently in the context of{' '}
-          <Link to={`/${currentContext.id}`}>{currentContext.title}</Link>.
-        </Typography>
+        <Styled.ContentWrapper>
+          {/* Display current context with navigation link */}
+          <Typography variant="body_short">
+            You are currently in the context of{' '}
+            <Link to={`/${currentContext.id}`}>{currentContext.title}</Link>.
+          </Typography>
+        </Styled.ContentWrapper>
       </ContentContainer>
-    </AppPageContainer>
+    </Styled.CenterWrapper>
   );
 };
