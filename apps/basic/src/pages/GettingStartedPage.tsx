@@ -10,6 +10,7 @@ import { Typography, Button, List, ListItem } from '@equinor/eds-core-react';
 
 import { AppPageContainer } from '@/components/AppPageContainer';
 import { ContentContainer } from '@/components/ContentContainer';
+import { Link } from 'react-router';
 
 /**
  * Getting started page with guidance and documentation.
@@ -39,42 +40,6 @@ export const GettingStartedPage = () => {
           Fusion Framework. It serves as a starting point for developing
           context-aware applications within the Equinor ecosystem.
         </Typography>
-        <Typography variant="body_short">
-          The app demonstrates key features including:
-        </Typography>
-        <List>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Context Management:</strong> Switch between different
-              contexts (projects, assets, etc.) and see context-specific content
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Navigation:</strong> Sidebar navigation with context-aware
-              menu items that adapt based on the selected context
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Related Context:</strong> Demonstrates React Query usage
-              for data fetching, caching, and state management - promoting its
-              adoption for better data handling
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Design System Integration:</strong> Consistent UI
-              components following Equinor Design System guidelines
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>TypeScript Support:</strong> Full type safety and
-              IntelliSense for better development experience
-            </Typography>
-          </ListItem>
-        </List>
 
         <Typography variant="h3">Quick Start Steps</Typography>
         <Typography variant="body_short">
@@ -114,139 +79,62 @@ export const GettingStartedPage = () => {
           </ListItem>
         </List>
 
-        <Typography variant="h3">Development Workflow</Typography>
+        <Typography variant="h3">Documentation</Typography>
         <Typography variant="body_short">
-          Here's how to work with this template:
+          Read more in the following documentation sites:
         </Typography>
         <List>
           <ListItem>
             <Typography variant="body_short">
-              <strong>Start development:</strong> Run <code>pnpm dev</code> to
-              start the development server
+              <Typography
+                link
+                href="https://fusion-docs.fusion-dev.net/docs/developer/getting-started/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <strong>Fusion Docs</strong>
+              </Typography>
             </Typography>
           </ListItem>
           <ListItem>
             <Typography variant="body_short">
-              <strong>Context switching:</strong> Use the context selector to
-              test different contexts
+              <Typography
+                link
+                href="https://eds.equinor.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <strong>Equinor Design System (EDS)</strong>
+              </Typography>
             </Typography>
           </ListItem>
           <ListItem>
             <Typography variant="body_short">
-              <strong>Styling:</strong> Use EDS tokens and styled-components for
-              consistent styling
+              <Typography
+                link
+                href="https://fusion-docs.fusion-dev.net/docs/developer/ux-design-guidelines/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <strong>UX design guidelines</strong>
+              </Typography>
             </Typography>
           </ListItem>
           <ListItem>
             <Typography variant="body_short">
-              <strong>TypeScript:</strong> Leverage full type safety with proper
-              interfaces and types
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Testing:</strong> Add tests in <code>src/__tests__/</code>{' '}
-              directory
-            </Typography>
-          </ListItem>
-        </List>
-
-        <Typography variant="h3">Essential Packages</Typography>
-        <Typography variant="body_short">
-          This basic app template uses several key packages to provide a solid
-          foundation:
-        </Typography>
-        <List>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>@equinor/fusion-framework-react-app:</strong> Core Fusion
-              Framework for React applications, providing app configuration and
-              context management
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>@equinor/fusion-framework-react-module-context:</strong>{' '}
-              Context management module for handling different contexts and
-              their data
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>@equinor/fusion-framework-module-navigation:</strong>{' '}
-              Navigation module providing routing and navigation capabilities
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>@equinor/eds-core-react:</strong> Equinor Design System
-              components for consistent UI elements and styling
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>react-router-dom:</strong> Client-side routing for
-              single-page application navigation
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>styled-components:</strong> CSS-in-JS styling library for
-              component-based styling
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>TypeScript:</strong> Type-safe JavaScript for better
-              development experience and fewer runtime errors
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>React Query:</strong> Data fetching and caching library
-              for efficient server state management and synchronization
-            </Typography>
-          </ListItem>
-        </List>
-
-        <Typography variant="h3">Resources & Next Steps</Typography>
-        <Typography variant="body_short">
-          Helpful resources to continue your development:
-        </Typography>
-        <List>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Fusion Framework:</strong> Check the documentation for
-              advanced features
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>EDS Components:</strong> Explore the full component
-              library at design.eds.equinor.com
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Context Management:</strong> Learn about context-specific
-              features and data handling
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>Styling Guide:</strong> Use EDS tokens for consistent
-              theming and spacing
-            </Typography>
-          </ListItem>
-          <ListItem>
-            <Typography variant="body_short">
-              <strong>TypeScript:</strong> Leverage the full type system for
-              better development experience
+              <Typography
+                link
+                href="https://equinor.github.io/fusion-framework/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <strong>Fusion Framework</strong>
+              </Typography>
             </Typography>
           </ListItem>
         </List>
       </ContentContainer>
-      <Button variant="outlined" href="./">
+      <Button as={Link} variant="outlined" to="/">
         Go to Home
       </Button>
     </AppPageContainer>
