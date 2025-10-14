@@ -55,7 +55,7 @@ jobs:
       # - Draft PRs: github-pr-check (less intrusive)
       # - Ready PRs: github-pr-review (more visible)
       - name: Lint source files
-        uses: mongolyy/reviewdog-action-biome@v1
+        uses: mongolyy/reviewdog-action-biome@v2
         with:
           github_token: ${{ github.token }}
           reporter: ${{ steps.draft-check.outputs.is-draft == 'true' && 'github-pr-check' || 'github-pr-review' }}
