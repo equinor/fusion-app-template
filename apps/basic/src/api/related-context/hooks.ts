@@ -21,31 +21,31 @@ import type { RelatedContext } from './types';
  *
  */
 export const useRelatedContext = (
-	contextId?: string,
-	filter?: string,
+  contextId?: string,
+  filter?: string,
 ): UseQueryResult<RelatedContext[]> => {
-	// Get the Fusion Framework HTTP client for the 'context' service
-	const httpClient = useHttpClient('context');
+  // Get the Fusion Framework HTTP client for the 'context' service
+  const httpClient = useHttpClient('context');
 
-	// Create the query function using the HTTP client
-	const queryRelatedContexts = createRelatedContextQuery(httpClient);
+  // Create the query function using the HTTP client
+  const queryRelatedContexts = createRelatedContextQuery(httpClient);
 
-	// Set up React Query with proper caching and error handling
-	const query = useQuery({
-		// Unique key for caching - includes contextId and filter for proper invalidation
-		queryKey: ['relatedContexts', contextId, filter],
-		queryFn: () => {
-			// Ensure we have a context ID before making the request
-			if (!contextId) {
-				throw new Error('No context ID available');
-			}
-			// Execute the actual API call
-			return queryRelatedContexts(contextId);
-		},
-		// Only run the query when we have a context ID
-		enabled: !!contextId,
-	});
-	return query;
+  // Set up React Query with proper caching and error handling
+  const query = useQuery({
+    // Unique key for caching - includes contextId and filter for proper invalidation
+    queryKey: ['relatedContexts', contextId, filter],
+    queryFn: () => {
+      // Ensure we have a context ID before making the request
+      if (!contextId) {
+        throw new Error('No context ID available');
+      }
+      // Execute the actual API call
+      return queryRelatedContexts(contextId);
+    },
+    // Only run the query when we have a context ID
+    enabled: !!contextId,
+  });
+  return query;
 };
 
 /**
@@ -56,14 +56,14 @@ export const useRelatedContext = (
  *
  */
 export const useCurrentRelatedContext = (
-	filter?: string,
+  filter?: string,
 ): UseQueryResult<RelatedContext[]> => {
-	// Get the current context from Fusion Framework
-	const { currentContext } = useCurrentContext();
+  // Get the current context from Fusion Framework
+  const { currentContext } = useCurrentContext();
 
-	// Use the related context hook with the current context's ID
-	// This automatically updates when the current context changes
-	return useRelatedContext(currentContext?.id, filter);
+  // Use the related context hook with the current context's ID
+  // This automatically updates when the current context changes
+  return useRelatedContext(currentContext?.id, filter);
 };
 
 export default useCurrentRelatedContext;

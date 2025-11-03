@@ -1,51 +1,51 @@
 {
-	"name": "@equinor/bare",
-	"version": "0.0.0",
-	"description": "Bare template for building React applications with Fusion Framework. A minimal starting point for developers to create custom applications from scratch.",
-	"private": true,
-	"main": "dist/index.js",
-	"type": "module",
-	"keywords": [
-		"fusion-framework",
-		"react",
-		"typescript",
-		"template",
-		"equinor",
-		"micro-frontend"
-	],
-	"scripts": {
-		"build": "fusion-framework-cli app build",
-		"dev": "fusion-framework-cli app dev",
-		"check": "biome check",
-		"check:errors": "biome check --diagnostic-level=error",
-		"lint": "biome lint",
-		"format": "biome format"
-	},
-	"author": "demo@equinor.com",
-	"license": "ISC",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/equinor/fusion-app-template.git",
-		"directory": "apps/bare"
-	},
-	"bugs": {
-		"url": "https://github.com/equinor/fusion-app-template/issues"
-	},
-	"homepage": "https://equinor.github.io/fusion-framework/",
-	"dependencies": {
-		"@equinor/fusion-framework-cli": "^12.3.4",
-		"@equinor/fusion-framework-react-app": "^7.0.0",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"typescript": "^5.9.3"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^2.2.6",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1"
-	},
-	"engines": {
-		"node": ">=18.0.0",
-		"pnpm": ">=8.0.0"
-	}
+  "name": "@equinor/bare",
+  "version": "0.0.0",
+  "description": "Bare template for building React applications with Fusion Framework. A minimal starting point for developers to create custom applications from scratch.",
+  "private": true,
+  "main": "dist/index.js",
+  "type": "module",
+  "keywords": [
+    "fusion-framework",
+    "react",
+    "typescript",
+    "template",
+    "equinor",
+    "micro-frontend"
+  ],
+  "scripts": {
+    "build": "fusion-framework-cli app build",
+    "dev": "fusion-framework-cli app dev",
+    "check": "biome check",
+    "check:errors": "biome check --diagnostic-level=error",
+    "lint": "biome lint",
+    "format": "biome format"
+  },
+  "author": "demo@equinor.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/equinor/fusion-app-template.git",
+    "directory": "apps/bare"
+  },
+  "bugs": {
+    "url": "https://github.com/equinor/fusion-app-template/issues"
+  },
+  "homepage": "https://equinor.github.io/fusion-framework/",
+  "dependencies": {
+    "@equinor/fusion-framework-cli": "^12.3.4",
+    "@equinor/fusion-framework-react-app": "^7.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
 }

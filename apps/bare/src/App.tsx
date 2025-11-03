@@ -84,34 +84,34 @@
  * @since 1.0.0
  */
 export const App = () => (
-	<div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-		<h2>Welcome to Fusion Framework</h2>
-		<p>
-			This is a bare template for building applications with Fusion Framework.
-		</p>
+  <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+    <h2>Welcome to Fusion Framework</h2>
+    <p>
+      This is a bare template for building applications with Fusion Framework.
+    </p>
 
-		<h3>Getting Started</h3>
-		<p>
-			Start by exploring the available modules and customizing this component.
-		</p>
+    <h3>Getting Started</h3>
+    <p>
+      Start by exploring the available modules and customizing this component.
+    </p>
 
-		<h3>Resources</h3>
-		<p>
-			<a
-				href="https://equinor.github.io/fusion-framework/modules/"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Fusion Framework Modules
-			</a>
-		</p>
+    <h3>Resources</h3>
+    <p>
+      <a
+        href="https://equinor.github.io/fusion-framework/modules/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fusion Framework Modules
+      </a>
+    </p>
 
-		<h3>Next Steps</h3>
-		<ul>
-			<li>Update this component with your app's content</li>
-			<li>Configure your app in the Fusion Portal</li>
-			<li>Set up authentication and routing</li>
-			<li>Deploy your application</li>
-		</ul>
-	</div>
+    <h3>Next Steps</h3>
+    <ul>
+      <li>Update this component with your app's content</li>
+      <li>Configure your app in the Fusion Portal</li>
+      <li>Set up authentication and routing</li>
+      <li>Deploy your application</li>
+    </ul>
+  </div>
 );

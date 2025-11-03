@@ -1,33 +1,33 @@
 {
-	"name": "@equinor/my-app-team-name",
-	"version": "1.0.0",
-	"description": "",
-	"private": true,
-	"engines": {
-		"node": "^22",
-		"npm": "please-use-pnpm",
-		"yarn": "please-use-pnpm",
-		"pnpm": ">=9"
-	},
-	"packageManager": "pnpm@10.15.1",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"check": "biome check",
-		"check:errors": "biome check --diagnostic-level=error",
-		"lint": "biome lint",
-		"lint:staged": "biome lint --staged",
-		"format": "biome format",
-		"format:staged": "biome format --staged",
-		"changeset:version": "pnpm changeset version && pnpm install --lockfile-only && pnpm check:errors --fix",
-		"changeset:publish": "pnpm changeset tag && pnpm publish -r"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@biomejs/biome": "^2.2.6",
-		"@changesets/changelog-github": "^0.5.1",
-		"@changesets/cli": "^2.29.7",
-		"typescript": "^5.9.3"
-	}
+  "name": "@equinor/my-app-team-name",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "engines": {
+    "node": "^22",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "biome check",
+    "check:errors": "biome check --diagnostic-level=error",
+    "lint": "biome lint",
+    "lint:staged": "biome lint --staged",
+    "format": "biome format",
+    "format:staged": "biome format --staged",
+    "changeset:version": "pnpm changeset version && pnpm install --lockfile-only && pnpm check:errors --fix",
+    "changeset:publish": "pnpm changeset tag && pnpm publish -r"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.6",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.7",
+    "typescript": "^5.9.3"
+  }
 }

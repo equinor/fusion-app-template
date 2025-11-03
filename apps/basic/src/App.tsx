@@ -17,11 +17,11 @@ import { Router } from './Router';
  * @see {@link https://tanstack.com/query/latest} for React Query documentation
  */
 const queryClient = new QueryClient({
-	defaultOptions: {
-		queries: {
-			staleTime: 1000 * 60 * 5, // 5 minutes stale time
-		},
-	},
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes stale time
+    },
+  },
 });
 
 /**
@@ -39,12 +39,12 @@ const queryClient = new QueryClient({
  * @component
  */
 export const App = () => {
-	return (
-		<QueryClientProvider client={queryClient}>
-			<Router />
-			<ReactQueryDevtools initialIsOpen={false} />
-		</QueryClientProvider>
-	);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Router />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
 };
 
 export default App;
