@@ -70,7 +70,7 @@ jobs:
 
       - name: Upload packed app as artifact
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: app-bundle
           path: ${{ steps.working-dir.outputs.working-directory }}/app-bundle.zip
