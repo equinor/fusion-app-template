@@ -103,7 +103,7 @@ jobs:
           package-name: ${{ env.package-name }}
 
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: app-bundle
           path: ${{ steps.working-dir.outputs.working-directory }}
