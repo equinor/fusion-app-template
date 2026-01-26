@@ -42,7 +42,7 @@
     "@equinor/fusion-framework-cli": "^12.3.4",
     "@equinor/fusion-framework-module-http": "^7.0.2",
     "@equinor/fusion-framework-module-navigation": "^6.0.0",
-    "@equinor/fusion-framework-react-ag-grid": "^34.2.1",
+    "@equinor/fusion-framework-react-ag-grid": "^34.4.1",
     "@equinor/fusion-framework-react-app": "^7.0.0",
     "@equinor/fusion-framework-react-module-context": "^6.2.33",
     "@equinor/fusion-observable": "^8.5.5",
