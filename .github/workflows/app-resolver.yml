@@ -1,0 +1,60 @@
+# This workflow determins what apps are affected by change. 
+# Its output is application name and working directory which is used by build and publish workflows.
+
+name:  🔦 App Resolver  
+
+on:
+  workflow_call:
+    inputs:
+      triggered-by:
+        required: false
+        type: string
+        default: 'manual'
+
+jobs:
+  app-resolver:
+    name: 🛠️ App Resolver
+    runs-on: ubuntu-latest
+    outputs:
+      changed-apps: ${{ steps.detect.outputs.changed-apps }}
+    steps:
+        # Checkout the repository to analyze changes with depth of 0 to get all history
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Detect changes
+        id: detect
+        uses: equinor/fusion-action-app-change@v0
+
+        # Print changed applications to $GITHUB_STEP_SUMMARY as one comment with all apps in table format
+      - name: 🛠️ Changed Applications
+        if: steps.detect.outputs.has-changes == 'true'
+        run: |
+          echo "## 🛠️ Changed Applications" >> $GITHUB_STEP_SUMMARY
+
+          echo "The following applications have changes in this pull request and will be built and deployed to the pr environment." >> $GITHUB_STEP_SUMMARY
+
+          echo "| Application Name | Path |" >> $GITHUB_STEP_SUMMARY
+          echo "|------------------|------|" >> $GITHUB_STEP_SUMMARY
+          printf '%s' '${{ steps.detect.outputs.changed-apps }}' | jq -r 'if type=="string" then fromjson else . end | .[] | "| " + .name + " | " + .path + " |"' >> $GITHUB_STEP_SUMMARY
+
+  build:
+    name: 🛠️ Build Workflow
+    needs: app-resolver
+    if: needs.app-resolver.outputs.changed-apps != ''
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
+    strategy:
+      matrix:
+        app: ${{ fromJson(needs.app-resolver.outputs.changed-apps) }}
+    uses: ./.github/workflows/build.yml
+    with:
+      app-name: ${{ matrix.app.name }}
+      work-dir: ${{ matrix.app.path }}
+      environment: '["pr"]'
+    

@@ -1,0 +1,52 @@
+name: 'Extract Package Info'
+description: 'Extracts package name, version, and path from git tag reference'
+inputs:
+  tag-ref:
+    description: 'Git tag reference (e.g., refs/tags/v1.0.0)'
+    required: false
+    default: ${{ github.ref }}
+outputs:
+  app-name:
+    description: 'The extracted package name from package.json'
+    value: ${{ steps.extract.outputs.app-name }}
+  app-version:
+    description: 'The extracted version from the git tag'
+    value: ${{ steps.extract.outputs.app-version }}
+  app-path:
+    description: 'The path to the directory containing package.json'
+    value: ${{ steps.extract.outputs.app-path }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Extract package information
+      id: extract
+      shell: bash
+      run: |
+        echo "Extracting package name and path from tag: ${{ inputs.tag-ref }}"
+        
+        # Extract version from tag (remove refs/tags/v prefix)
+        PACKAGE_VERSION=$(echo "${{ inputs.tag-ref }}" | sed 's|refs/tags/v||')
+        echo "Extracted version: $PACKAGE_VERSION"
+        
+        # Find package.json excluding node_modules
+        PACKAGE_JSON_PATH=$(find . -name "node_modules" -prune -o -type f -name "package.json" -print | head -n 1)
+        
+        if [ -n "$PACKAGE_JSON_PATH" ]; then
+          echo "Found package.json at: $PACKAGE_JSON_PATH"
+          
+          # Extract package name from package.json
+          PACKAGE_NAME=$(grep -o '"name": *"[^"]*"' "$PACKAGE_JSON_PATH" | cut -d'"' -f4)
+          PATH_TO_PACKAGE=$(dirname "$PACKAGE_JSON_PATH")
+          
+          echo "Package name: $PACKAGE_NAME"
+          echo "Package version: $PACKAGE_VERSION"
+          echo "Package path: $PATH_TO_PACKAGE"
+          
+          # Set outputs
+          echo "app-name=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+          echo "app-version=$PACKAGE_VERSION" >> $GITHUB_OUTPUT
+          echo "app-path=$PATH_TO_PACKAGE" >> $GITHUB_OUTPUT
+        else
+          echo "Error: No package.json found in project"
+          exit 1
+        fi

@@ -1,10 +1,4 @@
-# Release Workflow
-# This workflow is triggered when a GitHub release is published.
-# It extracts the app key from the release tag and dispatches the publish workflow
-# to deploy the application to the appropriate environment.
-# 
-# Expected release tag format: ${APP_KEY}@${VERSION}
-# Example: "my-app@1.0.0" or "my-app@1.0.0-beta.1"
+name: 🚀 On release
 
 on:
   release:
@@ -15,23 +9,31 @@ jobs:
   extract-package:
     runs-on: ubuntu-latest
     outputs:
-      package-name: ${{ steps.extract.outputs.package-name }}
-      package-version: ${{ steps.extract.outputs.package-version }}
+        appName: ${{ steps.extract.outputs.app-name }}
+        appPath: ${{ steps.extract.outputs.app-path }}
     steps:
-      - name: Extract package name and version
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      
+      - name: Extract package name and path
         id: extract
-        run: |
-          echo "Extracting package name and version"
-          PACKAGE_NAME=$(echo ${{ github.ref }} | cut -d'@' -f1 | sed 's|refs/tags/||')
-          PACKAGE_VERSION=$(echo ${{ github.ref }} | cut -d'@' -f2)
-          echo "package-name=$PACKAGE_NAME" >> $GITHUB_OUTPUT
-          echo "package-version=$PACKAGE_VERSION" >> $GITHUB_OUTPUT
+        uses: ./.github/workflows/actions/extract-package-info
+        
 
-  deploy:
+  build:
     needs: extract-package
-    uses: ./.github/workflows/deploy.yml
     secrets: inherit
+    uses: ./.github/workflows/build.yml
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
     with:
-      package-name: ${{ needs.extract-package.outputs.package-name }}
-      package-version: ${{ needs.extract-package.outputs.package-version }}
-      tag: ${{ github.event.release.prerelease == true && 'preview' || 'latest' }}
+        app-name: ${{ needs.extract-package.outputs.appName }}
+        work-dir: ${{ needs.extract-package.outputs.appPath }}
+        environment: '["ci"]' # if needed add additinal environments '["ci", "fqa", "fprd", "tr"]'
+        release: true # this will ensure that the app is packed with the version from package.json and not as a snapshot
+
+

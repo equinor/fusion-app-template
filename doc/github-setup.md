@@ -4,12 +4,13 @@ Welcome! This guide will help you set up automated workflows for your Fusion app
 
 ## What You'll Get
 
-By the end of this guide, you'll have four powerful workflows running:
+By the end of this guide, you'll have a comprehensive set of automated workflows running:
 
-1. **🔍 Pull Request Checks** - Automatically checks your code quality and builds your app when you create pull requests
-2. **📦 Version Management** - Automatically updates version numbers and publishes packages when you merge code
-3. **🚀 On-Release Hook** - Automatically triggers when GitHub creates a release and schedules deployment
-4. **🚀 Deployment Automation** - Automatically deploys your app to different environments when you're ready
+1. **🔍 Pull Request Checks** - Automatically validates your code quality and builds affected apps when you create pull requests
+2. **📦 Version Management** - Automatically updates version numbers and creates GitHub releases when you merge code
+3. **🚀 On-Release Hook** - Automatically triggers when GitHub creates a release and schedules build and deployment
+4. **🛠️ Build Automation** - Automatically builds and packages your applications for different environments
+5. **🚀 Publish Automation** - Automatically deploys your packaged apps to configured environments
 
 ## Table of Contents
 
@@ -32,62 +33,124 @@ Let's explore the four workflows that will automate your development process!
 
 ### 🔍 **Pull Request Checks** ([`pr.yml`](../.github/workflows/pr.yml))
 
-**What it does**: Every time you create a pull request, this workflow automatically checks your code.
+**What it does**: Every time you create a pull request, this workflow intelligently validates your code changes.
 
-**Why you need it**: Instead of manually checking if your code builds and follows style guidelines, this workflow does it automatically. It's like having a code reviewer that never sleeps!
+**Why you need it**: Instead of manually checking if your code builds and follows style guidelines, this workflow does it automatically with smart optimization based on PR status.
 
 **What happens**:
-- When you create a PR → Workflow checks your code quality
-- When you mark PR as "ready for review" → Workflow runs more thorough checks
-- When you push new commits → Workflow re-checks everything
-- If something's wrong → Workflow tells you exactly what to fix
+- **Draft PRs**: Runs lightweight validation (lint and test checks only) - perfect for work-in-progress
+- **Ready for Review PRs**: Runs full pipeline including app detection, building, and publishing to PR environment
+- **Smart App Detection**: Only builds and deploys apps that have actually changed
+- **Automatic Environment**: Creates temporary PR environments for testing your changes
 
-**The magic**: It's smart enough to know the difference between a draft PR (where you're still working) and a ready PR (where you want thorough checking).
+**The magic**: 
+- Detects which specific apps changed using the **App Resolver** workflow
+- Adjusts validation intensity based on whether PR is draft or ready
+- Provides detailed summaries showing which apps will be affected
 
 ### 📦 **Version Management** ([`ci.yml`](../.github/workflows/ci.yml))
 
-**What it does**: This workflow uses the Changesets action to automatically handle version numbers and publishing.
+**What it does**: This workflow uses the Changesets action to automatically handle version numbers and GitHub releases.
 
 **How it works**:
 - **Checks for changesets**: The workflow runs `changesets/action` to detect if there are any changesets in your code
 - **Creates release PR**: If changesets are found, it creates a new branch and opens a PR with version bumps and changelog updates
 - **Creates GitHub release**: When the release PR is merged to main, the workflow creates a GitHub release
+- **Smart draft protection**: Automatically converts release PRs back to draft if new changesets are added
 
 **The Changesets action handles**:
 - Detecting changesets in your repository
-- Creating version bump PRs with proper changelog updates
+- Creating version bump PRs with proper changelog updates (titled "🤖 Bip Bop - Fusion Application Release")
 - Creating GitHub releases when the release PR is merged
 - Managing draft status to prevent incomplete releases
+
+**Draft Protection Feature**: If you add new changesets to an existing release PR, the workflow automatically converts it back to draft. This prevents accidental merging of incomplete releases!
 
 **📚 Want to learn more about Changesets?** Check out our [Complete Changesets Guide](./working-with-changesets.md) for detailed instructions, best practices, and troubleshooting tips!
 
 ### 🚀 **On-Release Hook** ([`on-release.yml`](../.github/workflows/on-release.yml))
 
-**What it does**: This workflow is triggered automatically when GitHub creates a release, and schedules a job for deployment.
+**What it does**: This workflow is triggered automatically when GitHub creates a release, and orchestrates the build and deployment process.
 
-**Why you need it**: Instead of manually triggering deployments, this workflow automatically detects when you publish a release and starts the deployment process.
-
-**What happens**:
-- You create a GitHub release → Workflow automatically triggers
-- Workflow extracts package name and version from the release tag
-- Workflow schedules the deployment job with the extracted information
-- Workflow determines the correct deployment tag (preview vs latest) based on release type
-
-**The magic**: It automatically parses release tags in the format `package-name@version` and passes the information to the deployment workflow.
-
-### 🌈 **Deployment Automation** ([`deploy.yml`](../.github/workflows/deploy.yml))
-
-**What it does**: This workflow handles the actual building and deploying of your application to different environments.
-
-**Why you need it**: Deploying apps manually is time-consuming and error-prone. This workflow makes it one-click easy!
+**Why you need it**: Instead of manually triggering deployments, this workflow automatically detects when you publish a release and starts the build and deployment process.
 
 **What happens**:
-- Receives package name and version from the on-release hook
-- Workflow builds your app using Fusion Framework tools
-- Workflow deploys to your chosen environments (like staging, production)
-- Workflow makes sure everything is configured correctly for each environment
+- GitHub release is published → Workflow automatically triggers
+- **Package extraction**: Uses a custom action to extract package name and path from the release tag
+- **Build orchestration**: Calls the Build workflow with the extracted package information
+- **Environment configuration**: Passes deployment environment settings to the build process
+- **Release vs Preview**: Determines deployment strategy based on release type
 
-**The magic**: It knows how to talk to the Fusion Framework and can deploy to multiple environments automatically.
+**The magic**: It automatically parses release tags and uses a sophisticated extraction system to identify which app to build and deploy, then passes that information to the build pipeline.
+
+### 🛠️ **Build Automation** ([`build.yml`](../.github/workflows/build.yml))
+
+**What it does**: This workflow handles the building and packaging of your applications with sophisticated environment handling.
+
+**Why you need it**: Building apps consistently across different environments is complex. This workflow handles all the details automatically!
+
+**What happens**:
+- **Snapshot builds**: For PR deployments, creates apps with snapshot versioning and unique timestamps
+- **Release builds**: For production deployments, uses the exact version from package.json
+- **Environment-aware**: Adapts build process based on target environment (CI, FQA, FPRD, etc.)
+- **Artifact creation**: Packages your app into distributable bundles (app-bundle.zip)
+- **Dependency management**: Handles all build dependencies and Node.js setup
+
+**The magic**: It automatically determines whether to create snapshot or release versions based on the deployment context.
+
+### 🚀 **Publish Automation** ([`publish.yml`](../.github/workflows/publish.yml))
+
+**What it does**: This workflow takes built artifacts and deploys them to the configured Fusion environments.
+
+**Why you need it**: Deploying to Fusion Framework requires specific authentication and configuration. This workflow handles all of that!
+
+**What happens**:
+- **Artifact retrieval**: Downloads the built app bundle from the build workflow
+- **Environment authentication**: Uses Azure OpenID Connect for secure deployment
+- **Fusion Framework deployment**: Publishes your app using the Fusion Framework CLI
+- **Environment-specific configuration**: Adapts deployment parameters for each target environment
+- **Deployment verification**: Ensures the deployment completed successfully
+
+**The magic**: It uses modern security practices (OpenID Connect) and knows how to talk to the Fusion Framework deployment systems.
+
+## Supporting Workflows
+
+These workflows work behind the scenes to make the main workflows more efficient and intelligent:
+
+### 🔦 **App Resolver** ([`app-resolver.yml`](../.github/workflows/app-resolver.yml))
+
+**What it does**: Detects which applications in your monorepo have actually changed.
+
+**Why it's important**: Instead of building and deploying all apps, this workflow identifies only the apps that need attention, saving time and resources.
+
+**How it works**:
+- Uses `equinor/fusion-action-app-change@v0` to analyze git changes
+- Compares current changes against the base branch
+- Outputs a list of changed apps with their names and paths
+- Creates a summary table showing which apps will be affected
+
+### 🧹 **Lint Validation** ([`lint-validation.yml`](../.github/workflows/lint-validation.yml))
+
+**What it does**: Runs code linting and style checks using Biome and ReviewDog.
+
+**When it runs**: Automatically triggered for draft pull requests to provide quick feedback.
+
+**Features**:
+- Uses ReviewDog for inline PR comments on linting issues
+- Different reporting modes for draft vs. ready PRs
+- Integrates with GitHub checks API for status reporting
+- Provides actionable feedback directly in your PR
+
+### 🧪 **Test Validation** ([`test-validation.yml`](../.github/workflows/test-validation.yml))
+
+**What it does**: Runs your test suite to ensure code quality and functionality.
+
+**When it runs**: Automatically triggered for draft pull requests alongside lint validation.
+
+**Benefits**:
+- Quick feedback on test failures during development
+- Prevents broken code from reaching the full pipeline
+- Optimized for rapid iteration during draft phase
 
 ## What You Need Before Starting
 
@@ -139,19 +202,20 @@ Now we need to tell GitHub about your Azure setup and create "environments" wher
 
 ### Step 1: Create Deployment Environments
 
-Think of environments as different "rooms" where your app can live. You might have a testing room, a staging room, and a production room.
+Think of environments as different "rooms" where your app can live. You might have a CI room for testing, and production rooms for live apps.
 
 1. **Go to Repository Settings**:
    - In your GitHub repository, click the "Settings" tab
    - Look for "Environments" in the left sidebar and click it
+
 2. **Create Your Environments**:
    - Click "New environment"
-   - Create these environments (you can add more later):
-     - **`CI`** - For continuous integration (testing)
-     - **`FQA`** - For feature QA (optional, for testing features)
-     - **`FPRD`** - For feature production (optional, for production)
+   - Create these environments based on your needs:
+     - **`ci`** - For continuous integration and PR testing (required)
+     - **`fqa`** - For feature QA environment (optional)
+     - **`fprd`** - For feature production environment (optional)
 
-**💡 Pro tip**: Start with just `CI` for now. You can always add more environments later!
+**💡 Pro tip**: The `ci` environment is used for PR deployments and testing. Start with this one and add others as your team grows!
 
 ### Step 2: Add Your Azure Information
 
@@ -170,7 +234,64 @@ Now we'll give each environment the Azure credentials your workflows need.
 
 2. **Click "Save"** after adding each variable
 
-### Step 3: Enable GitHub Actions
+### Step 4: Configure Personal Access Token (PAT) for Automatic Releases
+
+⚠️ **CRITICAL FOR AUTOMATIC RELEASES**: The version management workflow requires a Personal Access Token (PAT) to create GitHub releases automatically.
+
+**Why you need this**: The `GITHUB_TOKEN` provided by GitHub Actions has limited permissions and cannot create releases. For automatic release creation, you need a Personal Access Token.
+
+**What happens without PAT**:
+- ❌ Automatic release creation fails
+- ❌ You'll need to manually create releases
+- ❌ Additional pipeline modifications required
+
+**Setting up your PAT**:
+
+1. **Create a Personal Access Token**:
+   - Go to [GitHub Settings > Developer settings > Personal access tokens](https://github.com/settings/tokens)
+   - Click "Generate new token (classic)"
+   - Give it a descriptive name like "Fusion App Releases"
+   - Set expiration (recommend 1 year maximum for security)
+   - Select these scopes:
+     - `repo` (Full control of private repositories)
+     - `write:packages` (Upload packages to GitHub packages)
+
+2. **Add PAT to Repository Secrets**:
+   - In your repository, go to Settings > Secrets and variables > Actions
+   - Click "New repository secret"
+   - Name: `PAT_TOKEN`
+   - Value: Paste your generated PAT token
+   - Click "Add secret"
+
+**📚 Need help creating PAT tokens?** Check the [official GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) for detailed steps.
+
+**Alternative: Manual Release Process**
+
+If you prefer not to use a PAT token, you can modify the workflow for manual releases:
+
+1. **Edit the CI workflow** (`.github/workflows/ci.yml`):
+   ```yaml
+   # Change this line:
+   env:
+     GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+   
+   # To:
+   env:
+     GITHUB_TOKEN: ${{ github.token }}
+   
+   # And change:
+   createGithubReleases: true
+   
+   # To:
+   createGithubReleases: false
+   ```
+
+2. **Manual release process**:
+   - Merge the release PR created by changesets
+   - Manually create GitHub releases from the releases page
+   - On-release workflow will still trigger automatically
+
+### Step 4: Enable GitHub Actions
 
 This is the final step to turn on your workflows!
 
@@ -190,7 +311,7 @@ Your workflows are pretty smart out of the box, but you can customize them! Here
 
 If your app needs special build steps, you can add them:
 
-1. **Edit the build action**: Open `.github/workflows/actions/build-packages/action.yml`
+1. **Edit the build workflow**: Open `.github/workflows/build.yml`
 2. **Add your custom steps**:
    ```yaml
    # Add this after the existing build steps
@@ -204,27 +325,24 @@ If your app needs special build steps, you can add them:
 
 Want your workflow to run tests? Easy!
 
-1. **Edit the PR workflow**: Open `.github/workflows/pr.yml`
-2. **Uncomment the test lines**:
+1. **Edit the test validation workflow**: Open `.github/workflows/test-validation.yml`
+2. **Customize the test commands**:
    ```yaml
-   # Find these lines and remove the # to uncomment them
+   # The workflow already includes test execution
+   # You can modify the test commands in this workflow
    - name: Run Tests
      run: pnpm test run
-   
-   - name: Generate Test Coverage Report
-     if: steps.draft-check.outputs.is-draft == 'false'
-     run: pnpm test:coverage
    ```
 
 ### 🌍 **Adding More Environments**
 
 Want to deploy to more places? No problem!
 
-1. **Edit the CI workflow**: Open `.github/workflows/ci.yml`
+1. **Edit the on-release workflow**: Open `.github/workflows/on-release.yml`
 2. **Add your environments**:
    ```yaml
    # Find this line and add more environments
-   environment: ['CI', 'FQA', 'FPRD', 'STAGING', 'PRODUCTION']
+   environment: '["ci", "fqa", "fprd", "staging", "production"]'
    ```
 
 ### 🤖 **Creating Custom Actions**
@@ -247,18 +365,26 @@ Let's see if your PR workflow is working:
 
 1. **Create a test branch**:
    - Create a new branch: `git checkout -b test-my-workflow`
-   - Make a small change (like adding a comment to a file)
+   - Make a small change (like adding a comment to a file in an app directory)
    - Commit and push: `git commit -m "test: testing my workflow" && git push origin test-my-workflow`
 
-2. **Create a Pull Request**:
-   - Go to GitHub and create a PR from your test branch
-   - Watch the "Actions" tab - you should see your PR workflow spring into action!
+2. **Create a Draft Pull Request**:
+   - Go to GitHub and create a **draft** PR from your test branch
+   - Watch the "Actions" tab - you should see lightweight validation (lint and test)
+   - Look for "🕵️‍♂️ PR Draft Detection" showing it detected the draft status
 
-3. **Check the results**:
-   - Look for a green checkmark ✅ (success) or red X ❌ (something needs fixing)
+3. **Convert to Ready for Review**:
+   - Click "Ready for review" on your PR
+   - Watch the workflow change to full pipeline mode
+   - You should see "🔦 App Resolver" detecting which apps changed
+   - If apps were affected, you'll see build and publish workflows run
+
+4. **Check the results**:
+   - Look for green checkmarks ✅ (success) or red X ❌ (something needs fixing)
+   - Check the PR summary for a table showing which apps were affected
    - If there's an error, click on it to see what went wrong
 
-**Expected result**: Your workflow should run linting and building, and tell you if everything looks good!
+**Expected result**: Draft PRs run lightweight checks, ready PRs run full pipeline with app detection and deployment to PR environment!
 
 ### 📦 **Test 2: Version Management (Changesets)**
 
@@ -289,26 +415,33 @@ Now let's test the version workflow with Changesets:
 
 **Expected result**: The workflow should create a release PR with version changes, and it should stay in draft if you add more changesets!
 
-### 🚀 **Test 3: On-Release Hook and Deployment Automation**
+### 🚀 **Test 3: On-Release Hook and Build/Publish Automation**
 
-Finally, let's test both the release hook and deployment workflows:
+Finally, let's test the complete release-to-deployment pipeline:
 
 1. **Create a GitHub Release**:
    - Go to "Releases" in your repository
    - Click "Create a new release"
-   - Use the tag format: `your-app@1.0.0` (replace `your-app` with your actual app name)
+   - Use a tag that matches your app structure (the release workflow will auto-detect the app)
+   - Add a release title and description
    - Click "Publish release"
 
 2. **Watch the release hook**:
-   - Check the "Actions" tab for the release workflow
-   - The release workflow should extract package name and version from the tag
-   - It should then trigger the deployment workflow
+   - Check the "Actions" tab for the "🚀 On release" workflow
+   - The workflow should use the extract-package-info action to identify the app
+   - It should extract the app name and path from your repository structure
 
-3. **Watch the deployment**:
-   - The deployment workflow should receive the package information
-   - Your workflow should build and deploy your app!
+3. **Watch the build pipeline**:
+   - The on-release workflow should call the "🛠️ Build Application" workflow
+   - Look for the build workflow creating app bundles with release versioning
+   - The workflow should create artifacts for deployment
 
-**Expected result**: The release hook should extract the package information and trigger the deployment workflow, which should deploy your app to your configured environments!
+4. **Watch the publish pipeline**:
+   - The build workflow should trigger the "🚀 Publish Application" workflow
+   - Your workflow should authenticate with Azure using OpenID Connect
+   - The publish workflow should deploy your app to the configured environments!
+
+**Expected result**: The release hook should detect your app, trigger the build pipeline to create release packages, and then publish them to your configured Fusion environments!
 
 ### 🎉 **Success!**
 
@@ -344,6 +477,7 @@ Don't panic! Even workflows can have issues. Here are the most common problems a
 1. **Check your dependencies**: Make sure `pnpm install` works locally
 2. **Check your build script**: Make sure `package.json` has a "build" script
 3. **Check the working directory**: Make sure the workflow is looking in the right folder
+4. **Check app detection**: Ensure your changes are in an app directory that the app resolver can detect
 
 ### 📦 **"Changeset not found" or "Version PR not created"**
 
@@ -356,6 +490,18 @@ Don't panic! Even workflows can have issues. Here are the most common problems a
 4. **Make sure changesets are committed**: Changesets need to be committed and pushed to main
 
 **📚 Need more help?** Check our [Complete Changesets Guide](./working-with-changesets.md) for detailed troubleshooting and best practices!
+
+### 🔑 **"Error creating release" or "Bad credentials"**
+
+**What this means**: The automatic release creation is failing due to PAT token issues.
+
+**How to fix it**:
+1. **Check PAT token exists**: Go to Settings > Secrets and verify `PAT_TOKEN` is set
+2. **Verify PAT permissions**: Make sure your PAT has `repo` and `write:packages` scopes
+3. **Check PAT expiration**: Personal access tokens expire - create a new one if expired
+4. **Test PAT locally**: Use `gh auth login --with-token < your-pat` to verify it works
+
+**Alternative solution**: Switch to manual release process by modifying the CI workflow as described in the PAT token section above.
 
 ### 🔄 **"Release PR keeps going back to draft"**
 

@@ -1,0 +1,66 @@
+name: 🚀 Publish Application
+
+on:
+  workflow_call:
+    inputs:
+      env: 
+        required: false
+        type: string
+        default: 'ci'
+      app-name:
+        required: false
+        type: string
+        default: 'unknown'
+      release:
+        required: false
+        type: boolean
+        default: false
+
+
+jobs:
+  publish:
+    name: Publish Application ${{ inputs.app-name }}
+    runs-on: ubuntu-latest
+    # The publish job depends on the build and config jobs to ensure artifacts are ready
+    environment: "${{ inputs.env == 'pr' && 'ci' || inputs.env }}"
+    steps:
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v7
+        with:
+          path: ./
+
+      # Publish the application to Fusion using the downloaded artifacts
+      # By specifying the prNR parameter, the deployment is linked to the pull request
+      # And tagged accordingly in Fusion
+      - name: Publish PR Application ${{ inputs.app-name }} pr-${{ github.event.number }}
+        uses: equinor/fusion-action-app-publish@v1
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          artifact: ./dist/app-bundle.zip
+          config: ./config/app-config.pr.json
+          prNR: ${{ github.event.number }}
+          azure-client-id: ${{ vars.AZURE_SP_FUSION }}
+          azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          azure-resource-id: ${{ vars.AZURE_FUSION_SCOPE }}
+
+      - name: Release Application ${{ inputs.app-name }}
+        uses: equinor/fusion-action-app-publish@v1
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          artifact: ./dist/app-bundle.zip
+          config: ./config/app-config.${{ inputs.env }}.json
+          azure-client-id: ${{ vars.AZURE_SP_FUSION }}
+          azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          azure-resource-id: ${{ vars.AZURE_FUSION_SCOPE }}
+
+      - name: Workflow Summary
+        run: |
+          if [[ "${{ inputs.release }}" != "true" ]]; then
+            echo "## 🚀 PR Deployment Published" >> $GITHUB_STEP_SUMMARY
+            echo "The application has been published to the CI environment. It will be tagged as pr-${{ github.event.number }} in Fusion." >> $GITHUB_STEP_SUMMARY
+            echo "View application [here](https://fusion.ci.fusion-dev.net/apps/${{ inputs.app-name }}?$tag=pr-${{ github.event.number }})" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## 🚀 Application Released" >> $GITHUB_STEP_SUMMARY
+            echo "The application has been published to the ${{ inputs.env }} environment." >> $GITHUB_STEP_SUMMARY
+          fi
