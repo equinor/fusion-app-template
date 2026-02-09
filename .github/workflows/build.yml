@@ -96,7 +96,7 @@ jobs:
       - name: Upload packed app as artifact
         uses: actions/upload-artifact@v6
         with:
-          name: dist
+          name: app-bundle
           path: ${{ inputs.work-dir }}/app-bundle.zip
 
   config: 
@@ -130,7 +130,7 @@ jobs:
       - name: Upload config as artifact
         uses: actions/upload-artifact@v6
         with: 
-          name: config
+          name: app-config
           path: ${{ inputs.work-dir }}/app-config.${{ matrix.env }}.json
 
   publish:

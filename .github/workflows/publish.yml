@@ -65,20 +65,27 @@ jobs:
     name: Publish Application ${{ inputs.app-name }}
     runs-on: ubuntu-latest
     # The publish job depends on the build and config jobs to ensure artifacts are ready
-    environment: "${{ inputs.env == 'pr' && 'ci' || inputs.env }}"
+    environment: "${{ inputs.env }}"
     steps:
 
-      - name: Download build artifact
+      - name: Download App artifact
         uses: actions/download-artifact@v7
         with:
-          path: ./
+          name: app-bundle
+          path: ./dist
+
+      - name: Download Config artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: app-config 
+          path: ./config
 
       # Publish the application to Fusion using the downloaded artifacts
       # By specifying the prNR parameter, the deployment is linked to the pull request
       # And tagged accordingly in Fusion
       - name: Publish PR Application ${{ inputs.app-name }} pr-${{ github.event.number }}
         uses: equinor/fusion-action-app-publish@v1
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' && inputs.release == false }}
         with:
           artifact: ./dist/app-bundle.zip
           config: ./config/app-config.pr.json
@@ -89,10 +96,11 @@ jobs:
 
       - name: Release Application ${{ inputs.app-name }}
         uses: equinor/fusion-action-app-publish@v1
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ inputs.release == true }}
         with:
           artifact: ./dist/app-bundle.zip
           config: ./config/app-config.${{ inputs.env }}.json
+          env: ${{ inputs.env }}
           azure-client-id: ${{ vars.AZURE_SP_FUSION }}
           azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
           azure-resource-id: ${{ vars.AZURE_FUSION_SCOPE }}

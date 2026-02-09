@@ -51,9 +51,7 @@ on:
     branches:
       - main 
 
-concurrency:
-  group: demo-pr-${{ github.event.pull_request.id }}
-  cancel-in-progress: true
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   app-ci:
