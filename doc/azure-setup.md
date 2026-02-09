@@ -18,9 +18,10 @@ Your workflows need permission to access Azure services to deploy your app. We'l
 
 ## Prerequisites
 
-Before you start, make sure you have:
-- **Azure AD access** - You need permission to create service principals in your organization's Azure
-- **Admin rights** - You may need admin rights to grant permissions and consent
+> [!IMPORTANT]
+> Before you start, make sure you have:
+> - **Azure AD access** - You need permission to create service principals in your organization's Azure
+> - **Admin rights** - You may need admin rights to grant permissions and consent
 
 ## Step 1: Create an Azure App Registration
 
@@ -76,7 +77,8 @@ You'll need these three values for the next step. Write them down or copy them s
 
 ## What's Next?
 
-**🎉 Great job!** You've created a secure way for your workflows to authenticate. 
+> [!TIP]
+> **Great job!** You've created a secure way for your workflows to authenticate. 
 
 Now you need to:
 1. **Configure GitHub** - Add these credentials to your GitHub repository
@@ -107,17 +109,21 @@ Continue with the [GitHub Setup Guide](./github-setup.md) to complete the config
 
 ### Getting Help
 
-If you run into issues:
-- **Check with your team** - Someone else might have done this before
-- **Azure documentation** - [Azure OIDC setup guide](https://docs.github.com/en/actions/deployment/security/hardening-your-deployments/configuring-openid-connect-in-azure)
-- **Fusion Framework docs** - Check your organization's internal documentation
+> [!NOTE]
+> If you run into issues:
+> - **Check with your team** - Someone else might have done this before
+> - **Azure documentation** - [Azure OIDC setup guide](https://docs.github.com/en/actions/deployment/security/hardening-your-deployments/configuring-openid-connect-in-azure)
+> - **Fusion Framework docs** - Check your organization's internal documentation
 
 ## Security Best Practices
 
-- **Use specific repository names** instead of `*` when possible
-- **Limit permissions** to only what your workflows need
-- **Regularly review** who has access to your app registrations
-- **Use descriptive names** for your app registrations
-- **Keep credentials secure** - never commit them to your repository
+> [!IMPORTANT]
+> **Security Best Practices**
+> - **Use specific repository names** instead of `*` when possible
+> - **Limit permissions** to only what your workflows need
+> - **Regularly review** who has access to your app registrations
+> - **Use descriptive names** for your app registrations
+> - **Keep credentials secure** - never commit them to your repository
 
-**Remember**: This setup creates a secure connection between GitHub and Azure. Keep your credentials safe and only share them with trusted team members!
+> [!IMPORTANT]
+> This setup creates a secure connection between GitHub and Azure. Keep your credentials safe and only share them with trusted team members!

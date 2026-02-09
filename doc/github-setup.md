@@ -43,10 +43,8 @@ Let's explore the four workflows that will automate your development process!
 - **Smart App Detection**: Only builds and deploys apps that have actually changed
 - **Automatic Environment**: Creates temporary PR environments for testing your changes
 
-**The magic**: 
-- Detects which specific apps changed using the **App Resolver** workflow
-- Adjusts validation intensity based on whether PR is draft or ready
-- Provides detailed summaries showing which apps will be affected
+> [!NOTE]
+> **The magic**: Detects which specific apps changed using the **App Resolver** workflow, adjusts validation intensity based on whether PR is draft or ready, and provides detailed summaries showing which apps will be affected.
 
 ### 📦 **Version Management** ([`ci.yml`](../.github/workflows/ci.yml))
 
@@ -66,7 +64,8 @@ Let's explore the four workflows that will automate your development process!
 
 **Draft Protection Feature**: If you add new changesets to an existing release PR, the workflow automatically converts it back to draft. This prevents accidental merging of incomplete releases!
 
-**📚 Want to learn more about Changesets?** Check out our [Complete Changesets Guide](./working-with-changesets.md) for detailed instructions, best practices, and troubleshooting tips!
+> [!NOTE]
+> Want to learn more about Changesets? Check out our [Complete Changesets Guide](./working-with-changesets.md) for detailed instructions, best practices, and troubleshooting tips!
 
 ### 🚀 **On-Release Hook** ([`on-release.yml`](../.github/workflows/on-release.yml))
 
@@ -81,7 +80,8 @@ Let's explore the four workflows that will automate your development process!
 - **Environment configuration**: Passes deployment environment settings to the build process
 - **Release vs Preview**: Determines deployment strategy based on release type
 
-**The magic**: It automatically parses release tags and uses a sophisticated extraction system to identify which app to build and deploy, then passes that information to the build pipeline.
+> [!NOTE]
+> **The magic**: It automatically parses release tags and uses a sophisticated extraction system to identify which app to build and deploy, then passes that information to the build pipeline.
 
 ### 🛠️ **Build Automation** ([`build.yml`](../.github/workflows/build.yml))
 
@@ -96,7 +96,8 @@ Let's explore the four workflows that will automate your development process!
 - **Artifact creation**: Packages your app into distributable bundles (app-bundle.zip)
 - **Dependency management**: Handles all build dependencies and Node.js setup
 
-**The magic**: It automatically determines whether to create snapshot or release versions based on the deployment context.
+> [!NOTE]
+> **The magic**: It automatically determines whether to create snapshot or release versions based on the deployment context.
 
 ### 🚀 **Publish Automation** ([`publish.yml`](../.github/workflows/publish.yml))
 
@@ -111,7 +112,8 @@ Let's explore the four workflows that will automate your development process!
 - **Environment-specific configuration**: Adapts deployment parameters for each target environment
 - **Deployment verification**: Ensures the deployment completed successfully
 
-**The magic**: It uses modern security practices (OpenID Connect) and knows how to talk to the Fusion Framework deployment systems.
+> [!NOTE]
+> **The magic**: It uses modern security practices (OpenID Connect) and knows how to talk to the Fusion Framework deployment systems.
 
 ## Supporting Workflows
 
@@ -156,20 +158,29 @@ These workflows work behind the scenes to make the main workflows more efficient
 
 Before we start setting up your workflows, let's make sure you have everything you need:
 
-### ✅ **Must Have**
-- **A GitHub repository** with your Fusion app template code (you should already have this)
-- **Azure AD access** - You need permission to create service principals in your organization's Azure
-- **Fusion Framework access** - Your app needs to be registered in the Fusion Application Service
+### Must Have
 
-### 📋 **Nice to Have**
-- **Basic GitHub knowledge** - You don't need to be an expert, but knowing how to create PRs helps
-- **Application manifest configured** - Your `app.manifest.ts` file should have your app details
-- **Changesets set up** - If you want automatic versioning (we'll help with this if needed)
+> [!IMPORTANT]
+> These are required before you can set up the workflows:
+> - **A GitHub repository** with your Fusion app template code (you should already have this)
+> - **Azure AD access** - You need permission to create service principals in your organization's Azure
+> - **Fusion Framework access** - Your app needs to be registered in the Fusion Application Service
 
-### 🤔 **Don't Worry If You Don't Have**
-- Deep knowledge of GitHub Actions (we'll explain everything)
-- Azure expertise (we'll walk you through it step by step)
-- Previous experience with CI/CD (that's why we're here!)
+### Nice to Have
+
+> [!NOTE]
+> These will make the setup easier but aren't strictly required:
+> - **Basic GitHub knowledge** - You don't need to be an expert, but knowing how to create PRs helps
+> - **Application manifest configured** - Your `app.manifest.ts` file should have your app details
+> - **Changesets set up** - If you want automatic versioning (we'll help with this if needed)
+
+### Don't Worry If You Don't Have
+
+> [!TIP]
+> We'll help you with all of these during the setup process:
+> - Deep knowledge of GitHub Actions (we'll explain everything)
+> - Azure expertise (we'll walk you through it step by step)
+> - Previous experience with CI/CD (that's why we're here!)
 
 **Ready to start?** Great! Let's begin with the most important part - setting up authentication so your workflows can do their job.
 
@@ -177,7 +188,8 @@ Before we start setting up your workflows, let's make sure you have everything y
 
 Your workflows need permission to access Azure services to deploy your app. We've created a detailed guide to help you set up secure authentication.
 
-**📚 Complete Azure Setup Guide**: [Azure Authentication Setup](./azure-setup.md)
+> [!NOTE]
+> **Complete Azure Setup Guide**: [Azure Authentication Setup](./azure-setup.md)
 
 This guide covers:
 - Creating an Azure App Registration
@@ -185,14 +197,16 @@ This guide covers:
 - Granting proper permissions for Fusion Framework
 - Getting the credentials you need for GitHub
 
-**Why this matters**: Instead of storing passwords (which can be stolen), we use a secure method called "OpenID Connect" that's much more secure.
+> [!NOTE]
+> **Why this matters**: Instead of storing passwords (which can be stolen), we use a secure method called "OpenID Connect" that's much more secure.
 
-**⏱️ Time needed**: About 10-15 minutes
+ > [!NOTE]\n> **Time needed**: About 10-15 minutes
 
-**🔑 What you'll get**: Three important values you'll need for the next step:
-- Application (client) ID
-- Directory (tenant) ID  
-- API Scope for Fusion Framework
+> [!NOTE]
+> **What you'll get**: Three important values you'll need for the next step:
+> - Application (client) ID
+> - Directory (tenant) ID  
+> - API Scope for Fusion Framework
 
 Once you've completed the Azure setup, come back here to continue with GitHub configuration!
 
@@ -215,28 +229,36 @@ Think of environments as different "rooms" where your app can live. You might ha
      - **`fqa`** - For feature QA environment (optional)
      - **`fprd`** - For feature production environment (optional)
 
-**💡 Pro tip**: The `ci` environment is used for PR deployments and testing. Start with this one and add others as your team grows!
+> [!TIP]
+> The `ci` environment is used for PR deployments and testing. Start with this one and add others as your team grows!
 
 ### Step 2: Add Your Azure Information
 
-Now we'll give each environment the Azure credentials your workflows need.
+Now we'll give your repository the Azure credentials your workflows need.
 
-1. **For each environment you created**:
-   - Click on the environment name
-   - Click "Environment variables" in the left menu
-   - Click "Add variable" and add these three:
+> [!IMPORTANT]
+> These should be added as **Repository Variables**, not Environment Variables.
+
+1. **Go to Repository Variables**:
+   - In your repository, go to Settings > Secrets and variables > Actions
+   - Click on the "Variables" tab
+   - Click "New repository variable"
+
+2. **Add these three variables**:
 
 | Variable Name | What to Put | Example |
-|---------------|-------------|---------|
-| `AZURE_CLIENT_ID` | The Application ID from Azure | `12345678-1234-1234-1234-123456789012` |
+|---------------|-------------|---------|  
+| `AZURE_SP_FUSION` | The Application ID from Azure | `12345678-1234-1234-1234-123456789012` |
 | `AZURE_TENANT_ID` | The Directory ID from Azure | `87654321-4321-4321-4321-210987654321` |
-| `APP_PUBLISH_SCOPE` | Your Fusion Framework API scope | `87654321-4321-4321-4321-21098765432/.default` |
+| `AZURE_FUSION_SCOPE` | Your Fusion Framework API scope | `87654321-4321-4321-4321-21098765432/.default` |
 
-2. **Click "Save"** after adding each variable
+3. **Click "Add variable"** after adding each one
 
-### Step 4: Configure Personal Access Token (PAT) for Automatic Releases
+> [!NOTE]
+> **Why Repository Variables?** These values aren't secrets (they're identifiers), so they can be stored as variables rather than secrets. This also makes them available across all environments automatically.
 
-⚠️ **CRITICAL FOR AUTOMATIC RELEASES**: The version management workflow requires a Personal Access Token (PAT) to create GitHub releases automatically.
+> [!WARNING]
+> **CRITICAL FOR AUTOMATIC RELEASES**: The version management workflow requires a Personal Access Token (PAT) to create GitHub releases automatically.
 
 **Why you need this**: The `GITHUB_TOKEN` provided by GitHub Actions has limited permissions and cannot create releases. For automatic release creation, you need a Personal Access Token.
 
@@ -263,11 +285,13 @@ Now we'll give each environment the Azure credentials your workflows need.
    - Value: Paste your generated PAT token
    - Click "Add secret"
 
-**📚 Need help creating PAT tokens?** Check the [official GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) for detailed steps.
+> [!NOTE]
+> Need help creating PAT tokens? Check the [official GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) for detailed steps.
 
-**Alternative: Manual Release Process**
-
-If you prefer not to use a PAT token, you can modify the workflow for manual releases:
+> [!NOTE]
+> **Alternative: Manual Release Process**
+> 
+> If you prefer not to use a PAT token, you can modify the workflow for manual releases:
 
 1. **Edit the CI workflow** (`.github/workflows/ci.yml`):
    ```yaml
@@ -301,7 +325,8 @@ This is the final step to turn on your workflows!
    - You might see a message about enabling workflows
    - Click "I understand my workflows, go ahead and enable them"
 
-**🎉 Congratulations!** Your workflows are now ready to help you. Let's test them out!
+> [!NOTE]
+> **🎉 Congratulations!** Your workflows are now ready to help you. Let's test them out!
 
 ## Customizing Your Workflows
 
@@ -342,8 +367,11 @@ Want to deploy to more places? No problem!
 2. **Add your environments**:
    ```yaml
    # Find this line and add more environments
-   environment: '["ci", "fqa", "fprd", "staging", "production"]'
+   environment: '["ci", "fqa", "fprd", "tr"]'
    ```
+
+> [!IMPORTANT]
+> The environments you add here must also be configured in your GitHub repository settings with the proper Azure credentials.
 
 ### 🤖 **Creating Custom Actions**
 
@@ -353,7 +381,8 @@ If you need a workflow to do something special, you can create a new action:
 2. **Add an action.yml file** with your custom logic
 3. **Use it in your workflows** by referencing it
 
-**💡 Pro tip**: Start with the defaults and only customize when you need something specific!
+> [!TIP]
+> Start with the defaults and only customize when you need something specific!
 
 ## Testing Everything Works
 
@@ -384,7 +413,9 @@ Let's see if your PR workflow is working:
    - Check the PR summary for a table showing which apps were affected
    - If there's an error, click on it to see what went wrong
 
-**Expected result**: Draft PRs run lightweight checks, ready PRs run full pipeline with app detection and deployment to PR environment!
+**Expected result**: 
+> [!NOTE]
+> Draft PRs run lightweight checks, ready PRs run full pipeline with app detection and deployment to PR environment!
 
 ### 📦 **Test 2: Version Management (Changesets)**
 
@@ -396,7 +427,8 @@ Now let's test the version workflow with Changesets:
    - Choose the version bump type (patch, minor, major)
    - Commit the changeset: `git add . && git commit -m "Add changeset"`
    
-   **💡 Need help with changesets?** See our [Complete Changesets Guide](./working-with-changesets.md) for detailed instructions!
+> [!NOTE]
+> Need help with changesets? See our [Complete Changesets Guide](./working-with-changesets.md) for detailed instructions!
 
 2. **Merge your test PR**:
    - If the PR looks good, merge it to main
@@ -413,7 +445,9 @@ Now let's test the version workflow with Changesets:
    - The workflow should automatically convert it back to draft
    - This prevents accidental merges of incomplete releases!
 
-**Expected result**: The workflow should create a release PR with version changes, and it should stay in draft if you add more changesets!
+**Expected result**: 
+> [!NOTE]
+> The workflow should create a release PR with version changes, and it should stay in draft if you add more changesets!
 
 ### 🚀 **Test 3: On-Release Hook and Build/Publish Automation**
 
@@ -441,37 +475,36 @@ Finally, let's test the complete release-to-deployment pipeline:
    - Your workflow should authenticate with Azure using OpenID Connect
    - The publish workflow should deploy your app to the configured environments!
 
-**Expected result**: The release hook should detect your app, trigger the build pipeline to create release packages, and then publish them to your configured Fusion environments!
+**Expected result**: 
+> [!NOTE]
+> The release hook should detect your app, trigger the build pipeline to create release packages, and then publish them to your configured Fusion environments!
 
-### 🎉 **Success!**
+### 🎉 Success!
 
-If all tests worked, congratulations! Your workflows are now your helpful development assistants. If something didn't work, don't worry - we'll help you fix it in the next section.
+> [!TIP]
+> If all tests worked, congratulations! Your workflows are now your helpful development assistants. If something didn't work, don't worry - we'll help you fix it in the next section.
 
 ## When Things Go Wrong
 
 Don't panic! Even workflows can have issues. Here are the most common problems and how to fix them:
 
-### 🔐 **"Authentication failed" or "Invalid client"**
+### � **"Authentication failed" or "Invalid client"**
 
-**What this means**: Your workflow can't log into Azure.
+> [!NOTE]
+> **What this means**: Your workflow can't authenticate with Azure or Fusion.
 
 **How to fix it**:
-1. **Double-check your numbers**: Make sure `AZURE_CLIENT_ID` and `AZURE_TENANT_ID` are exactly right (no extra spaces!)
+1. **Double-check your variables**: Make sure `AZURE_SP_FUSION` and `AZURE_TENANT_ID` are exactly right (no extra spaces!)
 2. **Check the federated credentials**: Go back to Azure and make sure the GitHub repository name matches exactly
-3. **Wait a few minutes**: Sometimes it takes a moment for changes to take effect
-
-### 🚫 **"FUSION_TOKEN not found" or "Authentication required"**
-
-**What this means**: Your workflow can't access the Fusion Framework.
-
-**How to fix it**:
-1. **Check your scope**: Make sure `APP_PUBLISH_SCOPE` is correct (ask your team if you're not sure)
-2. **Verify permissions**: Go to Azure and make sure your app registration has the right permissions
-3. **Check admin consent**: Make sure someone with admin rights clicked "Grant admin consent"
+3. **Verify scope**: Make sure `AZURE_FUSION_SCOPE` is correct (ask your team if you're not sure)
+4. **Check permissions**: Go to Azure and make sure your app registration has the right permissions for Fusion Framework
+5. **Verify admin consent**: Make sure someone with admin rights clicked "Grant admin consent"
+6. **Wait a few minutes**: Sometimes it takes a moment for changes to take effect
 
 ### 🏗️ **"Build failed" or "Package not found"**
 
-**What this means**: Your workflow can't build your app.
+> [!NOTE]
+> **What this means**: Your workflow can't build your app.
 
 **How to fix it**:
 1. **Check your dependencies**: Make sure `pnpm install` works locally
@@ -481,7 +514,8 @@ Don't panic! Even workflows can have issues. Here are the most common problems a
 
 ### 📦 **"Changeset not found" or "Version PR not created"**
 
-**What this means**: Your version workflow can't find any changesets to work with.
+> [!NOTE]
+> **What this means**: Your version workflow can't find any changesets to work with.
 
 **How to fix it**:
 1. **Initialize changesets**: Run `pnpm changeset init` in your repository
@@ -489,11 +523,13 @@ Don't panic! Even workflows can have issues. Here are the most common problems a
 3. **Create a changeset**: Run `pnpm changeset` to create your first changeset
 4. **Make sure changesets are committed**: Changesets need to be committed and pushed to main
 
-**📚 Need more help?** Check our [Complete Changesets Guide](./working-with-changesets.md) for detailed troubleshooting and best practices!
+> [!NOTE]
+> Need more help? Check our [Complete Changesets Guide](./working-with-changesets.md) for detailed troubleshooting and best practices!
 
 ### 🔑 **"Error creating release" or "Bad credentials"**
 
-**What this means**: The automatic release creation is failing due to PAT token issues.
+> [!NOTE]
+> **What this means**: The automatic release creation is failing due to PAT token issues.
 
 **How to fix it**:
 1. **Check PAT token exists**: Go to Settings > Secrets and verify `PAT_TOKEN` is set
@@ -501,33 +537,38 @@ Don't panic! Even workflows can have issues. Here are the most common problems a
 3. **Check PAT expiration**: Personal access tokens expire - create a new one if expired
 4. **Test PAT locally**: Use `gh auth login --with-token < your-pat` to verify it works
 
-**Alternative solution**: Switch to manual release process by modifying the CI workflow as described in the PAT token section above.
+> [!NOTE]
+> **Alternative solution**: Switch to manual release process by modifying the CI workflow as described in the PAT token section above.
 
 ### 🔄 **"Release PR keeps going back to draft"**
 
-**What this means**: This is actually normal! The workflow is protecting you from incomplete releases.
+> [!TIP]
+> **What this means**: This is actually normal! The workflow is protecting you from incomplete releases.
 
-**Why this happens**:
-- You added a new changeset to the release PR
-- The workflow detected this and converted it back to draft
-- This prevents accidental merges of incomplete releases
+> [!NOTE]
+> **Why this happens**:
+> - You added a new changeset to the release PR
+> - The workflow detected this and converted it back to draft
+> - This prevents accidental merges of incomplete releases
 
 **How to fix it**:
 1. **Wait until you're done adding changesets**
 2. **Mark the release PR as ready for review** when you're satisfied
 3. **Merge the release PR** to trigger publishing
 
-**💡 Pro tip**: This is a feature, not a bug! It ensures you don't accidentally publish incomplete releases.
+> [!TIP]
+> This is a feature, not a bug! It ensures you don't accidentally publish incomplete releases.
 
-### 🆘 **Still Stuck?**
+### 🆘 Still Stuck?
 
-**Don't worry!** Here are some places to get help:
-
-- **Check the logs**: Click on the failed workflow in GitHub Actions to see detailed error messages
-- **Ask your team**: Someone else might have seen this before
-- **GitHub Actions docs**: [docs.github.com/en/actions](https://docs.github.com/en/actions)
-- **Azure setup guide**: [Azure OIDC setup](https://docs.github.com/en/actions/deployment/security/hardening-your-deployments/configuring-openid-connect-in-azure)
-- **Fusion Framework docs**: [Fusion Framework CLI](https://equinor.github.io/fusion-framework/cli/docs/application.html)
+> [!NOTE]
+> **Don't worry!** Here are some places to get help:
+> 
+> - **Check the logs**: Click on the failed workflow in GitHub Actions to see detailed error messages
+> - **Ask your team**: Someone else might have seen this before
+> - **GitHub Actions docs**: [docs.github.com/en/actions](https://docs.github.com/en/actions)
+> - **Azure setup guide**: [Azure OIDC setup](https://docs.github.com/en/actions/deployment/security/hardening-your-deployments/configuring-openid-connect-in-azure)
+> - **Fusion Framework docs**: [Fusion Framework CLI](https://equinor.github.io/fusion-framework/cli/docs/application.html)
 
 ### 🎯 **Pro Tips for Success**
 
@@ -536,4 +577,5 @@ Don't panic! Even workflows can have issues. Here are the most common problems a
 - **Read the logs**: The error messages usually tell you exactly what's wrong
 - **Ask for help**: There's no shame in asking questions!
 
-**Remember**: Every developer runs into these issues. You're not alone, and you'll get through this! 🚀
+> [!TIP]
+> **Remember**: Every developer runs into these issues. You're not alone, and you'll get through this! 🚀

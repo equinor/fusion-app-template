@@ -90,11 +90,13 @@ Since this template includes Biome pre-configured:
 
 ## Best Practices
 
-1. **Always run `pnpm check` before committing**
-2. **Let Biome handle formatting** - don't manually adjust style
-3. **Fix all errors** before pushing code
-4. **Use auto-fix** when possible: `biome check --fix`
-5. **Configure your IDE** to use Biome
+> [!TIP]
+> **Follow these practices for the best experience:**
+> 1. **Always run `pnpm check` before committing**
+> 2. **Let Biome handle formatting** - don't manually adjust style
+> 3. **Fix all errors** before pushing code
+> 4. **Use auto-fix** when possible: `biome check --fix`
+> 5. **Configure your IDE** to use Biome
 
 ## Common Commands
 
