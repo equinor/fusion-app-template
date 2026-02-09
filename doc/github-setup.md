@@ -29,7 +29,7 @@ By the end of this guide, you'll have a comprehensive set of automated workflows
 
 ## Understanding Your Workflows
 
-Let's explore the four workflows that will automate your development process!
+Let's explore the five workflows that will automate your development process!
 
 ### 🔍 **Pull Request Checks** ([`pr.yml`](../.github/workflows/pr.yml))
 
@@ -38,13 +38,15 @@ Let's explore the four workflows that will automate your development process!
 **Why you need it**: Instead of manually checking if your code builds and follows style guidelines, this workflow does it automatically with smart optimization based on PR status.
 
 **What happens**:
-- **Draft PRs**: Runs lightweight validation (lint and test checks only) - perfect for work-in-progress
-- **Ready for Review PRs**: Runs full pipeline including app detection, building, and publishing to PR environment
+- **Draft Detection**: Uses a custom `check-draft` action to determine PR status
+- **Draft PRs**: Runs lightweight validation (`lint-validation.yml` and `test-validation.yml`) - perfect for work-in-progress
+- **Ready for Review PRs**: Triggers the full **App Resolver** workflow which detects changed apps and runs build/publish pipeline
 - **Smart App Detection**: Only builds and deploys apps that have actually changed
 - **Automatic Environment**: Creates temporary PR environments for testing your changes
+- **Visual Feedback**: Provides detailed summaries in GitHub with status indicators
 
 > [!NOTE]
-> **The magic**: Detects which specific apps changed using the **App Resolver** workflow, adjusts validation intensity based on whether PR is draft or ready, and provides detailed summaries showing which apps will be affected.
+> **The magic**: Uses a sophisticated draft detection system, conditionally runs different validation pipelines based on PR readiness, and integrates seamlessly with the App Resolver for intelligent app detection.
 
 ### 📦 **Version Management** ([`ci.yml`](../.github/workflows/ci.yml))
 
@@ -69,35 +71,50 @@ Let's explore the four workflows that will automate your development process!
 
 ### 🚀 **On-Release Hook** ([`on-release.yml`](../.github/workflows/on-release.yml))
 
-**What it does**: This workflow is triggered automatically when GitHub creates a release, and orchestrates the build and deployment process.
+**What it does**: This workflow is triggered automatically when GitHub creates a release, and orchestrates the build and deployment process using advanced package extraction.
 
 **Why you need it**: Instead of manually triggering deployments, this workflow automatically detects when you publish a release and starts the build and deployment process.
 
 **What happens**:
 - GitHub release is published → Workflow automatically triggers
-- **Package extraction**: Uses a custom action to extract package name and path from the release tag
+- **Advanced Package Extraction**: Uses custom `extract-package-info` action to analyze git tags and repository structure
+- **Intelligent App Detection**: Automatically determines app name, version, and working directory from release metadata
 - **Build orchestration**: Calls the Build workflow with the extracted package information
-- **Environment configuration**: Passes deployment environment settings to the build process
-- **Release vs Preview**: Determines deployment strategy based on release type
+- **Environment configuration**: Passes deployment environment settings to build process (configurable: `["ci"]` by default, can be extended to `["ci", "fqa", "fprd", "tr"]`)
+- **Release Mode**: Sets `release: true` to ensure apps use package.json version instead of snapshot versioning
 
 > [!NOTE]
-> **The magic**: It automatically parses release tags and uses a sophisticated extraction system to identify which app to build and deploy, then passes that information to the build pipeline.
+> **The magic**: Uses a sophisticated `extract-package-info` action that supports both monorepo and single-package structures, automatically parses release tags to determine deployment parameters, and seamlessly integrates with the build pipeline.
+
+### � **Test Coverage** ([`test-coverage.yml`](../.github/workflows/test-coverage.yml))
+
+**What it does**: This workflow generates comprehensive test coverage reports for your applications.
+
+**Why you need it**: Test coverage helps ensure your code is properly tested and identifies areas that might need more testing attention.
+
+**What happens**:
+- **Coverage Analysis**: Runs `pnpm test:coverage` to generate detailed coverage reports
+- **Smart Execution**: Only runs for non-draft PRs to optimize resource usage
+- **Node.js Setup**: Uses custom `node-setup` action for consistent environment
+- **Coverage Reporting**: Provides detailed coverage metrics and reports
 
 ### 🛠️ **Build Automation** ([`build.yml`](../.github/workflows/build.yml))
 
-**What it does**: This workflow handles the building and packaging of your applications with sophisticated environment handling.
+**What it does**: This reusable workflow handles building, configuring, and packaging of your applications with sophisticated environment handling.
 
 **Why you need it**: Building apps consistently across different environments is complex. This workflow handles all the details automatically!
 
 **What happens**:
-- **Snapshot builds**: For PR deployments, creates apps with snapshot versioning and unique timestamps
+- **Multi-stage Process**: Includes build-pack, config, and publish stages
+- **Snapshot builds**: For PR deployments, creates apps with snapshot versioning and unique timestamps  
 - **Release builds**: For production deployments, uses the exact version from package.json
 - **Environment-aware**: Adapts build process based on target environment (CI, FQA, FPRD, etc.)
 - **Artifact creation**: Packages your app into distributable bundles (app-bundle.zip)
-- **Dependency management**: Handles all build dependencies and Node.js setup
+- **Configuration Management**: Generates environment-specific config files (app.config.[env].ts)
+- **Fusion CLI Integration**: Uses @equinor/fusion-framework-cli for building and configuration
 
 > [!NOTE]
-> **The magic**: It automatically determines whether to create snapshot or release versions based on the deployment context.
+> **The magic**: It's a reusable workflow that can be called with different parameters, automatically determines snapshot vs release versioning, and handles complex environment matrices.
 
 ### 🚀 **Publish Automation** ([`publish.yml`](../.github/workflows/publish.yml))
 
@@ -121,38 +138,49 @@ These workflows work behind the scenes to make the main workflows more efficient
 
 ### 🔦 **App Resolver** ([`app-resolver.yml`](../.github/workflows/app-resolver.yml))
 
-**What it does**: Detects which applications in your monorepo have actually changed.
+**What it does**: Intelligently determines which Fusion applications have been affected by changes and triggers builds only for those applications.
 
-**Why it's important**: Instead of building and deploying all apps, this workflow identifies only the apps that need attention, saving time and resources.
+**Why it's important**: Instead of building and deploying all apps, this workflow identifies only the apps that need attention, saving time and resources in monorepo environments.
 
 **How it works**:
-- Uses `equinor/fusion-action-app-change@v0` to analyze git changes
-- Compares current changes against the base branch
-- Outputs a list of changed apps with their names and paths
-- Creates a summary table showing which apps will be affected
+- **Advanced Detection**: Uses `equinor/fusion-action-app-change@v0` with full git history analysis
+- **Smart Analysis**: Compares current changes against the base branch with depth=0 checkout for complete history
+- **Matrix Strategy**: Builds multiple affected apps in parallel using GitHub's matrix feature
+- **Visual Feedback**: Creates comprehensive summary tables showing exactly which apps will be built
+- **Integration**: Called by the PR workflow when PRs are ready for review
+- **Efficiency**: Prevents unnecessary builds for unchanged applications
+- **Output Format**: Provides structured JSON output with app names and paths for downstream workflows
+
+**Detection Logic**:
+- Analyzes git diff between base and head commits
+- Identifies changes within app directories (`apps/**`)
+- Considers both direct changes and dependency modifications
+- Works with both pull request and push events
 
 ### 🧹 **Lint Validation** ([`lint-validation.yml`](../.github/workflows/lint-validation.yml))
 
-**What it does**: Runs code linting and style checks using Biome and ReviewDog.
+**What it does**: Runs code linting and style checks using Biome and ReviewDog for draft pull requests.
 
-**When it runs**: Automatically triggered for draft pull requests to provide quick feedback.
+**When it runs**: Automatically triggered by the PR workflow when PRs are in draft status to provide quick feedback.
 
 **Features**:
-- Uses ReviewDog for inline PR comments on linting issues
-- Different reporting modes for draft vs. ready PRs
-- Integrates with GitHub checks API for status reporting
-- Provides actionable feedback directly in your PR
+- **Smart Triggering**: Only runs for draft PRs to optimize resource usage
+- **ReviewDog Integration**: Provides inline PR comments on linting issues
+- **GitHub Checks**: Integrates with GitHub checks API for status reporting
+- **Actionable Feedback**: Provides specific, actionable feedback directly in your PR
+- **Permission Optimized**: Requires only content read, PR write, and checks write permissions
 
 ### 🧪 **Test Validation** ([`test-validation.yml`](../.github/workflows/test-validation.yml))
 
-**What it does**: Runs your test suite to ensure code quality and functionality.
+**What it does**: Runs your test suite to ensure code quality and functionality for draft pull requests.
 
-**When it runs**: Automatically triggered for draft pull requests alongside lint validation.
+**When it runs**: Automatically triggered by the PR workflow for draft PRs alongside lint validation.
 
 **Benefits**:
-- Quick feedback on test failures during development
-- Prevents broken code from reaching the full pipeline
-- Optimized for rapid iteration during draft phase
+- **Quick Feedback**: Provides immediate feedback on test failures during development
+- **Draft Optimization**: Runs lightweight tests for draft PRs, full pipeline for ready PRs
+- **Rapid Iteration**: Optimized for rapid iteration during the draft development phase
+- **Permission Minimal**: Uses minimal permissions for efficient execution
 
 ## What You Need Before Starting
 
@@ -349,16 +377,31 @@ If your app needs special build steps, you can add them:
 
 ### 🧪 **Adding Tests**
 
-Want your workflow to run tests? Easy!
+Want to customize your testing workflow? You have multiple options:
 
-1. **Edit the test validation workflow**: Open `.github/workflows/test-validation.yml`
-2. **Customize the test commands**:
+1. **Test Validation** (`.github/workflows/test-validation.yml`): 
+   - Runs basic tests for draft PRs
+   - Customize the test commands as needed:
    ```yaml
    # The workflow already includes test execution
    # You can modify the test commands in this workflow
    - name: Run Tests
      run: pnpm test run
    ```
+
+2. **Test Coverage** (`.github/workflows/test-coverage.yml`):
+   - Generates comprehensive test coverage reports
+   - Runs for non-draft PRs automatically
+   - Customize coverage commands:
+   ```yaml
+   - name: Create Test Coverage
+     run: |
+       pnpm test:coverage
+       # Add additional coverage processing here
+   ```
+
+> [!TIP]
+> The test coverage workflow only runs for ready PRs to optimize resource usage. For draft PRs, use the test validation workflow for quick feedback!
 
 ### 🌍 **Adding More Environments**
 
@@ -406,8 +449,10 @@ Let's see if your PR workflow is working:
 3. **Convert to Ready for Review**:
    - Click "Ready for review" on your PR
    - Watch the workflow change to full pipeline mode
-   - You should see "🔦 App Resolver" detecting which apps changed
-   - If apps were affected, you'll see build and publish workflows run
+   - You should see "🔦 App Resolver" workflow running with sophisticated app detection
+   - Look for the workflow using `equinor/fusion-action-app-change@v0` to analyze git changes
+   - Check for a detailed summary table showing exactly which apps were affected
+   - If apps were affected, you'll see matrix builds running in parallel for each app
 
 4. **Check the results**:
    - Look for green checkmarks ✅ (success) or red X ❌ (something needs fixing)
@@ -463,8 +508,10 @@ Finally, let's test the complete release-to-deployment pipeline:
 
 2. **Watch the release hook**:
    - Check the "Actions" tab for the "🚀 On release" workflow
-   - The workflow should use the extract-package-info action to identify the app
-   - It should extract the app name and path from your repository structure
+   - The workflow should use the custom `extract-package-info` action to intelligently identify the app
+   - Look for successful extraction of app name, version, and working directory from the git tag
+   - The action supports both monorepo and single-package structures automatically
+   - Verify the workflow passes the extracted information to the build pipeline
 
 3. **Watch the build pipeline**:
    - The on-release workflow should call the "🛠️ Build Application" workflow
