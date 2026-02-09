@@ -200,7 +200,8 @@ This guide covers:
 > [!NOTE]
 > **Why this matters**: Instead of storing passwords (which can be stolen), we use a secure method called "OpenID Connect" that's much more secure.
 
- > [!NOTE]\n> **Time needed**: About 10-15 minutes
+> [!NOTE]
+> **Time needed**: About 10-15 minutes
 
 > [!NOTE]
 > **What you'll get**: Three important values you'll need for the next step:
