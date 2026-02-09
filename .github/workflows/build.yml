@@ -1,3 +1,44 @@
+# 🛠️ Build Application Workflow
+#
+# This reusable workflow handles building, configuring, and publishing Fusion applications.
+# It's designed to be called by other workflows (CI, PR, release) to ensure consistent 
+# build and deployment processes across different environments.
+#
+# Key Features:
+# - Reusable workflow: Can be called by other workflows with different parameters
+# - Environment-aware: Supports multiple environments (ci, pr, production)
+# - Artifact generation: Creates deployable app bundles and configuration files
+# - Release management: Different packaging for PR vs release deployments
+# - Fusion CLI integration: Uses @equinor/fusion-framework-cli for building and config
+#
+# Workflow Structure:
+# 1. build-pack: Packages the application into a distributable bundle
+#    - For PRs: Creates snapshot version with timestamp and "pr" suffix
+#    - For releases: Uses version from package.json
+# 2. config: Generates environment-specific configuration files
+#    - Looks for app.config.[env].ts files for environment-specific settings
+#    - Falls back to app.config.ts if environment-specific config doesn't exist
+#    - Outputs JSON configuration files as artifacts
+# 3. publish: Calls the publish workflow to deploy the built application
+#
+# Inputs:
+# - environment: Target environments as JSON array (default: ["ci"])
+# - app-name: Name of the application being built (default: "unknown")
+# - work-dir: Working directory for the build (default: "./")
+# - release: Whether this is a release build (affects versioning)
+#
+# Usage Examples:
+# ```yaml
+# jobs:
+#   build-app:
+#     uses: ./.github/workflows/build.yml
+#     with:
+#       app-name: "my-fusion-app"
+#       work-dir: "./apps/my-app"
+#       environment: '["ci", "pr"]'
+#       release: false
+# ```
+#
 name: 🛠️ Build Application
 
 

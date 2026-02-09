@@ -1,5 +1,62 @@
-# This workflow determins what apps are affected by change. 
-# Its output is application name and working directory which is used by build and publish workflows.
+# 🔦 App Resolver Workflow
+#
+# This workflow intelligently determines which Fusion applications have been affected
+# by changes in a pull request or push. It uses git history analysis to identify
+# modified applications and triggers builds only for those that need it, optimizing
+# CI/CD performance and resource usage.
+#
+# Key Features:
+# - Smart Detection: Only builds applications that have actual changes
+# - Monorepo Support: Works with multiple apps in the same repository  
+# - Change Analysis: Uses git diff to analyze file changes across commits
+# - Matrix Strategy: Builds multiple affected apps in parallel
+# - Visual Feedback: Provides clear summary of detected changes
+# - Efficient CI: Prevents unnecessary builds for unchanged applications
+#
+# Workflow Process:
+# 1. app-resolver job:
+#    - Checks out repository with full git history
+#    - Uses fusion-action-app-change to detect modified applications
+#    - Outputs list of changed apps with names and paths
+#    - Creates visual summary table for easy review
+# 2. build job:
+#    - Only runs if changes are detected
+#    - Uses matrix strategy to build all affected apps in parallel
+#    - Calls the reusable build.yml workflow for each app
+#    - Deploys to PR environment for testing
+#
+# Detection Logic:
+# - Analyzes git diff between base and head commits
+# - Identifies changes within app directories (apps/**)
+# - Considers both direct changes and dependency modifications
+# - Outputs structured JSON with app metadata
+#
+# Output Format:
+# The workflow outputs a JSON array of changed applications:
+# ```json
+# [
+#   {
+#     "name": "basic",
+#     "path": "./apps/basic"
+#   },
+#   {
+#     "name": "bare", 
+#     "path": "./apps/bare"
+#   }
+# ]
+# ```
+#
+# Integration:
+# - Designed to be called by PR workflow
+# - Can be triggered manually for testing
+# - Provides foundation for selective deployment strategies
+# - Supports both pull request and push events
+#
+# Benefits:
+# - Faster CI: Only builds what changed
+# - Resource Efficient: Reduces compute usage
+# - Clear Visibility: Shows exactly what will be built
+# - Scalable: Works with any number of applications
 
 name:  🔦 App Resolver  
 

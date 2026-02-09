@@ -1,3 +1,46 @@
+# 🚀 Publish Application Workflow
+#
+# This reusable workflow handles the deployment of Fusion applications to various 
+# environments. It downloads build artifacts and publishes them to Fusion using
+# the official Equinor Fusion publish action with Azure authentication.
+#
+# Key Features:
+# - Reusable workflow: Called by build workflow for consistent deployment
+# - Environment-aware: Supports different target environments (ci, pr, production)
+# - Artifact-based: Uses pre-built app bundles and configurations from build stage
+# - Azure Integration: Uses OpenID Connect (OIDC) for secure authentication
+# - PR Deployment: Special handling for pull request deployments with PR tagging
+# - Release Deployment: Standard deployment for release versions
+# - User Feedback: Provides deployment links and status in workflow summary
+#
+# Deployment Types:
+# 1. PR Deployments (inputs.release = false):
+#    - Tagged with PR number (pr-123) for easy identification
+#    - Deployed to CI environment regardless of env input
+#    - Provides direct link to access the PR deployment
+# 2. Release Deployments (inputs.release = true):
+#    - Uses standard versioning from package.json
+#    - Deployed to specified environment
+#    - Standard release workflow
+#
+# Required Artifacts:
+# - dist/app-bundle.zip: Built application bundle
+# - config/app-config.[env].json: Environment-specific configuration
+#
+# Azure Configuration Variables Required:
+# - AZURE_SP_FUSION: Azure Service Principal Client ID
+# - AZURE_TENANT_ID: Azure Active Directory Tenant ID  
+# - AZURE_FUSION_SCOPE: Azure resource ID/scope for Fusion
+#
+# Inputs:
+# - env: Target environment (default: "ci")
+# - app-name: Name of the application (default: "unknown")
+# - release: Whether this is a release deployment (default: false)
+#
+# Environment Mapping:
+# - PR deployments always go to "ci" environment for testing
+# - Release deployments respect the specified environment
+#
 name: 🚀 Publish Application
 
 on:

@@ -1,3 +1,44 @@
+# 🚀 CI Application Workflow
+#
+# This workflow handles Continuous Integration for Fusion applications, specifically
+# managing automated releases using Changesets. It's triggered on pushes to the main
+# branch and handles the complete release lifecycle.
+#
+# Key Features:
+# - Changeset Integration: Automates version bumping and release management
+# - Release Automation: Creates GitHub releases and publishes packages  
+# - PR Management: Automatically creates and manages release PRs
+# - Draft Safety: Converts release PRs to draft to prevent accidental merging
+# - Git Configuration: Sets up proper git user for automated commits
+#
+# Workflow Process:
+# 1. Checkout repository with full history (needed for changesets)
+# 2. Configure git user as the triggering actor
+# 3. Setup Node.js environment and install dependencies
+# 4. Run changesets action which:
+#    - Creates a "Version Packages" PR if there are pending changesets
+#    - OR publishes packages and creates GitHub releases if release PR is merged
+# 5. Convert any created PR to draft status for safety
+#
+# Permissions Required:
+# - contents: write (for creating releases and commits)
+# - pull-requests: write (for managing release PRs)
+# - issues: write (for release notes)
+# - id-token: write (for OpenID Connect authentication)
+#
+# Secrets Required:
+# - PAT_TOKEN: Personal Access Token for GitHub API access (needed for releases)
+#
+# Changesets Workflow:
+# - When changes are made, developers add changesets using `pnpm changeset`
+# - This workflow detects pending changesets and creates a "Version Packages" PR
+# - When the PR is merged, packages are published and releases are created
+# - The release PR is kept as draft to prevent accidental auto-merging
+#
+# Concurrency:
+# - Only one CI run per PR to prevent conflicts during release process
+# - Uses PR ID for grouping related runs
+#
 name: 🚀 CI Application
 
 permissions:

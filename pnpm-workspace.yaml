@@ -1,2 +1,21 @@
+# PNPM Workspace Configuration
+# This file defines the workspace structure for the Fusion App Template monorepo.
+# It tells pnpm which directories contain packages that should be managed as part of the workspace.
+#
+# Benefits of using pnpm workspaces:
+# - Shared dependencies: Common packages are hoisted to the root node_modules
+# - Cross-package dependencies: Apps can depend on each other easily
+# - Unified scripts: Run commands across all packages from the root
+# - Efficient storage: Deduplicated packages save disk space
+#
+# Current workspace structure:
+# - apps/**: All Fusion applications (bare, basic, etc.)
+#
+# Usage examples:
+# - Install dependencies for all apps: `pnpm install`
+# - Build all apps: `pnpm -r build`
+# - Run specific app: `pnpm --filter bare dev`
+# - Add dependency to specific app: `pnpm --filter basic add lodash`
+#
 packages:
   - "apps/**"
