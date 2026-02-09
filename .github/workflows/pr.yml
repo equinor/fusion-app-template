@@ -86,4 +86,14 @@ jobs:
       checks: write
     uses: ./.github/workflows/test-validation.yml
     
+  test-coverage:
+    name: 📋 Test Coverage
+    needs: pr-detection
+    if: needs.pr-detection.outputs.is-draft == 'true'
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    uses: ./.github/workflows/test-coverage.yml
+    
 

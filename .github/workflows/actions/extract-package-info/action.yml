@@ -5,6 +5,9 @@ inputs:
     description: 'Git tag reference (e.g., refs/tags/v1.0.0)'
     required: false
     default: ${{ github.ref }}
+  package-name:
+    description: 'Package name for monorepo structure (optional)'
+    required: false
 outputs:
   app-name:
     description: 'The extracted package name from package.json'
@@ -15,6 +18,12 @@ outputs:
   app-path:
     description: 'The path to the directory containing package.json'
     value: ${{ steps.extract.outputs.app-path }}
+  working-directory:
+    description: 'The working directory for the package'
+    value: ${{ steps.extract.outputs.working-directory }}
+  project-structure:
+    description: 'The detected project structure (monorepo or single-package)'
+    value: ${{ steps.extract.outputs.project-structure }}
 runs:
   using: 'composite'
   steps:
@@ -28,10 +37,41 @@ runs:
         PACKAGE_VERSION=$(echo "${{ inputs.tag-ref }}" | sed 's|refs/tags/v||')
         echo "Extracted version: $PACKAGE_VERSION"
         
-        # Find package.json excluding node_modules
-        PACKAGE_JSON_PATH=$(find . -name "node_modules" -prune -o -type f -name "package.json" -print | head -n 1)
+        # Detect project structure and set working directory
+        WORKING_DIR=""
+        PROJECT_STRUCTURE=""
         
-        if [ -n "$PACKAGE_JSON_PATH" ]; then
+        if [ -n "${{ inputs.package-name }}" ] && [ -d "apps/${{ inputs.package-name }}" ]; then
+          WORKING_DIR="apps/${{ inputs.package-name }}"
+          PROJECT_STRUCTURE="monorepo"
+          echo "working-directory=$WORKING_DIR" >> $GITHUB_OUTPUT
+          echo "project-structure=$PROJECT_STRUCTURE" >> $GITHUB_OUTPUT
+          echo "Project structure: Monorepo (apps/${{ inputs.package-name }})"
+        elif [ -f "package.json" ]; then
+          WORKING_DIR="."
+          PROJECT_STRUCTURE="single-package"
+          echo "working-directory=$WORKING_DIR" >> $GITHUB_OUTPUT
+          echo "project-structure=$PROJECT_STRUCTURE" >> $GITHUB_OUTPUT
+          if [ -f "app.manifest.ts" ]; then
+            echo "Project structure: Single package (root directory) - Fusion app detected"
+          else
+            echo "Project structure: Single package (root directory) - Generic package"
+          fi
+        else
+          echo "Error: Could not detect project structure"
+          echo "- For monorepo: Provide package-name input and ensure apps/\$package-name directory exists"
+          echo "- For single package: Ensure package.json exists in root directory"
+          exit 1
+        fi
+        
+        # Find package.json in the detected working directory
+        if [ "$WORKING_DIR" = "." ]; then
+          PACKAGE_JSON_PATH="./package.json"
+        else
+          PACKAGE_JSON_PATH="$WORKING_DIR/package.json"
+        fi
+        
+        if [ -f "$PACKAGE_JSON_PATH" ]; then
           echo "Found package.json at: $PACKAGE_JSON_PATH"
           
           # Extract package name from package.json
@@ -47,6 +87,6 @@ runs:
           echo "app-version=$PACKAGE_VERSION" >> $GITHUB_OUTPUT
           echo "app-path=$PATH_TO_PACKAGE" >> $GITHUB_OUTPUT
         else
-          echo "Error: No package.json found in project"
+          echo "Error: No package.json found at expected path: $PACKAGE_JSON_PATH"
           exit 1
         fi
