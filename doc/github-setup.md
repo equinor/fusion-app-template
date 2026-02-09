@@ -488,7 +488,7 @@ Finally, let's test the complete release-to-deployment pipeline:
 
 Don't panic! Even workflows can have issues. Here are the most common problems and how to fix them:
 
-### � **"Authentication failed" or "Invalid client"**
+### 🔐 **"Authentication failed" or "Invalid client"**
 
 > [!NOTE]
 > **What this means**: Your workflow can't authenticate with Azure or Fusion.
