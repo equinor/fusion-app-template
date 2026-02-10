@@ -24,6 +24,19 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 50
+    groups:
+      fusion-framework:
+        applies-to: version-updates
+        patterns:
+          - "@equinor/fusion-framework-*"
+      fusion-react:
+        applies-to: version-updates
+        patterns:
+          - "@equinor/fusion-react-*"
+      eds:
+        applies-to: version-updates
+        patterns:
+          - "@equinor/eds-*"
   - package-ecosystem: "github-actions"
     # Workflow files stored in the
     # default location of `.github/workflows`
