@@ -9,8 +9,8 @@ jobs:
   extract-package:
     runs-on: ubuntu-latest
     outputs:
-        appName: ${{ steps.extract.outputs.app-name }}
-        appPath: ${{ steps.extract.outputs.app-path }}
+        app-name: ${{ steps.extract.outputs.app-name }}
+        app-path: ${{ steps.extract.outputs.app-path }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -31,8 +31,8 @@ jobs:
       issues: write
       pull-requests: write
     with:
-        app-name: ${{ needs.extract-package.outputs.appName }}
-        work-dir: ${{ needs.extract-package.outputs.appPath }}
+        app-name: ${{ needs.extract-package.outputs.app-name }}
+        work-dir: ${{ needs.extract-package.outputs.app-path }}
         environment: '["ci"]' # if needed add additinal environments '["ci", "fqa", "fprd", "tr"]'
         release: true # this will ensure that the app is packed with the version from package.json and not as a snapshot
 
