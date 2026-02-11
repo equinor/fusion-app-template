@@ -1,0 +1,32 @@
+name: 🤖 Test
+
+on:
+  workflow_call:
+    inputs:
+      NODE_VERSION:
+        required: false
+        type: string
+        default: '22'
+
+jobs:
+  test:
+    name: 🧪 Test
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup node and install deps
+        uses: ./.github/workflows/actions/node-setup
+        with:
+          node-version: ${{ inputs.NODE_VERSION }}
+
+      - name: Run tests
+        run: pnpm test:run --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+

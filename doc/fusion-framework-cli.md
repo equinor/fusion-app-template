@@ -43,7 +43,8 @@ pnpm fusion-framework-cli publish --env <environment>
 
 For comprehensive documentation, setup instructions, and troubleshooting:
 
-**📚 [Official Fusion Framework CLI Documentation](https://equinor.github.io/fusion-framework/cli/)**
+> [!NOTE]
+> [Official Fusion Framework CLI Documentation](https://equinor.github.io/fusion-framework/cli/)
 
 The official documentation includes:
 - Complete setup and configuration guides

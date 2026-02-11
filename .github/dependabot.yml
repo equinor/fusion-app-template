@@ -1,3 +1,22 @@
+# Dependabot Configuration
+# Dependabot is GitHub's automated dependency update service that helps keep
+# dependencies up-to-date by creating pull requests when new versions are available.
+#
+# This configuration sets up automatic updates for:
+# 1. NPM packages: All JavaScript/TypeScript dependencies in package.json files
+# 2. GitHub Actions: Workflow and action versions used in .github/workflows/
+#
+# Benefits:
+# - Security: Automatically updates vulnerable dependencies
+# - Maintenance: Keeps dependencies current without manual effort  
+# - Compliance: Helps maintain security standards
+# - Testing: Each update comes as a separate PR that can be tested
+#
+# Configuration details:
+# - NPM updates: Daily checks with up to 50 concurrent PRs
+# - GitHub Actions: Weekly checks for workflow dependencies
+# - All updates target the default branch for review and testing
+#
 version: 2
 updates:
   - package-ecosystem: "npm"
@@ -5,6 +24,19 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 50
+    groups:
+      fusion-framework:
+        applies-to: version-updates
+        patterns:
+          - "@equinor/fusion-framework-*"
+      fusion-react:
+        applies-to: version-updates
+        patterns:
+          - "@equinor/fusion-react-*"
+      eds:
+        applies-to: version-updates
+        patterns:
+          - "@equinor/eds-*"
   - package-ecosystem: "github-actions"
     # Workflow files stored in the
     # default location of `.github/workflows`

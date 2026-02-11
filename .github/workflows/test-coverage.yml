@@ -1,0 +1,42 @@
+name: 📋 Test Coverage
+
+on:
+  workflow_call:
+    inputs:
+      NODE_VERSION:
+        required: false
+        type: string
+        default: '22'
+
+jobs:
+  coverage:
+    name: 📋 Test Coverage
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup node and install deps
+        uses: ./.github/workflows/actions/node-setup
+        with:
+          node-version: ${{ inputs.NODE_VERSION }}
+
+      - name: Create Test Coverage
+        id: test-coverage
+        if: ${{ ! github.event.pull_request.draft }}
+        run: |
+          pnpm test:coverage
+          # Check if coverage files were actually generated
+          if [ -f "coverage/coverage-summary.json" ]; then
+            echo "coverage-exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "coverage-exists=false" >> $GITHUB_OUTPUT
+            echo "No coverage files generated - tests may not be configured yet" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Publish test coverage
+        if: ${{ steps.test-coverage.outputs.coverage-exists == 'true' }}
+        uses: davelosert/vitest-coverage-report-action@v2.9.2
+    

@@ -51,33 +51,36 @@ The release PR contains version bumps and changelog updates based on your change
 
 ## Best Practices
 
-**Create changesets when you:**
-- Add new features
-- Fix bugs
-- Make breaking changes
-
-**Write clear descriptions:**
-- Be specific about what changed
-- Use consistent language (Added, Fixed, Updated, Removed)
-
-**Don't create changesets for:**
-- Documentation updates
-- Test-only changes
-- Build configuration changes
+> [!TIP]
+> **Create changesets when you:**
+> - Add new features
+> - Fix bugs
+> - Make breaking changes
+> 
+> **Write clear descriptions:**
+> - Be specific about what changed
+> - Use consistent language (Added, Fixed, Updated, Removed)
+> 
+> **Don't create changesets for:**
+> - Documentation updates
+> - Test-only changes
+> - Build configuration changes
 
 ## Troubleshooting
 
-**"No changesets found"**
-- Make sure you created a changeset with `pnpm changeset`
-- Check that the changeset is committed and pushed to main
-
-**"Release PR keeps going back to draft"**
-- This is normal! You added a new changeset to the release PR
-- Wait until you're done adding changesets, then mark as ready for review
+> [!NOTE]
+> **"No changesets found"**
+> - Make sure you created a changeset with `pnpm changeset`
+> - Check that the changeset is committed and pushed to main
+> 
+> **"Release PR keeps going back to draft"**
+> - This is normal! You added a new changeset to the release PR
+> - Wait until you're done adding changesets, then mark as ready for review
 
 ## Getting Help
 
-For detailed documentation, see the [official Changesets guide](https://github.com/changesets/changesets).
+> [!NOTE]
+> For detailed documentation, see the [official Changesets guide](https://github.com/changesets/changesets).
 
 ## Summary
 

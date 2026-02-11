@@ -1,0 +1,151 @@
+# 🛠️ Build Application Workflow
+#
+# This reusable workflow handles building, configuring, and publishing Fusion applications.
+# It's designed to be called by other workflows (CI, PR, release) to ensure consistent 
+# build and deployment processes across different environments.
+#
+# Key Features:
+# - Reusable workflow: Can be called by other workflows with different parameters
+# - Environment-aware: Supports multiple environments (ci, pr, production)
+# - Artifact generation: Creates deployable app bundles and configuration files
+# - Release management: Different packaging for PR vs release deployments
+# - Fusion CLI integration: Uses @equinor/fusion-framework-cli for building and config
+#
+# Workflow Structure:
+# 1. build-pack: Packages the application into a distributable bundle
+#    - For PRs: Creates snapshot version with timestamp and "pr" suffix
+#    - For releases: Uses version from package.json
+# 2. config: Generates environment-specific configuration files
+#    - Looks for app.config.[env].ts files for environment-specific settings
+#    - Falls back to app.config.ts if environment-specific config doesn't exist
+#    - Outputs JSON configuration files as artifacts
+# 3. publish: Calls the publish workflow to deploy the built application
+#
+# Inputs:
+# - environment: Target environments as JSON array (default: ["ci"])
+# - app-name: Name of the application being built (default: "unknown")
+# - work-dir: Working directory for the build (default: "./")
+# - release: Whether this is a release build (affects versioning)
+#
+# Usage Examples:
+# ```yaml
+# jobs:
+#   build-app:
+#     uses: ./.github/workflows/build.yml
+#     with:
+#       app-name: "my-fusion-app"
+#       work-dir: "./apps/my-app"
+#       environment: '["ci", "pr"]'
+#       release: false
+# ```
+#
+name: 🛠️ Build Application
+
+
+on:
+  workflow_call:
+    inputs:
+      environment: 
+        required: false
+        type: string
+        default: '[ "ci"]'
+      app-name:
+        required: false
+        type: string
+        default: 'unknown'
+      work-dir:
+        required: false
+        type: string
+        default: './'
+      release:
+        required: false
+        type: boolean
+        default: false
+
+
+jobs:
+  build-pack:
+    name: 🛠️ Build and Pack Application ${{ inputs.app-name }}
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # Install dependencies and setup Node.js environment
+      - name: 🤖 Setup node and install deps
+        uses: ./.github/workflows/actions/node-setup
+
+      # Pack the application with snapshot flag for PR deployments this ensures unique versioning
+      # Using pr suffix is optional but helps in identifying PR deployments
+      - name: Pack application PR deployment
+        # This step packages the application into a distributable bundle (app-bundle.zip)
+        # The --snapshot flag creates a pre-release version with a timestamp
+        # The pr suffix helps identify this as a pull request deployment
+        if: ${{ inputs.release == false }}
+        working-directory: ${{ inputs.work-dir }}
+        run: npx -y -p @equinor/fusion-framework-cli@latest ffc app pack --snapshot pr
+
+      # Pack the application for release if the release flag is true this will use the version from package.json
+      - name: Pack application release deployment
+        # This step packages the application into a distributable bundle (app-bundle.zip)
+        if: ${{ inputs.release == true }}
+        working-directory: ${{ inputs.work-dir }}
+        run: npx -y -p @equinor/fusion-framework-cli@latest ffc app pack
+
+      - name: Upload packed app as artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: app-bundle
+          path: ${{ inputs.work-dir }}/app-bundle.zip
+
+  config: 
+    name: 🛠️ Generate Configuration for ${{ inputs.app-name }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: ${{ fromJson(inputs.environment) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # Install dependencies and setup Node.js environment
+      - name: 🤖 Setup node and install deps
+        uses: ./.github/workflows/actions/node-setup
+
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile
+
+      # Generate configuration for the PR environment if needed will use [app.config.pr.ts] file to generate config
+      - name: Generate config
+        # This step generates the configuration file for the application based on the PR environment
+        # It reads [app.config.pr.ts] and outputs a JSON configuration file
+        # if [app.config.pr.ts] does not exist, default config will be used [app.config.ts]
+        # The configuration includes environment-specific settings like API endpoints
+        working-directory: ${{ inputs.work-dir }}
+        run: |
+          npx -y -p @equinor/fusion-framework-cli@latest ffc app config --env ${{ matrix.env }} --output ./app-config.${{ matrix.env }}.json
+
+      - name: Upload config as artifact
+        uses: actions/upload-artifact@v6
+        with: 
+          name: app-config
+          path: ${{ inputs.work-dir }}/app-config.${{ matrix.env }}.json
+
+  publish:
+    name: 🛠️ Call Publish Workflow for ${{ inputs.app-name }}
+    needs: [build-pack, config]
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
+    strategy:
+      matrix:
+        env: ${{ fromJson(inputs.environment) }}
+    uses: ./.github/workflows/publish.yml
+    with:
+      env: ${{ matrix.env }}
+      app-name: ${{ inputs.app-name }}
+      release: ${{ inputs.release }}

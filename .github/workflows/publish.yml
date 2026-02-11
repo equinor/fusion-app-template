@@ -1,0 +1,117 @@
+# 🚀 Publish Application Workflow
+#
+# This reusable workflow handles the deployment of Fusion applications to various 
+# environments. It downloads build artifacts and publishes them to Fusion using
+# the official Equinor Fusion publish action with Azure authentication.
+#
+# Key Features:
+# - Reusable workflow: Called by build workflow for consistent deployment
+# - Environment-aware: Supports different target environments (ci, pr, production)
+# - Artifact-based: Uses pre-built app bundles and configurations from build stage
+# - Azure Integration: Uses OpenID Connect (OIDC) for secure authentication
+# - PR Deployment: Special handling for pull request deployments with PR tagging
+# - Release Deployment: Standard deployment for release versions
+# - User Feedback: Provides deployment links and status in workflow summary
+#
+# Deployment Types:
+# 1. PR Deployments (inputs.release = false):
+#    - Tagged with PR number (pr-123) for easy identification
+#    - Deployed to CI environment regardless of env input
+#    - Provides direct link to access the PR deployment
+# 2. Release Deployments (inputs.release = true):
+#    - Uses standard versioning from package.json
+#    - Deployed to specified environment
+#    - Standard release workflow
+#
+# Required Artifacts:
+# - dist/app-bundle.zip: Built application bundle
+# - config/app-config.[env].json: Environment-specific configuration
+#
+# Azure Configuration Variables Required:
+# - AZURE_SP_FUSION: Azure Service Principal Client ID
+# - AZURE_TENANT_ID: Azure Active Directory Tenant ID  
+# - AZURE_FUSION_SCOPE: Azure resource ID/scope for Fusion
+#
+# Inputs:
+# - env: Target environment (default: "ci")
+# - app-name: Name of the application (default: "unknown")
+# - release: Whether this is a release deployment (default: false)
+#
+# Environment Mapping:
+# - PR deployments always go to "ci" environment for testing
+# - Release deployments respect the specified environment
+#
+name: 🚀 Publish Application
+
+on:
+  workflow_call:
+    inputs:
+      env: 
+        required: false
+        type: string
+        default: 'ci'
+      app-name:
+        required: false
+        type: string
+        default: 'unknown'
+      release:
+        required: false
+        type: boolean
+        default: false
+
+
+jobs:
+  publish:
+    name: Publish Application ${{ inputs.app-name }}
+    runs-on: ubuntu-latest
+    # The publish job depends on the build and config jobs to ensure artifacts are ready
+    environment: "${{ inputs.env }}"
+    steps:
+
+      - name: Download App artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: app-bundle
+          path: ./dist
+
+      - name: Download Config artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: app-config 
+          path: ./config
+
+      # Publish the application to Fusion using the downloaded artifacts
+      # By specifying the prNR parameter, the deployment is linked to the pull request
+      # And tagged accordingly in Fusion
+      - name: Publish PR Application ${{ inputs.app-name }} pr-${{ github.event.number }}
+        uses: equinor/fusion-action-app-publish@v1
+        if: ${{ github.event_name == 'pull_request' && inputs.release == false }}
+        with:
+          artifact: ./dist/app-bundle.zip
+          config: ./config/app-config.pr.json
+          prNR: ${{ github.event.number }}
+          azure-client-id: ${{ vars.AZURE_SP_FUSION }}
+          azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          azure-resource-id: ${{ vars.AZURE_FUSION_SCOPE }}
+
+      - name: Release Application ${{ inputs.app-name }}
+        uses: equinor/fusion-action-app-publish@v1
+        if: ${{ inputs.release == true }}
+        with:
+          artifact: ./dist/app-bundle.zip
+          config: ./config/app-config.${{ inputs.env }}.json
+          env: ${{ inputs.env }}
+          azure-client-id: ${{ vars.AZURE_SP_FUSION }}
+          azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          azure-resource-id: ${{ vars.AZURE_FUSION_SCOPE }}
+
+      - name: Workflow Summary
+        run: |
+          if [[ "${{ inputs.release }}" != "true" ]]; then
+            echo "## 🚀 PR Deployment Published" >> $GITHUB_STEP_SUMMARY
+            echo "The application has been published to the CI environment. It will be tagged as pr-${{ github.event.number }} in Fusion." >> $GITHUB_STEP_SUMMARY
+            echo "View application [here](https://fusion.ci.fusion-dev.net/apps/${{ inputs.app-name }}?$tag=pr-${{ github.event.number }})" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## 🚀 Application Released" >> $GITHUB_STEP_SUMMARY
+            echo "The application has been published to the ${{ inputs.env }} environment." >> $GITHUB_STEP_SUMMARY
+          fi

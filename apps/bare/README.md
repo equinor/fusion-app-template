@@ -233,10 +233,12 @@ const MyComponent = () => {
 
 ### Getting Help
 
-1. **Check the Documentation**: Review the [Fusion Framework documentation](https://equinor.github.io/fusion-framework/)
-2. **Search Issues**: Look for similar issues in the [Fusion Framework repository](https://github.com/equinor/fusion-framework/issues)
-3. **Ask Questions**: Create an issue in the [Fusion Framework repository](https://github.com/equinor/fusion-framework/issues)
-4. **Review Examples**: Check the [basic template](../basic/) for more complex examples
+> [!NOTE]
+> **Need assistance?**
+> 1. **Check the Documentation**: Review the [Fusion Framework documentation](https://equinor.github.io/fusion-framework/)
+> 2. **Search Issues**: Look for similar issues in the [Fusion Framework repository](https://github.com/equinor/fusion-framework/issues)
+> 3. **Ask Questions**: Create an issue in the [Fusion Framework repository](https://github.com/equinor/fusion-framework/issues)
+> 4. **Review Examples**: Check the [basic template](../basic/) for more complex examples
 
 ## 🤝 Contributing
 

@@ -1,81 +1,99 @@
-# Pull Request Workflow
-# This workflow runs on every pull request to ensure code quality and build integrity.
-# It includes linting, building, and optional testing steps with different behaviors
-# for draft vs ready-for-review PRs.
+name: 🛠️ PR
 
-name: PR
+# The permissions the workflow needs to run
+# - id-token: Required for OpenID Connect authentication with Azure
+# - contents: Required to read the repository contents during checkout
+# - pull-requests: Required for the publish action to read/write comments on the PR
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
 
-# Trigger on pull request events
-on: 
-  pull_request: 
-    types: 
-      - ready_for_review  # When a draft PR is marked ready for review
-      - opened           # When a new PR is created
-      - reopened         # When a closed PR is reopened
-      - synchronize      # When new commits are pushed to the PR
+on:
+  pull_request:
+    types:
+      - ready_for_review
+      - opened
+      - reopened
+      - synchronize
+  workflow_call:
 
-# Prevent multiple instances of this workflow running for the same PR
 concurrency:
   group: pr-${{ github.event.pull_request.id }}
   cancel-in-progress: true
-  
+
 jobs:
-  code-quality:
-    name: Check Code Quality
+  pr-detection:
+    name: 🕵️‍♂️ PR Draft Detection 
     runs-on: ubuntu-latest
-    
-    # Required permissions for the workflow
+    if: github.actor != 'dependabot[bot]' || github.event_name == 'workflow_dispatch'
     permissions:
-      contents: read          # Read repository contents
-      pages: write           # Write to GitHub Pages (if used)
-      id-token: write        # Generate OIDC tokens for authentication
-      pull-requests: read    # Read PR information for draft checking
+      contents: read
+      pull-requests: read
+    outputs:
+      is-draft: ${{ steps.check-draft.outputs.is-draft }}
     steps:
-      # Checkout the PR code
-      - uses: actions/checkout@v5
-        with:
-          # Use the merge commit to test the final state after merge
-          ref: "${{ github.event.pull_request.merge_commit_sha }}"
-          # Fetch full history for proper change detection
-          fetch-depth: 0
-      
-      # Check if this is a draft PR to adjust behavior accordingly
-      - name: Check if PR is draft
-        id: draft-check
+    
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Check if Draft
         uses: ./.github/workflows/actions/check-draft
-        env:
-          GH_TOKEN: ${{ github.token }}
-      
-      # Setup Node.js and install dependencies
-      - name: Setup node and install deps
-        uses: ./.github/workflows/actions/node-setup
-
-      # Lint source files with Biome
-      # Uses different reporters based on PR status:
-      # - Draft PRs: github-pr-check (less intrusive)
-      # - Ready PRs: github-pr-review (more visible)
-      - name: Lint source files
-        uses: mongolyy/reviewdog-action-biome@v2
+        id: check-draft
         with:
-          github_token: ${{ github.token }}
-          reporter: ${{ steps.draft-check.outputs.is-draft == 'true' && 'github-pr-check' || 'github-pr-review' }}
-          level: error
+          pr-number: ${{ github.event.pull_request.number }}
 
-      # Build only affected packages for efficiency
-      - name: Build affected packages
-        id: build
-        uses: ./.github/workflows/actions/build-packages
-        with: 
-          only-affected: true
-      
-      # TODO: Add your test steps here
-      # Uncomment and configure based on your testing setup
-      # - name: Run Tests
-      #   run: pnpm test run
-      
-      # TODO: Add test coverage reporting for non-draft PRs
-      # This helps maintain code quality standards
-      # - name: Generate Test Coverage Report
-      #   id: test-coverage  
-      #   if: steps.draft-check.outputs.is-draft == 'false'
-      #   run: pnpm test:coverage
+      - name: Add draft status to summary
+        run: |
+          if [ "${{ steps.check-draft.outputs.is-draft }}" = "true" ]; then
+            echo "## ⚠️ Draft Pull Request" >> $GITHUB_STEP_SUMMARY
+            echo "This PR is currently in draft status. Now running validation workflow." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ✅ Ready for Review" >> $GITHUB_STEP_SUMMARY
+            echo "This PR is ready for review. Running full PR pipeline." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+
+  build:
+    name: 🛠️ App Resolver Workflow
+    needs: pr-detection
+    if: needs.pr-detection.outputs.is-draft == 'false' 
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
+    uses: ./.github/workflows/app-resolver.yml
+
+
+  lint-validation:
+    name: 🧹 Lint Validation
+    needs: pr-detection
+    if: needs.pr-detection.outputs.is-draft == 'true'
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    uses: ./.github/workflows/lint-validation.yml
+    
+  test-validation:
+    name: 🧪 Test Validation
+    needs: pr-detection
+    if: needs.pr-detection.outputs.is-draft == 'true'
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    uses: ./.github/workflows/test-validation.yml
+    
+  test-coverage:
+    name: 📋 Test Coverage
+    needs: pr-detection
+    if: needs.pr-detection.outputs.is-draft == 'true'
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    uses: ./.github/workflows/test-coverage.yml
+    
+

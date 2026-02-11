@@ -1,0 +1,50 @@
+# Configure Git User Action
+# This action configures the git user identity for GitHub Actions workflows.
+# It sets the triggering actor as the git user with a bot-like email format
+# to clearly identify automated commits in git history.
+#
+# Features:
+# - Actor-based identity: Uses the GitHub actor who triggered the workflow
+# - Bot identification: Appends "[bot]" suffix to clearly mark automated commits
+# - Global configuration: Sets git config globally for the runner session
+# - Standardized email: Uses GitHub's no-reply email format for consistency
+#
+# The configured git user will appear as:
+# - Name: "username[bot]" (e.g., "dependabot[bot]", "github-actions[bot]")
+# - Email: "username[bot]@users.noreply.github.com"
+#
+# This is essential for workflows that need to make git commits, such as:
+# - Automated version bumps
+# - Changeset releases  
+# - Automated documentation updates
+# - Code formatting fixes
+#
+# Example usage in a workflow:
+#
+# steps:
+#   - name: Checkout code
+#     uses: actions/checkout@v4
+#   
+#   - name: Configure git user
+#     uses: ./.github/workflows/actions/config-git-user
+#   
+#   - name: Make automated commit
+#     run: |
+#       git add .
+#       git commit -m "chore: automated update"
+#       git push
+#
+# Prerequisites:
+# - Repository must be checked out
+# - Workflow must have appropriate permissions for the intended git operations
+#
+name: configure git user
+
+runs:
+  using: composite
+  steps:
+    - name: Set workflow trigger as git user
+      shell: bash
+      run: |
+        git config --global user.name "${{ github.actor }}[bot]"
+        git config --global user.email "${{ github.actor }}[bot]@users.noreply.github.com"
