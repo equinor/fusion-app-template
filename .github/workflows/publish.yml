@@ -28,9 +28,9 @@
 # - config/app-config.[env].json: Environment-specific configuration
 #
 # Azure Configuration Variables Required:
-# - AZURE_SP_FUSION: Azure Service Principal Client ID
+# - AZURE_CLIENT_ID: Azure Service Principal Client ID
 # - AZURE_TENANT_ID: Azure Active Directory Tenant ID  
-# - AZURE_FUSION_SCOPE: Azure resource ID/scope for Fusion
+# - FUSION_RESOURCE_ID: Azure resource ID/scope for Fusion
 #
 # Inputs:
 # - env: Target environment (default: "ci")
@@ -90,9 +90,9 @@ jobs:
           artifact: ./dist/app-bundle.zip
           config: ./config/app-config.pr.json
           prNR: ${{ github.event.number }}
-          azure-client-id: ${{ vars.AZURE_SP_FUSION }}
+          azure-client-id: ${{ vars.AZURE_CLIENT_ID }}
           azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
-          azure-resource-id: ${{ vars.AZURE_FUSION_SCOPE }}
+          azure-resource-id: ${{ vars.FUSION_RESOURCE_ID }}
 
       - name: Release Application ${{ inputs.app-name }}
         uses: equinor/fusion-action-app-publish@v1
@@ -101,9 +101,9 @@ jobs:
           artifact: ./dist/app-bundle.zip
           config: ./config/app-config.${{ inputs.env }}.json
           env: ${{ inputs.env }}
-          azure-client-id: ${{ vars.AZURE_SP_FUSION }}
+          azure-client-id: ${{ vars.AZURE_CLIENT_ID }}
           azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
-          azure-resource-id: ${{ vars.AZURE_FUSION_SCOPE }}
+          azure-resource-id: ${{ vars.FUSION_RESOURCE_ID }}
 
       - name: Workflow Summary
         run: |

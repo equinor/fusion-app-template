@@ -63,9 +63,9 @@ Go to **Settings > Secrets and variables > Actions > Variables** and add:
 
 | Name | Value |
 |------|-------|
-| `AZURE_SP_FUSION` | Application ID |
+| `AZURE_CLIENT_ID` | Application ID |
 | `AZURE_TENANT_ID` | Directory ID |
-| `AZURE_FUSION_SCOPE` | API Scope URL |
+| `FUSION_RESOURCE_ID` | Application ID for Fusion App Service |
 
 > [!NOTE]
 > These are stored as Variables, not Secrets (they're not sensitive identifiers)
@@ -136,7 +136,7 @@ pnpm changeset
 **"Invalid client" / "Authentication failed"**
 
 Check:
-- Variables exactly match Azure (no spaces): `AZURE_SP_FUSION`, `AZURE_TENANT_ID`
+- Variables exactly match Azure (no spaces): `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`
 - Federated credentials in Azure: GitHub repo name matches exactly
 - Scope is correct for your org
 - App registration has Fusion permissions
