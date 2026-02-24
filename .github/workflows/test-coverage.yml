@@ -38,5 +38,5 @@ jobs:
 
       - name: Publish test coverage
         if: ${{ steps.test-coverage.outputs.coverage-exists == 'true' }}
-        uses: davelosert/vitest-coverage-report-action@v2.9.2
+        uses: davelosert/vitest-coverage-report-action@v2.9.3
     
