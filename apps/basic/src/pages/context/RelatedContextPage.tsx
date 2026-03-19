@@ -99,3 +99,5 @@ export const RelatedContextPage = () => {
     </AppPageContainer>
   );
 };
+
+export default RelatedContextPage;

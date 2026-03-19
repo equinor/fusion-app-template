@@ -6,7 +6,7 @@
  *
  */
 
-import { Link } from 'react-router-dom';
+import { Link } from '@equinor/fusion-framework-react-router';
 import { Icon, Typography } from '@equinor/eds-core-react';
 import { useCurrentContext } from '@equinor/fusion-framework-react-app/context';
 import { ContentContainer } from '@/components/ContentContainer';
@@ -95,3 +95,5 @@ export const HomePage = () => {
     </Styled.CenterWrapper>
   );
 };
+
+export default HomePage;

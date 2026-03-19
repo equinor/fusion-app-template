@@ -15,7 +15,7 @@ This template is designed for developers who want to:
 ## ✨ Key Features
 
 - **Context Management**: Full integration with Fusion Framework's context system
-- **Navigation System**: Built-in routing with React Router and Fusion Framework navigation
+- **Navigation System**: Built-in routing with Fusion Framework's React Router integration
 - **EDS Integration**: Equinor Design System components and theming
 - **Data Fetching**: React Query integration for efficient data management
 - **TypeScript Support**: Full TypeScript support with strict type checking
@@ -247,7 +247,7 @@ export const useMyData = () => {
 - `styled-components` - CSS-in-JS styling
 
 ### Routing & Data
-- `react-router-dom` - Client-side routing
+- `@equinor/fusion-framework-react-router` - Fusion React Router integration
 - `react-query` - Data fetching and caching
 - `rxjs` - Reactive programming utilities
 
@@ -319,7 +319,7 @@ const useContextData = () => {
 
 ### Navigation with Context
 ```typescript
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '@equinor/fusion-framework-react-router';
 import { useCurrentContext } from '@equinor/fusion-framework-react-app/context';
 
 const MyComponent = () => {
@@ -398,6 +398,20 @@ const MyComponent = () => {
 ## 🤝 Contributing
 
 This is a template package designed to help developers get started quickly. To contribute to the Fusion Framework itself, visit the [main repository](https://github.com/equinor/fusion-framework).
+
+## 🤖 AI-Assisted Development
+
+This template works with [Fusion Skills](https://github.com/equinor/fusion-skills) — reusable GitHub Copilot Agent Skills for common Fusion workflows.
+
+```bash
+# Install skills into your project
+npx skills add equinor/fusion-skills -y --agent github-copilot
+
+# List available skills
+npx skills add equinor/fusion-skills --list
+```
+
+The **`fusion-app-react-dev`** skill is particularly useful — it guides feature development, scaffolding components, hooks, and services that follow EDS conventions and Fusion Framework patterns.
 
 ### Template Improvements
 

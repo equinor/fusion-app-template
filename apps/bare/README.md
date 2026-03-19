@@ -255,6 +255,20 @@ If you have suggestions for improving this template:
 
 ISC - See the main project for license details.
 
+## 🤖 AI-Assisted Development
+
+This template works with [Fusion Skills](https://github.com/equinor/fusion-skills) — reusable GitHub Copilot Agent Skills for common Fusion workflows.
+
+```bash
+# Install skills into your project
+npx skills add equinor/fusion-skills -y --agent github-copilot
+
+# List available skills
+npx skills add equinor/fusion-skills --list
+```
+
+The **`fusion-app-react-dev`** skill is particularly useful — it guides feature development, scaffolding components, hooks, and services that follow EDS conventions and Fusion Framework patterns.
+
 ---
 
 ## 📋 Template Checklist

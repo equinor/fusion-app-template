@@ -6,7 +6,11 @@
  *
  */
 
-import { Link, Outlet, useMatches } from 'react-router-dom';
+import {
+  Link,
+  Outlet,
+  useMatches,
+} from '@equinor/fusion-framework-react-router';
 
 import styled from 'styled-components';
 
@@ -123,3 +127,5 @@ export const AppContainer = () => {
     </Styled.Root>
   );
 };
+
+export default AppContainer;

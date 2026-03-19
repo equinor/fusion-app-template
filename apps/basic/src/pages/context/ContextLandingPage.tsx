@@ -6,7 +6,7 @@
  *
  */
 
-import { Link } from 'react-router-dom';
+import { Link } from '@equinor/fusion-framework-react-router';
 import { useState } from 'react';
 
 import { Typography, Card, Button, Icon } from '@equinor/eds-core-react';
@@ -89,3 +89,5 @@ export const ContextLandingPage = () => {
     </AppPageContainer>
   );
 };
+
+export default ContextLandingPage;

@@ -9,7 +9,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import { Router } from './Router';
+import Router from './Router';
 
 /**
  * React Query client with 5-minute stale time for context-aware applications.
