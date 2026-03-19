@@ -7,10 +7,23 @@
  */
 
 import { Typography, Button, List, ListItem } from '@equinor/eds-core-react';
+import { tokens } from '@equinor/eds-tokens';
+import styled from 'styled-components';
 
 import { AppPageContainer } from '@/components/AppPageContainer';
 import { ContentContainer } from '@/components/ContentContainer';
-import { Link } from 'react-router';
+import { Link } from '@equinor/fusion-framework-react-router';
+
+const Styled = {
+  /** Inline code span styled to match EDS typography. */
+  Code: styled.code`
+    font-family: 'Equinor', monospace;
+    font-size: ${tokens.typography.paragraph.body_short.fontSize};
+    background: ${tokens.colors.ui.background__light.hex};
+    padding: 1px ${tokens.spacings.comfortable.x_small};
+    border-radius: 3px;
+  `,
+};
 
 /**
  * Getting started page with guidance and documentation.
@@ -49,26 +62,26 @@ export const GettingStartedPage = () => {
           <ListItem>
             <Typography variant="body_short">
               <strong>Explore the structure:</strong> Check out the pages in{' '}
-              <code>src/pages/</code> to understand the app layout
+              <Styled.Code>src/pages/</Styled.Code> to understand the app layout
             </Typography>
           </ListItem>
           <ListItem>
             <Typography variant="body_short">
               <strong>Add new pages:</strong> Create new components in{' '}
-              <code>src/pages/</code> and add routes in{' '}
-              <code>src/Router.tsx</code>
+              <Styled.Code>src/pages/</Styled.Code> and add routes in{' '}
+              <Styled.Code>src/Router.tsx</Styled.Code>
             </Typography>
           </ListItem>
           <ListItem>
             <Typography variant="body_short">
               <strong>Customize components:</strong> Modify existing components
-              in <code>src/components/</code> or create new ones
+              in <Styled.Code>src/components/</Styled.Code> or create new ones
             </Typography>
           </ListItem>
           <ListItem>
             <Typography variant="body_short">
               <strong>Update configuration:</strong> Modify app settings in{' '}
-              <code>src/config.ts</code>
+              <Styled.Code>src/config.ts</Styled.Code>
             </Typography>
           </ListItem>
           <ListItem>
@@ -88,7 +101,7 @@ export const GettingStartedPage = () => {
             <Typography variant="body_short">
               <Typography
                 link
-                href="https://fusion-docs.fusion-dev.net/docs/developer/getting-started/"
+                href="https://docs.fusion.equinor.com/docs/developer/application/getting-started/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -112,7 +125,7 @@ export const GettingStartedPage = () => {
             <Typography variant="body_short">
               <Typography
                 link
-                href="https://fusion-docs.fusion-dev.net/docs/developer/ux-design-guidelines/"
+                href="https://docs.fusion.equinor.com/docs/developer/ux-design-guidelines/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -140,3 +153,5 @@ export const GettingStartedPage = () => {
     </AppPageContainer>
   );
 };
+
+export default GettingStartedPage;

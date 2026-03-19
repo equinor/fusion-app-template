@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "fusion-app-react-dev": {
+      "source": "equinor/fusion-skills",
+      "sourceType": "github",
+      "computedHash": "7aae469589f85a211bf8f2220ef85572d4242f4065842b67615f9612ae437e61"
+    }
+  }
+}
