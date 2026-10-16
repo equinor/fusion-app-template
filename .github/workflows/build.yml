@@ -94,7 +94,7 @@ jobs:
         run: npx -y -p @equinor/fusion-framework-cli@latest ffc app pack
 
       - name: Upload packed app as artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: app-bundle
           path: ${{ inputs.work-dir }}/app-bundle.zip
@@ -128,7 +128,7 @@ jobs:
           npx -y -p @equinor/fusion-framework-cli@latest ffc app config --env ${{ matrix.env }} --output ./app-config.${{ matrix.env }}.json
 
       - name: Upload config as artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with: 
           name: app-config
           path: ${{ inputs.work-dir }}/app-config.${{ matrix.env }}.json
