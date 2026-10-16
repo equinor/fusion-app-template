@@ -69,13 +69,13 @@ jobs:
     steps:
 
       - name: Download App artifact
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: app-bundle
           path: ./dist
 
       - name: Download Config artifact
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: app-config 
           path: ./config
