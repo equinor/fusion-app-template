@@ -77,7 +77,7 @@ jobs:
     steps:
         # Checkout the repository to analyze changes with depth of 0 to get all history
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 

@@ -12,7 +12,7 @@ jobs:
         app-name: ${{ steps.extract.outputs.app-name }}
         app-path: ${{ steps.extract.outputs.app-path }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       
