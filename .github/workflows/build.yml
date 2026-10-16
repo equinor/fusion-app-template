@@ -70,7 +70,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # Install dependencies and setup Node.js environment
       - name: 🤖 Setup node and install deps
@@ -107,7 +107,7 @@ jobs:
         env: ${{ fromJson(inputs.environment) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # Install dependencies and setup Node.js environment
       - name: 🤖 Setup node and install deps
