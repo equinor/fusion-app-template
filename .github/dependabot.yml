@@ -34,7 +34,7 @@ updates:
         patterns:
           - "@equinor/fusion-react-*"
       react:
-        applies-to: version-updated
+        applies-to: version-updates
         patterns:
           - "react"
           - "react-dom"
