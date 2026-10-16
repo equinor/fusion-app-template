@@ -8,7 +8,7 @@
 #
 # Benefits:
 # - Security: Automatically updates vulnerable dependencies
-# - Maintenance: Keeps dependencies current without manual effort  
+# - Maintenance: Keeps dependencies current without manual effort
 # - Compliance: Helps maintain security standards
 # - Testing: Each update comes as a separate PR that can be tested
 #
@@ -33,6 +33,13 @@ updates:
         applies-to: version-updates
         patterns:
           - "@equinor/fusion-react-*"
+      react:
+        applies-to: version-updated
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
       eds:
         applies-to: version-updates
         patterns:
