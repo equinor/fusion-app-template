@@ -23,7 +23,8 @@
     "test:run": "echo \"No tests specified\"",
     "test:coverage": "echo \"No tests specified\"",
     "changeset:version": "pnpm changeset version && pnpm install --lockfile-only && pnpm check:errors --fix",
-    "changeset:publish": "pnpm changeset tag"
+    "changeset:publish": "pnpm changeset tag",
+    "typecheck": "tsc -p ."
   },
   "author": "demo@equinor.com",
   "license": "ISC",
@@ -40,13 +41,13 @@
     "@equinor/fusion-framework-cli": "^14.0.0",
     "@equinor/fusion-framework-react-app": "^10.0.0",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1",
-    "typescript": "^7.0.2"
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.8",
     "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0"
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
   },
   "packageManager": "pnpm@10.15.1",
   "engines": {
