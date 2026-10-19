@@ -24,11 +24,11 @@ importers:
   apps/bare:
     dependencies:
       '@equinor/fusion-framework-cli':
-        specifier: ^15.6.1
-        version: 15.6.1(5039d806b94fe5069b39d420809d8458)
+        specifier: ^15.6.3
+        version: 15.6.3(d3f8da9db511a1cbe244877630b0d37e)
       '@equinor/fusion-framework-react-app':
-        specifier: ^14.3.4
-        version: 14.3.4(3735db81d2c4e5c283eeeffb1e16d359)
+        specifier: ^14.3.6
+        version: 14.3.6(1d4d895eaf9e9249604d65f4ba8f8138)
       react:
         specifier: ^19.3.1
         version: 19.3.1
@@ -61,26 +61,26 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0
       '@equinor/fusion-framework-cli':
-        specifier: ^15.6.1
-        version: 15.6.1(ea3e220f86e1e22bf9c6582260cc0232)
+        specifier: ^15.6.3
+        version: 15.6.3(d3f8da9db511a1cbe244877630b0d37e)
       '@equinor/fusion-framework-module-http':
-        specifier: ^8.1.3
-        version: 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
+        specifier: ^8.1.4
+        version: 8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
       '@equinor/fusion-framework-module-navigation':
-        specifier: ^7.0.11
-        version: 7.0.11(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
+        specifier: ^7.0.12
+        version: 7.0.12(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
       '@equinor/fusion-framework-react-ag-grid':
-        specifier: ^37.1.3
-        version: 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: ^37.1.4
+        version: 37.1.4(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@equinor/fusion-framework-react-app':
-        specifier: ^14.3.4
-        version: 14.3.4(4291a571abe24ad48d215cce43c11bbc)
+        specifier: ^14.3.6
+        version: 14.3.6(1d4d895eaf9e9249604d65f4ba8f8138)
       '@equinor/fusion-framework-react-module-context':
-        specifier: ^7.0.5
-        version: 7.0.5(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
+        specifier: ^7.0.6
+        version: 7.0.6(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
       '@equinor/fusion-framework-react-router':
-        specifier: ^2.4.5
-        version: 2.4.5(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
+        specifier: ^2.4.6
+        version: 2.4.6(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
       '@equinor/fusion-observable':
         specifier: ^9.2.4
         version: 9.2.5(@types/react@19.3.0)(react@19.3.1)
@@ -187,10 +187,6 @@ packages:
 
   '@babel/helper-validator-identifier@7.29.7':
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/runtime@7.28.4':
-    resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.29.2':
@@ -353,19 +349,19 @@ packages:
       react-dom: ^19
       styled-components: ^6
 
-  '@equinor/fusion-framework-app@13.1.10':
-    resolution: {integrity: sha512-xYpjW+pJYS8u+W2f6uPNxxim1GPDMZPITPq1xkF8IRng80y7ttzQl1vQU2EWqiv4wh0XGjzewiw27sh3f/RY+g==}
+  '@equinor/fusion-framework-app@13.2.0':
+    resolution: {integrity: sha512-+OhyrFIFDDduUb4Chqp3o7d74/9nQ7gP/odkM9eMb/01f+rkRa1aGUpGL/Dn+uQ+Yep6+LrQSvO1mTNFaQ222A==}
     peerDependencies:
-      '@equinor/fusion-framework-module-bookmark': ^4.1.4
-      '@equinor/fusion-framework-module-state': ^2.0.6
+      '@equinor/fusion-framework-module-bookmark': ^4.1.5
+      '@equinor/fusion-framework-module-state': ^2.0.7
     peerDependenciesMeta:
       '@equinor/fusion-framework-module-bookmark':
         optional: true
       '@equinor/fusion-framework-module-state':
         optional: true
 
-  '@equinor/fusion-framework-cli@15.6.1':
-    resolution: {integrity: sha512-wYurY5hI2B/RVJ9tk/SQt+xu+4usstGrWmxuhD3E0stxKCK56i9UoGS5N5C1lTaC9ey9buFYWDBt+piDat0Itw==}
+  '@equinor/fusion-framework-cli@15.6.3':
+    resolution: {integrity: sha512-vFSbHLc3O19nTPnmDlh3+UCAl0GfSLnDJD9PFalqAay9oZ0DBplOeRqkMa3hDnHaW6Ntg9DDrXDzNqQWiAaYtA==}
     engines: {node: '>=22.22.2'}
     hasBin: true
     peerDependencies:
@@ -374,30 +370,30 @@ packages:
       typescript:
         optional: true
 
-  '@equinor/fusion-framework-dev-portal@11.1.6':
-    resolution: {integrity: sha512-1c4ZM90Cbc/3o1BbRFHjFICqh4kaZhi+Wvzmw9ib6tR9UmMnatsJko/4cgrKBT0PRovnsv0qwTVCjHTSSEtRFg==}
+  '@equinor/fusion-framework-dev-portal@11.1.8':
+    resolution: {integrity: sha512-71IsMPN9cfwB/HOv9nytQsBDmuM4x5lawNYoz+tt9BlV3S+cpqgTj9OaeEu0Q4lo4FZBcMzz4rqMUsBX6LJitQ==}
     peerDependencies:
-      '@equinor/fusion-framework': 9.0.4
-      '@equinor/fusion-framework-app': 13.1.10
-      '@equinor/fusion-framework-dev-server': 2.3.1
-      '@equinor/fusion-framework-module-ag-grid': 37.1.3
-      '@equinor/fusion-framework-module-analytics': 3.1.9
-      '@equinor/fusion-framework-module-app': 8.2.1
-      '@equinor/fusion-framework-module-bookmark': 4.1.4
+      '@equinor/fusion-framework': 9.0.5
+      '@equinor/fusion-framework-app': 13.2.0
+      '@equinor/fusion-framework-dev-server': 2.3.2
+      '@equinor/fusion-framework-module-ag-grid': 37.1.4
+      '@equinor/fusion-framework-module-analytics': 3.1.10
+      '@equinor/fusion-framework-module-app': 8.2.2
+      '@equinor/fusion-framework-module-bookmark': 4.1.5
       '@equinor/fusion-framework-module-context': 9.0.2
-      '@equinor/fusion-framework-module-feature-flag': 2.1.2
-      '@equinor/fusion-framework-module-navigation': 7.0.11
-      '@equinor/fusion-framework-module-roles': ^0.3.1
-      '@equinor/fusion-framework-module-services': 8.1.4
-      '@equinor/fusion-framework-module-telemetry': 7.2.1
-      '@equinor/fusion-framework-plugin-context-navigation': 1.0.5
-      '@equinor/fusion-framework-react': 9.0.3
-      '@equinor/fusion-framework-react-components-bookmark': 2.0.6
-      '@equinor/fusion-framework-react-components-people-provider': 2.0.7
-      '@equinor/fusion-framework-react-components-roles': ^0.2.1
-      '@equinor/fusion-framework-react-module-bookmark': 7.0.2
-      '@equinor/fusion-observable': 9.2.4
-      '@equinor/fusion-query': 7.0.6
+      '@equinor/fusion-framework-module-feature-flag': 2.1.3
+      '@equinor/fusion-framework-module-navigation': 7.0.12
+      '@equinor/fusion-framework-module-roles': ^0.3.2
+      '@equinor/fusion-framework-module-services': 8.1.5
+      '@equinor/fusion-framework-module-telemetry': 7.2.2
+      '@equinor/fusion-framework-plugin-context-navigation': 1.0.6
+      '@equinor/fusion-framework-react': 9.0.4
+      '@equinor/fusion-framework-react-components-bookmark': 2.0.7
+      '@equinor/fusion-framework-react-components-people-provider': 2.0.8
+      '@equinor/fusion-framework-react-components-roles': ^0.2.2
+      '@equinor/fusion-framework-react-module-bookmark': 7.0.3
+      '@equinor/fusion-observable': 9.2.5
+      '@equinor/fusion-query': 7.0.7
     peerDependenciesMeta:
       '@equinor/fusion-framework':
         optional: true
@@ -440,16 +436,16 @@ packages:
       '@equinor/fusion-query':
         optional: true
 
-  '@equinor/fusion-framework-dev-server@2.3.1':
-    resolution: {integrity: sha512-qWWWmSh7aw7x9VQngHeyp5/JYlBZ/JaNhCtY/JPcS87mhV/Kt0lw4ZA4I0wRAwCcNO3cHlByUU+5wQF3EsFkag==}
+  '@equinor/fusion-framework-dev-server@2.3.2':
+    resolution: {integrity: sha512-p4KxMW4yPxKqgp9e5Sl5vInylVKlfGW/NXJCm8E9JoTDH40xx/mmrG5o7Vzpz8ZJf4HkuOPYcBzMPW/4PMIWhw==}
     peerDependencies:
       vite: ^7.0.0 || ^8.0.0
 
-  '@equinor/fusion-framework-module-ag-grid@37.1.3':
-    resolution: {integrity: sha512-RxJ2+Ay+pWVUZSf8M22W42Ig6WagMF+9IR24+hwyCsWLiEa5+4dv0q9s+YNCcd9VFxjdvyg+gj3AcvjIYd877g==}
+  '@equinor/fusion-framework-module-ag-grid@37.1.4':
+    resolution: {integrity: sha512-icx0j6ROUBG96AULgT70rH4Q5Uu4S/vL3dzOY4+4+oa85Qk0s0KcQnkrvX2JnMhBS01q3WsBXkbc6s2m/AJx9g==}
     peerDependencies:
       '@equinor/eds-tokens': ^2.0.0
-      '@equinor/fusion-framework-module': ^6.1.5
+      '@equinor/fusion-framework-module': ^6.1.6
       ag-charts-enterprise: '*'
       ag-grid-community: '>=36.0.0'
       ag-grid-enterprise: '>=36.0.0'
@@ -457,11 +453,11 @@ packages:
       ag-charts-enterprise:
         optional: true
 
-  '@equinor/fusion-framework-module-app@8.2.1':
-    resolution: {integrity: sha512-4PGkP2eiRnPmlXWofDy8se5YdK5SyJmr89S9iWoV3dZEsOT4p3Q/Cg/zcho11O+gBOcz8KNjpxccFcDJVV6m3Q==}
+  '@equinor/fusion-framework-module-app@8.2.2':
+    resolution: {integrity: sha512-qHQYwdCm9E3eVigS+jw2ojnlfy1v5lmzAv+avcrH+AtLIQ78soOcDjOF464cBkp1+mvTezs6NWLDsdz1jgeZjg==}
 
-  '@equinor/fusion-framework-module-azure-identity@0.3.3':
-    resolution: {integrity: sha512-vFM00sPluipAJXcAHmToEHF2YvCs8UsRLHuO7RyUu4HVzwuEgUjqagcTHSnKe5ersQg6R2Fj3NGqmFB5Ve3U3w==}
+  '@equinor/fusion-framework-module-azure-identity@0.3.4':
+    resolution: {integrity: sha512-JrSdwNPykn+pEjeyQxVnkd49RclmJ0jd4yomgJAYd5FtR6MqcLatBYFHgdI+rWg+H/sIE/43N6kATUJQEZKs+A==}
 
   '@equinor/fusion-framework-module-context@9.0.2':
     resolution: {integrity: sha512-4Dx2yp+L03TTRamT5uuQhMBsvIjxRTrWpsr6aV+/JIu14gUQk0JXndt/SWYb8euhmXuZXgiH+rf/iuHKm4OfrQ==}
@@ -478,11 +474,11 @@ packages:
       '@faker-js/faker':
         optional: true
 
-  '@equinor/fusion-framework-module-event@6.1.2':
-    resolution: {integrity: sha512-bDo/6zFYezwM5zN5wq6bpyFoRGnhSTVKxXfGne8y3eGKLQM/jgOLS4Bxj3zE5/IphUhhLSluHSAtamEeh1d8Zw==}
+  '@equinor/fusion-framework-module-event@6.1.3':
+    resolution: {integrity: sha512-0iiddiET/BfHF7+xNjErjYLGYWq+aa94IYTnO9mZ6meCW/DV05cOpL10i1qLkbRGm5UnijMhkLGg+pNot15TBA==}
 
-  '@equinor/fusion-framework-module-http@8.1.3':
-    resolution: {integrity: sha512-zf8jg+pz4RhHcnjtbS04lSRDgi1vC/AzxaW4E4/gjdzULL1xCu9klpCJ34bsPK+ZIWBsuUZN3xeobp8wQcxfeQ==}
+  '@equinor/fusion-framework-module-http@8.1.4':
+    resolution: {integrity: sha512-ALkK5OTp1as3bse9nPFDXHlgO767c/9IiF4qi8SddiGcW+TRP4e2DC6BnPmraMV9HRh/PSmumfFnFf80UTj3pw==}
 
   '@equinor/fusion-framework-module-msal@12.0.1':
     resolution: {integrity: sha512-DtHKdNRCZ0xVW/g+/6x8qJoWzHd9u2xpg8MfIbHX/FwdYnR3rs4m/GlVkxvZsG8UOP2eNoPvzFh/Eqp+9PRtyA==}
@@ -499,29 +495,29 @@ packages:
       '@types/semver':
         optional: true
 
-  '@equinor/fusion-framework-module-navigation@7.0.11':
-    resolution: {integrity: sha512-qIIHsuFnmivalPBbfeJVHUKZG60SUEr9XU84/1avDbmOoKUTaJdrEiFeL/hDUTeUrKoce0In+Qp58Dwy9UaGNQ==}
+  '@equinor/fusion-framework-module-navigation@7.0.12':
+    resolution: {integrity: sha512-pfA8sbdIqdGKdQ+uWa38HXUW87gzU2GeDOw3+zEgp96tcYlNQFbzgRPC32XOpv0uc9c5WT/DCatBfQGDf0Lf+g==}
     peerDependencies:
-      '@equinor/fusion-framework-module': ^6.1.5
-      '@equinor/fusion-observable': ^9.2.4
+      '@equinor/fusion-framework-module': ^6.1.6
+      '@equinor/fusion-observable': ^9.2.5
       '@remix-run/router': ^1.0.0
       rxjs: ^7.0.0
 
   '@equinor/fusion-framework-module-service-discovery@10.2.0':
     resolution: {integrity: sha512-PP6SJ36jLEWG/1tjjbgamV+a0tAn/VcGnjV4Bs0GrhzHSKWGj+NRT4aFZATskiHpsj2u3R2OtR5mmkQcze23ug==}
 
-  '@equinor/fusion-framework-module-services@8.1.4':
-    resolution: {integrity: sha512-BwZUILUpJwYLKO1xBwgwN0JkSWp8yf7Y3IGolA7qm5YyIS848YMMu3WDMdpPnjAmzIkMCLGKuaemMjv6WmS2yA==}
+  '@equinor/fusion-framework-module-services@8.1.5':
+    resolution: {integrity: sha512-AAFLDMNHdPyv00A6fbWVRdORXhzEtaRPtfqo0GJ9WruGvdJetGQSn1tPqaxrWJPiqu/VDfgHL15HUJWxiK7qbA==}
     peerDependencies:
-      '@equinor/fusion-framework-module': ^6.1.5
+      '@equinor/fusion-framework-module': ^6.1.6
       odata-query: ^8.0.0
 
-  '@equinor/fusion-framework-module-telemetry@7.2.1':
-    resolution: {integrity: sha512-r56vKjGqy+UKhmKx7u/YuXuguP7MDHHVAEg05CfFvfgfciGPVraj5x2SLl1wZc8FrWnrZ57Fn/i569MpLjolag==}
+  '@equinor/fusion-framework-module-telemetry@7.2.2':
+    resolution: {integrity: sha512-Ssr/0MOakAzUGsARhtdDM7jKHUuUPu6KjgN7G+e0jGjNDg6twCnf/Pyoz1Uod50avcAT77l9XyX5nZRkdXzuRw==}
     peerDependencies:
-      '@equinor/fusion-framework-module': 6.1.5
-      '@equinor/fusion-framework-module-event': 6.1.2
-      '@equinor/fusion-observable': 9.2.4
+      '@equinor/fusion-framework-module': 6.1.6
+      '@equinor/fusion-framework-module-event': 6.1.3
+      '@equinor/fusion-observable': 9.2.5
       '@microsoft/applicationinsights-web': ^3.0.0
       '@opentelemetry/api-logs': ^0.223.0
       '@opentelemetry/exporter-logs-otlp-http': ^0.223.0
@@ -541,14 +537,6 @@ packages:
       '@opentelemetry/sdk-logs':
         optional: true
 
-  '@equinor/fusion-framework-module@6.1.5':
-    resolution: {integrity: sha512-v7qZkgBGgu8WhdudhYN8jkfNBwcMEkMO+Kj4jRLihTOcJeAY7Eg6zgbSszq6y0oxLw3+6jHRoe+dHKqAHJgnXQ==}
-    peerDependencies:
-      '@types/semver': ^7.0.0
-    peerDependenciesMeta:
-      '@types/semver':
-        optional: true
-
   '@equinor/fusion-framework-module@6.1.6':
     resolution: {integrity: sha512-QqIJMajF1CLlTKnzHUQlD+pEOuihJHTC2aARKQv2S8xsdlgcvIjWvyx+xKOfDYgNcjvyYjXotjjh7lmDEIIY+w==}
     peerDependencies:
@@ -557,36 +545,36 @@ packages:
       '@types/semver':
         optional: true
 
-  '@equinor/fusion-framework-plugin-context-navigation@1.0.5':
-    resolution: {integrity: sha512-gUpwCT3LBARBzfyInTa+IRWfifADrzl92YewTlxLx9sSzqvJpeAtwSUljIdjAcyDTD6nnI28E5sXQxoEGX9p7Q==}
+  '@equinor/fusion-framework-plugin-context-navigation@1.0.6':
+    resolution: {integrity: sha512-RiwS7naoNrH0el0AVr7Emr8z3RqJ+QPJxX31KbI8tdFRJ84xYL9bGyJVG0OX4EI6QeT8qax3ALeM9SWJiy9azw==}
     peerDependencies:
-      '@equinor/fusion-framework-module': ^6.1.5
-      '@equinor/fusion-framework-module-app': ^8.2.1
+      '@equinor/fusion-framework-module': ^6.1.6
+      '@equinor/fusion-framework-module-app': ^8.2.2
       '@equinor/fusion-framework-module-context': ^9.0.2
-      '@equinor/fusion-framework-module-event': ^6.1.2
-      '@equinor/fusion-framework-module-navigation': ^7.0.11
+      '@equinor/fusion-framework-module-event': ^6.1.3
+      '@equinor/fusion-framework-module-navigation': ^7.0.12
       rxjs: ^7.8.1
 
-  '@equinor/fusion-framework-react-ag-grid@37.1.3':
-    resolution: {integrity: sha512-U0oXqaC/zUP4WLxspWbL+HnfOEaWHZQ8IuLE2k72WLR5VhDs3ru+jxW1E1XIhyIPFB63ohk1an9mTcd1SQNc0A==}
+  '@equinor/fusion-framework-react-ag-grid@37.1.4':
+    resolution: {integrity: sha512-QYtCSXWtDTMo0f7/Ic6vFO6PWoxx8P41UjPSDrnYgWhmPFkVoOE8U6bG9mbLTtBgVVcZ87xs0+OnGbzz4BEWdw==}
     peerDependencies:
-      '@equinor/fusion-framework-react-module': ^4.0.5
+      '@equinor/fusion-framework-react-module': ^4.0.6
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
 
-  '@equinor/fusion-framework-react-app@14.3.4':
-    resolution: {integrity: sha512-O12ZeVGm5zr9TzQfspYGlr5D/rPme27MvQSQqnUQSzT7d0DOLouN+XITqH32fb2QXblBNyEW4LpHcLrwixmJbw==}
+  '@equinor/fusion-framework-react-app@14.3.6':
+    resolution: {integrity: sha512-GXh/I6sk0zrfrg2yLFyIwkObdf85skTuAK+StqOTzaW1yTvb4vkNkqf9OseD/bhSpeUHDx5U5QzU32XKLjXdMg==}
     peerDependencies:
-      '@equinor/fusion-framework-module-ag-grid': ^37.1.3
+      '@equinor/fusion-framework-module-ag-grid': ^37.1.4
       '@equinor/fusion-framework-module-feature-flag': '*'
       '@equinor/fusion-framework-module-msal': ^12.0.1
-      '@equinor/fusion-framework-module-roles': ^0.3.1
-      '@equinor/fusion-framework-module-state': ^2.0.6
-      '@equinor/fusion-framework-react-ag-grid': ^37.1.3
+      '@equinor/fusion-framework-module-roles': ^0.3.2
+      '@equinor/fusion-framework-module-state': ^2.0.7
+      '@equinor/fusion-framework-react-ag-grid': ^37.1.4
       '@equinor/fusion-framework-react-module-ag-grid': '*'
       '@equinor/fusion-framework-react-module-bookmark': '*'
       '@equinor/fusion-framework-react-module-context': '*'
-      '@equinor/fusion-framework-react-router': ^2.4.5
+      '@equinor/fusion-framework-react-router': ^2.4.6
       '@equinor/fusion-observable': '*'
       '@types/react': ^18.0.0 || ^19.0.0
       react: ^18.0.0 || ^19.0.0
@@ -620,8 +608,8 @@ packages:
       rxjs:
         optional: true
 
-  '@equinor/fusion-framework-react-module-context@7.0.5':
-    resolution: {integrity: sha512-1LGD/Z/+qzyfZLowTlpDCqHv4D/3OYI23CUF0P4s1phQLpobCmvBKRAjKZne9eHcOK7G/hJcsraRuf0djOxupg==}
+  '@equinor/fusion-framework-react-module-context@7.0.6':
+    resolution: {integrity: sha512-6kCRFitziFSjsYxEgJCeAz0oFgOzTKAD6XQp9VaUWY6a9j1Q3n9gFO8sN64/YcvnwD9QojEPA/NBOng2NXjm7g==}
     peerDependencies:
       '@types/react': ^18.0.0 || ^19.0.0
       react: ^18.0.0 || ^19.0.0
@@ -632,23 +620,11 @@ packages:
       react-dom:
         optional: true
 
-  '@equinor/fusion-framework-react-module-http@12.0.2':
-    resolution: {integrity: sha512-CJHfBpb+iCu1+toB6v4NlumsVPA7ur/xsScV6pGZn6jJ+w43m+VkPuTlyIKKrMWmcBpb1Z9bPLL4Cl8hHnOznQ==}
+  '@equinor/fusion-framework-react-module-http@12.0.3':
+    resolution: {integrity: sha512-m/X7JN+KGw3I+t8sue5ya68VpAds0A2nJ03Rhvg0lXYxzxlaQgcII5aiJHm8Mm9XHUcGO3SlUsSEt8MvuR24gQ==}
     peerDependencies:
-      '@equinor/fusion-framework-module-http': ^8.1.3
-      '@equinor/fusion-framework-react-module': ^4.0.5
-      '@types/react': ^18.0.0 || ^19.0.0
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react-dom:
-        optional: true
-
-  '@equinor/fusion-framework-react-module@4.0.5':
-    resolution: {integrity: sha512-O4LeMQXItldwh9/H5qaM50cx26awvddzPsq0p5pdbQNOiUeez3MeiD2M9ymhh0XQKG2n2q2BlwDcQpd3UCugDA==}
-    peerDependencies:
+      '@equinor/fusion-framework-module-http': ^8.1.4
+      '@equinor/fusion-framework-react-module': ^4.0.6
       '@types/react': ^18.0.0 || ^19.0.0
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -670,8 +646,8 @@ packages:
       react-dom:
         optional: true
 
-  '@equinor/fusion-framework-react-router@2.4.5':
-    resolution: {integrity: sha512-4818aa1SE6e2SUStOKWgDkXia8S6VaCVQI1/i3KaQJeHYZBZLJf75IPlukdVhXMYcHUkNUpSkG2CZZ0B11Xd1w==}
+  '@equinor/fusion-framework-react-router@2.4.6':
+    resolution: {integrity: sha512-z73kpughyDgbxPmdy38I6UPtpRtCXheZyNeUENEFvC1T1IANvyEuVre6nh2XYF7Jw252ibYOg6Px4oT3tfE5kA==}
     peerDependencies:
       '@types/react': ^18.0.0 || ^19.0.0
       react: ^18.0.0 || ^19.0.0
@@ -682,13 +658,13 @@ packages:
       react-dom:
         optional: true
 
-  '@equinor/fusion-framework-react@9.0.3':
-    resolution: {integrity: sha512-KtJg3mvAT8sj54SP6rXfKUUlFVQZod+iN1MDkNXQMNQu1Rwz6bdk89vqOcFluI+RRcD58TnVTt1B0wZERObFmw==}
+  '@equinor/fusion-framework-react@9.0.4':
+    resolution: {integrity: sha512-0aEI+ytJgDQV4ZrMv5ZYxyI2UUaRaPJxOMkHRVcbPfH0OrZRdhvfHzjiKuUF9E386azkK++r0shKpzDUY4KFWQ==}
     peerDependencies:
       '@equinor/fusion-framework-module-event': '*'
-      '@equinor/fusion-framework-module-feature-flag': ^2.1.2
+      '@equinor/fusion-framework-module-feature-flag': ^2.1.3
       '@equinor/fusion-framework-react-module-context': '*'
-      '@equinor/fusion-framework-react-module-signalr': ^4.0.6
+      '@equinor/fusion-framework-react-module-signalr': ^4.0.7
       '@types/react': ^18.0.0 || ^19.0.0
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -706,19 +682,11 @@ packages:
       react-dom:
         optional: true
 
-  '@equinor/fusion-framework-vite-plugin-api-service@2.1.1':
-    resolution: {integrity: sha512-GhFV5y+ynP/yv9+6f/HQcIt44ciTol/4ReneqIzbVIpEy41KexPO8MDZGIMUsbnFfrIwieB6ma1TXZ+/+6n3Qw==}
+  '@equinor/fusion-framework-vite-plugin-api-service@2.1.2':
+    resolution: {integrity: sha512-+uvqEbgDwPmzYyQeTZ64QGnLaoJK5hlmcmi6Zcy/VGz9fwRNO200pNLs7ms28jgauv8dpNNbTDmjJrMiisattw==}
 
-  '@equinor/fusion-framework-vite-plugin-raw-imports@2.0.4':
-    resolution: {integrity: sha512-yxVrXqoZqdq8G7lWHXcL0EJA4dGsoU6BB6kfqQNU92nT95n6cYdvqlJY1hIQRur10CYN5eyVGNSrqc6meR7tkw==}
-
-  '@equinor/fusion-framework-vite-plugin-react-router@0.1.3':
-    resolution: {integrity: sha512-Do4Fn/LOIJHQBYX2hyvDtXgZagveugplOjL1Q9tyMrwoulMD95A1g8vK0+Xq2TUvm7TomAIyyhDb8KAg6gI9lQ==}
-    peerDependencies:
-      vite: ^7.0.0 || ^8.0.0
-    peerDependenciesMeta:
-      vite:
-        optional: true
+  '@equinor/fusion-framework-vite-plugin-raw-imports@2.0.5':
+    resolution: {integrity: sha512-ZgwfzcPRzluUZTxs7VoqSU4aM9Kx2NtYqzT97nnE8ulvhTEQpjrgA9mKEPFoQUxjWGCqMg2ZEcfaUJfwRrchtg==}
 
   '@equinor/fusion-framework-vite-plugin-react-router@0.1.5':
     resolution: {integrity: sha512-M5/RIHfrzsKPppRMH6LyOo+l2C99ldOySkQDc6RKAyQqNdLgDTKCQUfs4/1yb+hix6OEv92v0Bahz6+TnwlEMw==}
@@ -728,23 +696,14 @@ packages:
       vite:
         optional: true
 
-  '@equinor/fusion-framework-vite-plugin-spa@5.2.2':
-    resolution: {integrity: sha512-JyPHexvRI6A/Bq2p5IMsoX0dbSjiQkTe2VEgWcy21cprIS3QZA2O9EwJL8/PLGEXqvJhXim9xS13YUBnjgvjdg==}
+  '@equinor/fusion-framework-vite-plugin-spa@5.2.3':
+    resolution: {integrity: sha512-hrkUJNomRZvBFYV5yNjLDq1pYfS/MylcavtFgR9mgIymkIes8E4QE3hztKMg8Mxta4nl6k02ASPGwEzIFDUylg==}
 
-  '@equinor/fusion-framework@9.0.4':
-    resolution: {integrity: sha512-tfEr0N/8Gjs2JnZ2Szg052big6+/dHukhLUG0QWnzPdQj2ZrAj4YYf57ScAVoOFeo0SlYUewLunaj3ZSMcVzJw==}
-
-  '@equinor/fusion-imports@2.0.6':
-    resolution: {integrity: sha512-ko3oZnbBvAt7VVVvRQShcY6hgVs7eNL/LRhfxSQJ0zaX5DWNthzeKZ7XyOVhOauuwvbp8HrJkKWnlgcNn64OzA==}
+  '@equinor/fusion-framework@9.0.5':
+    resolution: {integrity: sha512-j86px0Al5vaZ0G4+NLymgPOu8apqEcEf1EnpFRZ2R08LRFY3W60yLJtnMsLKSgs/hVOQASkJIrUraPoa9L8Mkg==}
 
   '@equinor/fusion-imports@2.0.7':
     resolution: {integrity: sha512-2wzr/CJzgaXkSvrrqX5rQ6MZCy6S0Y2MVU27x530qF/UxJprDNGVrszwZpVnAKM2zprzqGRDiCSHvFsoC2GtlA==}
-
-  '@equinor/fusion-log@2.0.6':
-    resolution: {integrity: sha512-Q3I/459UrHD19s/dzbXTY/Dnhf7mY9vj2Q8jf7CYHWBA7RyBouxERVd+Z+9nUdXhefD5Wb2Ir/q06u+qfehoXQ==}
-    peerDependencies:
-      chalk: '>=5'
-      rxjs: '>=7'
 
   '@equinor/fusion-log@2.0.7':
     resolution: {integrity: sha512-u56S3+L3iKy3eQYVlxE5jFRHfIKLixyayE/28fsAWipgqjRtaQa9BOdzHuetNJqG6BpcObL0s4xDRXJIe+a7bA==}
@@ -2368,7 +2327,6 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   globrex@0.1.2:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
@@ -2427,7 +2385,6 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
-    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -2781,7 +2738,6 @@ packages:
   prebuild-install@7.1.3:
     resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
     engines: {node: '>=10'}
-    deprecated: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
     hasBin: true
 
   pretty-ms@9.3.1:
@@ -2884,7 +2840,6 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
-    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rolldown@1.2.14:
@@ -3027,7 +2982,6 @@ packages:
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
     engines: {node: ^18 || >=20}
-    deprecated: unmaintained
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
@@ -3281,8 +3235,6 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@babel/runtime@7.28.4': {}
-
   '@babel/runtime@7.29.2': {}
 
   '@biomejs/biome@2.5.15':
@@ -3482,15 +3434,15 @@ snapshots:
       react-dom: 19.3.1(react@19.3.1)
       styled-components: 6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
 
-  '@equinor/fusion-framework-app@13.1.10(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
+  '@equinor/fusion-framework-app@13.2.0(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
     dependencies:
-      '@equinor/fusion-framework': 9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-app': 8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
+      '@equinor/fusion-framework': 9.0.5(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-app': 8.2.2(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
+      '@equinor/fusion-framework-module-event': 6.1.3(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-http': 8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module-telemetry': 7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
       lodash.clonedeep: 4.5.0
       rxjs: 7.8.2
     transitivePeerDependencies:
@@ -3510,14 +3462,14 @@ snapshots:
       - typescript
       - zod
 
-  '@equinor/fusion-framework-cli@15.6.1(5039d806b94fe5069b39d420809d8458)':
+  '@equinor/fusion-framework-cli@15.6.3(d3f8da9db511a1cbe244877630b0d37e)':
     dependencies:
-      '@equinor/fusion-framework-dev-portal': 11.1.6(8b7203ff551268018a429071559d3cc1)
-      '@equinor/fusion-framework-dev-server': 2.3.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)
-      '@equinor/fusion-framework-module-azure-identity': 0.3.3(@types/semver@7.7.1)
-      '@equinor/fusion-framework-vite-plugin-raw-imports': 2.0.4
-      '@equinor/fusion-framework-vite-plugin-react-router': 0.1.3(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
-      '@equinor/fusion-imports': 2.0.6
+      '@equinor/fusion-framework-dev-portal': 11.1.8(8b12d18aefa78daa0f7f3405319e7994)
+      '@equinor/fusion-framework-dev-server': 2.3.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)
+      '@equinor/fusion-framework-module-azure-identity': 0.3.4(@types/semver@7.7.1)
+      '@equinor/fusion-framework-vite-plugin-raw-imports': 2.0.5
+      '@equinor/fusion-framework-vite-plugin-react-router': 0.1.5(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
+      '@equinor/fusion-imports': 2.0.7
       '@types/inquirer': 9.0.10
       chalk: 6.0.1
       commander: 15.0.0
@@ -3585,118 +3537,28 @@ snapshots:
       - tsx
       - yaml
 
-  '@equinor/fusion-framework-cli@15.6.1(ea3e220f86e1e22bf9c6582260cc0232)':
+  '@equinor/fusion-framework-dev-portal@11.1.8(8b12d18aefa78daa0f7f3405319e7994)':
     dependencies:
-      '@equinor/fusion-framework-dev-portal': 11.1.6(6142486ebd7a3289dfe87f0d31ded36c)
-      '@equinor/fusion-framework-dev-server': 2.3.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)
-      '@equinor/fusion-framework-module-azure-identity': 0.3.3(@types/semver@7.7.1)
-      '@equinor/fusion-framework-vite-plugin-raw-imports': 2.0.4
-      '@equinor/fusion-framework-vite-plugin-react-router': 0.1.3(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
-      '@equinor/fusion-imports': 2.0.6
-      '@types/inquirer': 9.0.10
-      chalk: 6.0.1
-      commander: 15.0.0
-      deepmerge: 4.3.1
-      dotenv: 18.0.8
-      execa: 10.2.0
-      find-up: 8.0.0
-      inquirer: 14.2.3(@types/node@26.6.5)
-      is-mergeable-object: 1.1.1
-      is-path-inside: 4.0.0
-      ora: 9.4.1
-      read-package-up: 12.0.0
-      semver: 7.8.5
-      simple-git: 4.0.2
-      vite: 8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1)
-      vite-tsconfig-paths: 6.1.1(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
-      zod: 4.6.7
+      '@equinor/fusion-framework-plugin-context-navigation': 1.0.6(80bacd858b1b166468fa8792c132d97d)
     optionalDependencies:
-      typescript: 7.0.2
-    transitivePeerDependencies:
-      - '@equinor/fusion-framework'
-      - '@equinor/fusion-framework-app'
-      - '@equinor/fusion-framework-module-ag-grid'
-      - '@equinor/fusion-framework-module-analytics'
-      - '@equinor/fusion-framework-module-app'
-      - '@equinor/fusion-framework-module-bookmark'
-      - '@equinor/fusion-framework-module-context'
-      - '@equinor/fusion-framework-module-event'
-      - '@equinor/fusion-framework-module-feature-flag'
-      - '@equinor/fusion-framework-module-navigation'
-      - '@equinor/fusion-framework-module-roles'
-      - '@equinor/fusion-framework-module-services'
-      - '@equinor/fusion-framework-module-telemetry'
-      - '@equinor/fusion-framework-plugin-context-navigation'
-      - '@equinor/fusion-framework-react'
-      - '@equinor/fusion-framework-react-components-bookmark'
-      - '@equinor/fusion-framework-react-components-people-provider'
-      - '@equinor/fusion-framework-react-components-roles'
-      - '@equinor/fusion-framework-react-module-bookmark'
-      - '@equinor/fusion-observable'
-      - '@equinor/fusion-query'
-      - '@microsoft/applicationinsights-web'
-      - '@opentelemetry/api-logs'
-      - '@opentelemetry/exporter-logs-otlp-http'
-      - '@opentelemetry/sdk-logs'
-      - '@rolldown/plugin-babel'
-      - '@types/node'
-      - '@types/react'
-      - '@types/semver'
-      - '@vitejs/devtools'
-      - babel-plugin-react-compiler
-      - debug
-      - esbuild
-      - jiti
-      - less
-      - oxc-transform-react
-      - react
-      - rxjs
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
-
-  '@equinor/fusion-framework-dev-portal@11.1.6(6142486ebd7a3289dfe87f0d31ded36c)':
-    dependencies:
-      '@equinor/fusion-framework-plugin-context-navigation': 1.0.5(c4bcf685b378e6b85c26b2dbd1eb4a25)
-    optionalDependencies:
-      '@equinor/fusion-framework': 9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-app': 13.1.10(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-dev-server': 2.3.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)
-      '@equinor/fusion-framework-module-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
-      '@equinor/fusion-framework-module-app': 8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
-      '@equinor/fusion-framework-module-services': 8.1.4(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(odata-query@8.0.4)
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
-      '@equinor/fusion-framework-react': 9.0.3(0f317bb82dab9c07bf7824200b2f283c)
+      '@equinor/fusion-framework': 9.0.5(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-app': 13.2.0(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-dev-server': 2.3.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)
+      '@equinor/fusion-framework-module-ag-grid': 37.1.4(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
+      '@equinor/fusion-framework-module-app': 8.2.2(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
+      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
+      '@equinor/fusion-framework-module-navigation': 7.0.12(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
+      '@equinor/fusion-framework-module-services': 8.1.5(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(odata-query@8.0.4)
+      '@equinor/fusion-framework-module-telemetry': 7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
+      '@equinor/fusion-framework-react': 9.0.4(e61013b312d2ef38f44d9b0d13d070aa)
       '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
+      '@equinor/fusion-query': 7.0.7(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
 
-  '@equinor/fusion-framework-dev-portal@11.1.6(8b7203ff551268018a429071559d3cc1)':
+  '@equinor/fusion-framework-dev-server@2.3.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)':
     dependencies:
-      '@equinor/fusion-framework-plugin-context-navigation': 1.0.5(6a4e01897b504dcd1e83f44676df4915)
-    optionalDependencies:
-      '@equinor/fusion-framework': 9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-app': 13.1.10(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-dev-server': 2.3.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)
-      '@equinor/fusion-framework-module-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
-      '@equinor/fusion-framework-module-app': 8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
-      '@equinor/fusion-framework-module-services': 8.1.4(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(odata-query@8.0.4)
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
-      '@equinor/fusion-framework-react': 9.0.3(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
-
-  '@equinor/fusion-framework-dev-server@2.3.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)(typescript@7.0.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(zod@4.6.7)':
-    dependencies:
-      '@equinor/fusion-framework-vite-plugin-api-service': 2.1.1
-      '@equinor/fusion-framework-vite-plugin-spa': 5.2.2(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-log': 2.0.6(chalk@6.0.1)(rxjs@7.8.2)
+      '@equinor/fusion-framework-vite-plugin-api-service': 2.1.2
+      '@equinor/fusion-framework-vite-plugin-spa': 5.2.3(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-log': 2.0.7(chalk@6.0.1)(rxjs@7.8.2)
       '@vitejs/plugin-react': 6.1.2(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
       vite: 8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1)
     transitivePeerDependencies:
@@ -3720,22 +3582,14 @@ snapshots:
       - typescript
       - zod
 
-  '@equinor/fusion-framework-module-ag-grid@37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)':
-    dependencies:
-      '@equinor/eds-tokens': 2.2.0
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      ag-grid-community: 36.2.0
-      ag-grid-enterprise: 36.2.0
-    optional: true
-
-  '@equinor/fusion-framework-module-ag-grid@37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)':
+  '@equinor/fusion-framework-module-ag-grid@37.1.4(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)':
     dependencies:
       '@equinor/eds-tokens': 2.2.0
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
       ag-grid-community: 36.2.0
       ag-grid-enterprise: 36.2.0
 
-  '@equinor/fusion-framework-module-app@8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)':
+  '@equinor/fusion-framework-module-app@8.2.2(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)':
     dependencies:
       '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
       '@equinor/fusion-query': 7.0.7(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
@@ -3749,7 +3603,7 @@ snapshots:
       - chalk
       - react
 
-  '@equinor/fusion-framework-module-azure-identity@0.3.3(@types/semver@7.7.1)':
+  '@equinor/fusion-framework-module-azure-identity@0.3.4(@types/semver@7.7.1)':
     dependencies:
       '@azure/identity': 4.14.0
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
@@ -3760,22 +3614,7 @@ snapshots:
       - '@types/semver'
       - supports-color
 
-  '@equinor/fusion-framework-module-context@9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)':
-    dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-query': 7.0.7(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@types/semver': 7.7.1
-      fast-deep-equal: 3.1.3
-      rxjs: 7.8.2
-      semver: 7.8.5
-    optionalDependencies:
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
-    transitivePeerDependencies:
-      - '@types/react'
-      - chalk
-      - react
-
-  '@equinor/fusion-framework-module-context@9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)':
+  '@equinor/fusion-framework-module-context@9.0.2(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)':
     dependencies:
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
       '@equinor/fusion-query': 7.0.7(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
@@ -3784,34 +3623,22 @@ snapshots:
       rxjs: 7.8.2
       semver: 7.8.5
     optionalDependencies:
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
+      '@equinor/fusion-framework-module-telemetry': 7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
     transitivePeerDependencies:
       - '@types/react'
       - chalk
       - react
 
-  '@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1)':
+  '@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1)':
     dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
     transitivePeerDependencies:
       - '@types/semver'
 
-  '@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)':
+  '@equinor/fusion-framework-module-http@8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)':
     dependencies:
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      rxjs: 7.8.2
-      zod: 4.6.7
-    transitivePeerDependencies:
-      - '@equinor/fusion-framework-module-telemetry'
-      - '@types/semver'
-      - semver
-      - typescript
-
-  '@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)':
-    dependencies:
-      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
       rxjs: 7.8.2
       zod: 4.6.7
     transitivePeerDependencies:
@@ -3820,18 +3647,7 @@ snapshots:
       - semver
       - typescript
 
-  '@equinor/fusion-framework-module-msal@12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
-    dependencies:
-      '@azure/msal-browser': 5.25.1
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      semver: 7.8.5
-      typescript: 7.0.2
-      zod: 4.6.7
-    optionalDependencies:
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
-      '@types/semver': 7.7.1
-
-  '@equinor/fusion-framework-module-msal@12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
+  '@equinor/fusion-framework-module-msal@12.0.1(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
     dependencies:
       '@azure/msal-browser': 5.25.1
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
@@ -3839,30 +3655,10 @@ snapshots:
       typescript: 7.0.2
       zod: 4.6.7
     optionalDependencies:
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
+      '@equinor/fusion-framework-module-telemetry': 7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
       '@types/semver': 7.7.1
 
-  '@equinor/fusion-framework-module-msal@12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
-    dependencies:
-      '@azure/msal-browser': 5.25.1
-      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
-      semver: 7.8.5
-      typescript: 7.0.2
-      zod: 4.6.7
-    optionalDependencies:
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
-      '@types/semver': 7.7.1
-
-  '@equinor/fusion-framework-module-navigation@7.0.11(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)':
-    dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
-      '@remix-run/router': 1.23.0
-      rxjs: 7.8.2
-      uuid: 14.0.3
-      zod: 4.6.7
-
-  '@equinor/fusion-framework-module-navigation@7.0.11(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)':
+  '@equinor/fusion-framework-module-navigation@7.0.12(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)':
     dependencies:
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
       '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
@@ -3871,10 +3667,10 @@ snapshots:
       uuid: 14.0.3
       zod: 4.6.7
 
-  '@equinor/fusion-framework-module-service-discovery@10.2.0(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)':
+  '@equinor/fusion-framework-module-service-discovery@10.2.0(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)':
     dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-http': 8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
       '@equinor/fusion-query': 7.0.7(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
       rxjs: 7.8.2
       zod: 4.6.7
@@ -3887,33 +3683,13 @@ snapshots:
       - semver
       - typescript
 
-  '@equinor/fusion-framework-module-services@8.1.4(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(odata-query@8.0.4)':
-    dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      odata-query: 8.0.4
-      zod: 4.6.7
-
-  '@equinor/fusion-framework-module-services@8.1.4(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(odata-query@8.0.4)':
+  '@equinor/fusion-framework-module-services@8.1.5(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(odata-query@8.0.4)':
     dependencies:
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
       odata-query: 8.0.4
       zod: 4.6.7
-    optional: true
 
-  '@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))':
-    dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
-      deepmerge: 4.3.1
-      rxjs: 7.8.2
-      zod: 4.6.7
-    optionalDependencies:
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
-      '@opentelemetry/api-logs': 0.223.0
-      '@opentelemetry/resources': 2.12.0(@opentelemetry/api@1.9.1)
-      '@opentelemetry/sdk-logs': 0.223.0(@opentelemetry/api@1.9.1)
-
-  '@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))':
+  '@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))':
     dependencies:
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
       '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
@@ -3921,18 +3697,10 @@ snapshots:
       rxjs: 7.8.2
       zod: 4.6.7
     optionalDependencies:
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-event': 6.1.3(@types/semver@7.7.1)
       '@opentelemetry/api-logs': 0.223.0
       '@opentelemetry/resources': 2.12.0(@opentelemetry/api@1.9.1)
       '@opentelemetry/sdk-logs': 0.223.0(@opentelemetry/api@1.9.1)
-    optional: true
-
-  '@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1)':
-    dependencies:
-      rxjs: 7.8.2
-      semver: 7.8.5
-    optionalDependencies:
-      '@types/semver': 7.7.1
 
   '@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1)':
     dependencies:
@@ -3941,42 +3709,18 @@ snapshots:
     optionalDependencies:
       '@types/semver': 7.7.1
 
-  '@equinor/fusion-framework-plugin-context-navigation@1.0.5(6a4e01897b504dcd1e83f44676df4915)':
-    dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-app': 8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
-      rxjs: 7.8.2
-
-  '@equinor/fusion-framework-plugin-context-navigation@1.0.5(c4bcf685b378e6b85c26b2dbd1eb4a25)':
+  '@equinor/fusion-framework-plugin-context-navigation@1.0.6(80bacd858b1b166468fa8792c132d97d)':
     dependencies:
       '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-app': 8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
+      '@equinor/fusion-framework-module-app': 8.2.2(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
+      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
+      '@equinor/fusion-framework-module-event': 6.1.3(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-navigation': 7.0.12(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
       rxjs: 7.8.2
 
-  '@equinor/fusion-framework-react-ag-grid@37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@equinor/fusion-framework-react-ag-grid@37.1.4(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@equinor/fusion-framework-module-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
-      '@equinor/fusion-framework-react-module': 4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      ag-grid-community: 36.2.0
-      ag-grid-enterprise: 36.2.0
-      ag-grid-react: 36.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      react: 19.3.1
-      react-dom: 19.3.1(react@19.3.1)
-    transitivePeerDependencies:
-      - '@equinor/eds-tokens'
-      - '@equinor/fusion-framework-module'
-      - ag-charts-enterprise
-    optional: true
-
-  '@equinor/fusion-framework-react-ag-grid@37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
-    dependencies:
-      '@equinor/fusion-framework-module-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
+      '@equinor/fusion-framework-module-ag-grid': 37.1.4(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
       '@equinor/fusion-framework-react-module': 4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       ag-grid-community: 36.2.0
       ag-grid-enterprise: 36.2.0
@@ -3988,23 +3732,24 @@ snapshots:
       - '@equinor/fusion-framework-module'
       - ag-charts-enterprise
 
-  '@equinor/fusion-framework-react-app@14.3.4(3735db81d2c4e5c283eeeffb1e16d359)':
+  '@equinor/fusion-framework-react-app@14.3.6(1d4d895eaf9e9249604d65f4ba8f8138)':
     dependencies:
-      '@equinor/fusion-framework': 9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-app': 13.1.10(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-app': 8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
-      '@equinor/fusion-framework-react': 9.0.3(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-react-module': 4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-framework-react-module-http': 12.0.2(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@equinor/fusion-framework': 9.0.5(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-app': 13.2.0(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-app': 8.2.2(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
+      '@equinor/fusion-framework-module-http': 8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module-navigation': 7.0.12(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
+      '@equinor/fusion-framework-react': 9.0.4(e61013b312d2ef38f44d9b0d13d070aa)
+      '@equinor/fusion-framework-react-module': 4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@equinor/fusion-framework-react-module-http': 12.0.3(@equinor/fusion-framework-module-http@8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
     optionalDependencies:
-      '@equinor/fusion-framework-module-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
-      '@equinor/fusion-framework-react-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-framework-react-router': 2.4.5(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
+      '@equinor/fusion-framework-module-ag-grid': 37.1.4(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
+      '@equinor/fusion-framework-react-ag-grid': 37.1.4(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@equinor/fusion-framework-react-module-context': 7.0.6(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
+      '@equinor/fusion-framework-react-router': 2.4.6(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
       '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
       '@types/react': 19.3.0
       react-dom: 19.3.1(react@19.3.1)
@@ -4028,50 +3773,9 @@ snapshots:
       - typescript
       - zod
 
-  '@equinor/fusion-framework-react-app@14.3.4(4291a571abe24ad48d215cce43c11bbc)':
+  '@equinor/fusion-framework-react-module-context@7.0.6(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)':
     dependencies:
-      '@equinor/fusion-framework': 9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-app': 13.1.10(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-app': 8.2.1(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
-      '@equinor/fusion-framework-react': 9.0.3(0f317bb82dab9c07bf7824200b2f283c)
-      '@equinor/fusion-framework-react-module': 4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-framework-react-module-http': 12.0.2(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      react: 19.3.1
-    optionalDependencies:
-      '@equinor/fusion-framework-module-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(ag-grid-community@36.2.0)(ag-grid-enterprise@36.2.0)
-      '@equinor/fusion-framework-react-ag-grid': 37.1.3(@equinor/eds-tokens@2.2.0)(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-framework-react-module-context': 7.0.5(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
-      '@equinor/fusion-framework-react-router': 2.4.5(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
-      '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
-      '@types/react': 19.3.0
-      react-dom: 19.3.1(react@19.3.1)
-      rxjs: 7.8.2
-    transitivePeerDependencies:
-      - '@equinor/fusion-framework-module-bookmark'
-      - '@equinor/fusion-framework-module-event'
-      - '@equinor/fusion-framework-module-telemetry'
-      - '@equinor/fusion-framework-react-module-signalr'
-      - '@faker-js/faker'
-      - '@microsoft/applicationinsights-web'
-      - '@opentelemetry/api-logs'
-      - '@opentelemetry/exporter-logs-otlp-http'
-      - '@opentelemetry/resources'
-      - '@opentelemetry/sdk-logs'
-      - '@remix-run/router'
-      - '@types/semver'
-      - chalk
-      - odata-query
-      - semver
-      - typescript
-      - zod
-
-  '@equinor/fusion-framework-react-module-context@7.0.5(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)':
-    dependencies:
-      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
+      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
       '@equinor/fusion-framework-react-module': 4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
       '@equinor/fusion-query': 7.0.7(@types/react@19.3.0)(chalk@6.0.1)(react@19.3.1)
@@ -4088,33 +3792,14 @@ snapshots:
       - rxjs
       - semver
 
-  '@equinor/fusion-framework-react-module-http@12.0.2(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@equinor/fusion-framework-react-module-http@12.0.3(@equinor/fusion-framework-module-http@8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-react-module': 4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@equinor/fusion-framework-module-http': 8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-react-module': 4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
     optionalDependencies:
       '@types/react': 19.3.0
       react-dom: 19.3.1(react@19.3.1)
-
-  '@equinor/fusion-framework-react-module-http@12.0.2(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
-    dependencies:
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-react-module': 4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      react: 19.3.1
-    optionalDependencies:
-      '@types/react': 19.3.0
-      react-dom: 19.3.1(react@19.3.1)
-
-  '@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
-    dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      react: 19.3.1
-    optionalDependencies:
-      '@types/react': 19.3.0
-      react-dom: 19.3.1(react@19.3.1)
-    transitivePeerDependencies:
-      - '@types/semver'
 
   '@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
@@ -4126,29 +3811,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/semver'
 
-  '@equinor/fusion-framework-react-router@2.4.5(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))':
+  '@equinor/fusion-framework-react-router@2.4.6(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))':
     dependencies:
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
-      '@equinor/fusion-framework-react-module': 4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-framework-vite-plugin-react-router': 0.1.5(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
-      '@equinor/fusion-imports': 2.0.7
-      react: 19.3.1
-      react-router: 7.18.4(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-    optionalDependencies:
-      '@types/react': 19.3.0
-      react-dom: 19.3.1(react@19.3.1)
-    transitivePeerDependencies:
-      - '@equinor/fusion-framework-module'
-      - '@equinor/fusion-observable'
-      - '@remix-run/router'
-      - '@types/semver'
-      - rxjs
-      - vite
-    optional: true
-
-  '@equinor/fusion-framework-react-router@2.4.5(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))':
-    dependencies:
-      '@equinor/fusion-framework-module-navigation': 7.0.11(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
+      '@equinor/fusion-framework-module-navigation': 7.0.12(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.0)(rxjs@7.8.2)
       '@equinor/fusion-framework-react-module': 4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@equinor/fusion-framework-vite-plugin-react-router': 0.1.5(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))
       '@equinor/fusion-imports': 2.0.7
@@ -4165,18 +3830,18 @@ snapshots:
       - rxjs
       - vite
 
-  '@equinor/fusion-framework-react@9.0.3(0f317bb82dab9c07bf7824200b2f283c)':
+  '@equinor/fusion-framework-react@9.0.4(e61013b312d2ef38f44d9b0d13d070aa)':
     dependencies:
-      '@equinor/fusion-framework': 9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-react-module': 4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-framework-react-module-http': 12.0.2(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@equinor/fusion-framework': 9.0.5(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
+      '@equinor/fusion-framework-react-module': 4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@equinor/fusion-framework-react-module-http': 12.0.3(@equinor/fusion-framework-module-http@8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.6(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
       react: 19.3.1
       rxjs: 7.8.2
     optionalDependencies:
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
-      '@equinor/fusion-framework-react-module-context': 7.0.5(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
+      '@equinor/fusion-framework-module-event': 6.1.3(@types/semver@7.7.1)
+      '@equinor/fusion-framework-react-module-context': 7.0.6(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
       '@types/react': 19.3.0
       react-dom: 19.3.1(react@19.3.1)
     transitivePeerDependencies:
@@ -4194,35 +3859,7 @@ snapshots:
       - typescript
       - zod
 
-  '@equinor/fusion-framework-react@9.0.3(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
-    dependencies:
-      '@equinor/fusion-framework': 9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-react-module': 4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-framework-react-module-http': 12.0.2(@equinor/fusion-framework-module-http@8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2))(@equinor/fusion-framework-react-module@4.0.5(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@equinor/fusion-observable': 9.2.5(@types/react@19.3.0)(react@19.3.1)
-      react: 19.3.1
-      rxjs: 7.8.2
-    optionalDependencies:
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
-      '@types/react': 19.3.0
-      react-dom: 19.3.1(react@19.3.1)
-    transitivePeerDependencies:
-      - '@equinor/fusion-framework-module-http'
-      - '@faker-js/faker'
-      - '@microsoft/applicationinsights-web'
-      - '@opentelemetry/api-logs'
-      - '@opentelemetry/exporter-logs-otlp-http'
-      - '@opentelemetry/resources'
-      - '@opentelemetry/sdk-logs'
-      - '@types/semver'
-      - chalk
-      - odata-query
-      - semver
-      - typescript
-      - zod
-
-  '@equinor/fusion-framework-vite-plugin-api-service@2.1.1':
+  '@equinor/fusion-framework-vite-plugin-api-service@2.1.2':
     dependencies:
       http-proxy: 1.18.1
       http-proxy-middleware: 4.2.0
@@ -4231,23 +3868,19 @@ snapshots:
       - debug
       - supports-color
 
-  '@equinor/fusion-framework-vite-plugin-raw-imports@2.0.4': {}
-
-  '@equinor/fusion-framework-vite-plugin-react-router@0.1.3(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))':
-    optionalDependencies:
-      vite: 8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1)
+  '@equinor/fusion-framework-vite-plugin-raw-imports@2.0.5': {}
 
   '@equinor/fusion-framework-vite-plugin-react-router@0.1.5(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))':
     optionalDependencies:
       vite: 8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1)
 
-  '@equinor/fusion-framework-vite-plugin-spa@5.2.2(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
+  '@equinor/fusion-framework-vite-plugin-spa@5.2.3(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
     dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module-service-discovery': 10.2.0(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
+      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-http': 8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module-service-discovery': 10.2.0(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-module-telemetry': 7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/context-zone': 2.12.0(@opentelemetry/api@1.9.1)
       '@opentelemetry/core': 2.12.0(@opentelemetry/api@1.9.1)
@@ -4273,16 +3906,16 @@ snapshots:
       - typescript
       - zod
 
-  '@equinor/fusion-framework@9.0.4(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
+  '@equinor/fusion-framework@9.0.5(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(odata-query@8.0.4)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)':
     dependencies:
-      '@equinor/fusion-framework-module': 6.1.5(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
-      '@equinor/fusion-framework-module-event': 6.1.2(@types/semver@7.7.1)
-      '@equinor/fusion-framework-module-http': 8.1.3(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
-      '@equinor/fusion-framework-module-service-discovery': 10.2.0(@equinor/fusion-framework-module-telemetry@7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)
-      '@equinor/fusion-framework-module-services': 8.1.4(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(odata-query@8.0.4)
-      '@equinor/fusion-framework-module-telemetry': 7.2.1(@equinor/fusion-framework-module-event@6.1.2(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.5(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
+      '@equinor/fusion-framework-module': 6.1.6(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-context': 9.0.2(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
+      '@equinor/fusion-framework-module-event': 6.1.3(@types/semver@7.7.1)
+      '@equinor/fusion-framework-module-http': 8.1.4(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-module-msal': 12.0.1(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)(zod@4.6.7)
+      '@equinor/fusion-framework-module-service-discovery': 10.2.0(@equinor/fusion-framework-module-telemetry@7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react@19.3.1)(semver@7.8.5)(typescript@7.0.2)
+      '@equinor/fusion-framework-module-services': 8.1.5(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(odata-query@8.0.4)
+      '@equinor/fusion-framework-module-telemetry': 7.2.2(@equinor/fusion-framework-module-event@6.1.3(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.1.6(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.5(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1))
       rxjs: 7.8.2
     transitivePeerDependencies:
       - '@equinor/fusion-observable'
@@ -4301,20 +3934,10 @@ snapshots:
       - typescript
       - zod
 
-  '@equinor/fusion-imports@2.0.6':
-    dependencies:
-      esbuild: 0.28.2
-      read-package-up: 12.0.0
-
   '@equinor/fusion-imports@2.0.7':
     dependencies:
       esbuild: 0.28.2
       read-package-up: 12.0.0
-
-  '@equinor/fusion-log@2.0.6(chalk@6.0.1)(rxjs@7.8.2)':
-    dependencies:
-      chalk: 6.0.1
-      rxjs: 7.8.2
 
   '@equinor/fusion-log@2.0.7(chalk@6.0.1)(rxjs@7.8.2)':
     dependencies:
@@ -5988,7 +5611,7 @@ snapshots:
 
   broadcast-channel@3.7.0:
     dependencies:
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.29.2
       detect-node: 2.1.0
       js-sha3: 0.8.0
       microseconds: 0.2.0
@@ -6465,7 +6088,7 @@ snapshots:
 
   match-sorter@6.3.4:
     dependencies:
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.29.2
       remove-accents: 0.5.0
 
   micromatch@4.0.8:
@@ -6711,7 +6334,7 @@ snapshots:
 
   react-query@3.39.3(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.29.2
       broadcast-channel: 3.7.0
       match-sorter: 6.3.4
       react: 19.3.1
@@ -6964,7 +6587,7 @@ snapshots:
 
   unload@2.2.0:
     dependencies:
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.29.2
       detect-node: 2.1.0
 
   use-sync-external-store@1.6.0(react@19.3.1):
