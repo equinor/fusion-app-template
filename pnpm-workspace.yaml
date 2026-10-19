@@ -19,3 +19,7 @@
 #
 packages:
   - "apps/**"
+
+# Security overrides for transitive dependencies (Dependabot alerts)
+overrides:
+  "minimatch@3": ^3.1.5
