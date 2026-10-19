@@ -77,18 +77,11 @@ jobs:
         id: changesets
         uses: changesets/action@v2
         with:
-          title: '🤖 Bip Bop - Fusion Application Release'
-          createGithubReleases: true
-          setupGitUser: false
-          version: pnpm changeset:version
-          publish: pnpm changeset:publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-
-      # Convert changeset PR to draft to prevent accidental merging
-      - name: 🤖 Convert Changeset PR to draft
-        if: steps.changesets.outputs.published == 'false' && steps.changesets.outputs.pullRequestNumber
-        run: gh pr ready ${{ steps.changesets.outputs.pullRequestNumber }} --undo
-        env:
-          GH_TOKEN: ${{ github.token }}
+          github-token: ${{ secrets.PAT_TOKEN || github.token }}
+          pr-title: '🤖 Bip Bop - Fusion Application Release'
+          # Keep the changeset PR as draft to prevent accidental merging
+          pr-draft: always
+          create-github-releases: true
+          version-script: pnpm changeset:version
+          publish-script: pnpm changeset:publish
 
