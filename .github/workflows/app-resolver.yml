@@ -74,6 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changed-apps: ${{ steps.detect.outputs.changed-apps }}
+      has-changes: ${{ steps.detect.outputs.has-changes }}
     steps:
         # Checkout the repository to analyze changes with depth of 0 to get all history
       - name: Checkout repository
@@ -100,7 +101,10 @@ jobs:
   build:
     name: 🛠️ Build Workflow
     needs: app-resolver
-    if: needs.app-resolver.outputs.changed-apps != ''
+    if: >-
+      needs.app-resolver.outputs.has-changes == 'true' &&
+      needs.app-resolver.outputs.changed-apps != '' &&
+      needs.app-resolver.outputs.changed-apps != '[]'
     permissions:
       contents: read
       id-token: write
