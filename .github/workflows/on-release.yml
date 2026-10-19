@@ -8,6 +8,8 @@ on:
 jobs:
   extract-package:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
         app-name: ${{ steps.extract.outputs.app-name }}
         app-path: ${{ steps.extract.outputs.app-path }}
