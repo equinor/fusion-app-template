@@ -51,7 +51,7 @@
     "@equinor/fusion-framework-react-app": "^10.0.0",
     "@equinor/fusion-framework-react-router": "^1.0.0",
     "@equinor/fusion-framework-react-module-context": "^7.0.0",
-    "@equinor/fusion-observable": "^9.0.0",
+    "@equinor/fusion-observable": "^9.2.4",
     "@equinor/fusion-react-side-sheet": "^2.1.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
