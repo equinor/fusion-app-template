@@ -84,7 +84,7 @@ jobs:
       # By specifying the prNR parameter, the deployment is linked to the pull request
       # And tagged accordingly in Fusion
       - name: Publish PR Application ${{ inputs.app-name }} pr-${{ github.event.number }}
-        uses: equinor/fusion-action-app-publish@v1
+        uses: equinor/fusion-action-app-publish@v2
         if: ${{ github.event_name == 'pull_request' && inputs.release == false }}
         with:
           artifact: ./dist/app-bundle.zip
@@ -95,7 +95,7 @@ jobs:
           azure-resource-id: ${{ vars.FUSION_RESOURCE_ID }}
 
       - name: Release Application ${{ inputs.app-name }}
-        uses: equinor/fusion-action-app-publish@v1
+        uses: equinor/fusion-action-app-publish@v2
         if: ${{ inputs.release == true }}
         with:
           artifact: ./dist/app-bundle.zip
