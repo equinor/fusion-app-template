@@ -83,7 +83,7 @@ jobs:
 
       - name: Detect changes
         id: detect
-        uses: equinor/fusion-action-app-change@v1
+        uses: equinor/fusion-action-app-change@v2
 
         # Print changed applications to $GITHUB_STEP_SUMMARY as one comment with all apps in table format
       - name: 🛠️ Changed Applications
