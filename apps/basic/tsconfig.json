@@ -15,9 +15,8 @@
     "lib": ["esnext", "dom", "dom.iterable"],
     "outDir": "./dist",
     "rootDir": "./src",
-    "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["./src/*"]
     },
     "noEmit": true
   },

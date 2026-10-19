@@ -9,7 +9,7 @@
 import type { Employee } from './types';
 
 /** Sample employee records used to populate the AG Grid demo. */
-export const EMPLOYEES: readonly Employee[] = [
+export const EMPLOYEES: Employee[] = [
   {
     id: 1,
     name: 'John Doe',
