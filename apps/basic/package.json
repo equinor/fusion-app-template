@@ -41,7 +41,7 @@
   },
   "homepage": "https://equinor.github.io/fusion-framework/",
   "dependencies": {
-    "@equinor/eds-core-react": "^2.6.3",
+    "@equinor/eds-core-react": "^2.6.4",
     "@equinor/eds-icons": "^1.6.0",
     "@equinor/eds-tokens": "^2.3.2",
     "@equinor/fusion-framework-cli": "^15.6.3",
