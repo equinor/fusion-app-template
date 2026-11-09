@@ -20,7 +20,7 @@ jobs:
       REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - name: Determine reporter type
-        uses: haya14busa/action-cond@v1
+        uses: haya14busa/action-cond@v1.2.1
         id: reporter
         with:
           cond: ${{ github.event.pull_request.draft }}
@@ -28,20 +28,20 @@ jobs:
           if_false: "github-pr-review"
 
       - name: Determine Checkout Depth
-        uses: haya14busa/action-cond@v1
+        uses: haya14busa/action-cond@v1.2.1
         id: fetch-depth
         with:
           cond: ${{ github.actor != 'dependabot[bot]' }}
           if_true: "0"
           if_false: "1"
 
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: ${{ steps.fetch-depth.outputs.value }}
 
       - name: Setup node and install deps
-        uses: ./.github/workflows/actions/node-setup
+        uses: $/.github/workflows/actions/node-setup
         with:
           node-version: ${{ inputs.NODE_VERSION }}
 
@@ -54,7 +54,7 @@ jobs:
           filter-user: "reviewdog"
 
       - name: Lint source files
-        uses: mongolyy/reviewdog-action-biome@v2
+        uses: mongolyy/reviewdog-action-biome@v2.13.0
         with:
           github_token: ${{ github.token }}
           reporter: ${{ steps.reporter.outputs.value }}

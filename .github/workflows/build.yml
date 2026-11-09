@@ -70,11 +70,11 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
 
       # Install dependencies and setup Node.js environment
       - name: 🤖 Setup node and install deps
-        uses: ./.github/workflows/actions/node-setup
+        uses: $/.github/workflows/actions/node-setup
 
       # Pack the application with snapshot flag for PR deployments this ensures unique versioning
       # Using pr suffix is optional but helps in identifying PR deployments
@@ -94,7 +94,7 @@ jobs:
         run: npx -y -p @equinor/fusion-framework-cli@latest ffc app pack
 
       - name: Upload packed app as artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: app-bundle
           path: ${{ inputs.work-dir }}/app-bundle.zip
@@ -107,11 +107,11 @@ jobs:
         env: ${{ fromJson(inputs.environment) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
 
       # Install dependencies and setup Node.js environment
       - name: 🤖 Setup node and install deps
-        uses: ./.github/workflows/actions/node-setup
+        uses: $/.github/workflows/actions/node-setup
 
       - name: Install dependencies
         shell: bash
@@ -128,7 +128,7 @@ jobs:
           npx -y -p @equinor/fusion-framework-cli@latest ffc app config --env ${{ matrix.env }} --output ./app-config.${{ matrix.env }}.json
 
       - name: Upload config as artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.2
         with: 
           name: app-config
           path: ${{ inputs.work-dir }}/app-config.${{ matrix.env }}.json
