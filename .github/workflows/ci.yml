@@ -61,21 +61,21 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
       
       - name: Configure git user (trigger actor) 
-        uses: ./.github/workflows/actions/config-git-user
+        uses: $/.github/workflows/actions/config-git-user
      
       # Install dependencies and setup Node.js environment
       - name: 🤖 Setup node and install deps
-        uses: ./.github/workflows/actions/node-setup
+        uses: $/.github/workflows/actions/node-setup
       # Process changesets: create version PR or publish packages to npm
       # This step requires write permissions to create releases and publish packages
       - name: 🤖 Create Release Pull Request Fusion App Application
         id: changesets
-        uses: changesets/action@v2
+        uses: changesets/action@v2.1.2
         with:
           github-token: ${{ secrets.PAT_TOKEN || github.token }}
           pr-title: '🤖 Bip Bop - Fusion Application Release'

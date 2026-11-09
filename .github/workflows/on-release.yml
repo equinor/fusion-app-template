@@ -14,13 +14,13 @@ jobs:
         app-name: ${{ steps.extract.outputs.app-name }}
         app-path: ${{ steps.extract.outputs.app-path }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
       
       - name: Extract package name and path
         id: extract
-        uses: ./.github/workflows/actions/extract-package-info
+        uses: $/.github/workflows/actions/extract-package-info
         
 
   build:

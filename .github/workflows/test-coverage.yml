@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
 
       - name: Setup node and install deps
-        uses: ./.github/workflows/actions/node-setup
+        uses: $/.github/workflows/actions/node-setup
         with:
           node-version: ${{ inputs.NODE_VERSION }}
 

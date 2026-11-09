@@ -78,13 +78,13 @@ jobs:
     steps:
         # Checkout the repository to analyze changes with depth of 0 to get all history
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
       - name: Detect changes
         id: detect
-        uses: equinor/fusion-action-app-change@v2
+        uses: equinor/fusion-action-app-change@v2.0.0
 
         # Print changed applications to $GITHUB_STEP_SUMMARY as one comment with all apps in table format
       - name: 🛠️ Changed Applications

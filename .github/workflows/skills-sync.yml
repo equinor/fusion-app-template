@@ -8,4 +8,4 @@ permissions:
   pull-requests: write
 jobs:
   upgrade:
-    uses: equinor/fusion-skills/.github/workflows/skills-update.yml@main
+    uses: equinor/fusion-skills/.github/workflows/skills-update.yml@1c66977827019accc53fd213a5324e0085fcaf19 # v1.17.0
