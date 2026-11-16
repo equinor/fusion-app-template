@@ -35,7 +35,7 @@ workflows:
     '.github/workflows/test-coverage.yml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-node@v4.4.0'
-        - 'davelosert/vitest-coverage-report-action@v2.13.1'
+        - 'davelosert/vitest-coverage-report-action@v2.13.2'
         - 'pnpm/action-setup@v3.0.0'
     '.github/workflows/test-validation.yml':
         - 'actions/checkout@v7.0.1'
@@ -87,9 +87,9 @@ dependencies:
         commit: 'sha1-ae32849d5ba541f9ae29e40e22a623bc13562f51'
         owner_id: 51163350
         repo_id: 202093906
-    'davelosert/vitest-coverage-report-action@v2.13.1':
-        ref: 'v2.13.1'
-        commit: 'sha1-8f86cfb56ed6d5613ea8cdc5259f207fbfd51ece'
+    'davelosert/vitest-coverage-report-action@v2.13.2':
+        ref: 'v2.13.2'
+        commit: 'sha1-74c2d9210b4fc44c84d8213f61d7ec99837b7aa0'
         owner_id: 4287128
         repo_id: 501176456
     'equinor/fusion-action-app-change@v2.0.0':
