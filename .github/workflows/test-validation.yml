@@ -6,7 +6,7 @@ on:
       NODE_VERSION:
         required: false
         type: string
-        default: '22'
+        default: '24'
 
 jobs:
   test:
@@ -28,5 +28,5 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}
 
       - name: Run tests
-        run: pnpm test:run --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: pnpm -r test:run --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 

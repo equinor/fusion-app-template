@@ -9,7 +9,7 @@
     "yarn": "please-use-pnpm",
     "pnpm": ">=10"
   },
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@12.21.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "check": "biome check",

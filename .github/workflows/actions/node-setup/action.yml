@@ -4,7 +4,7 @@
 # manager and installs project dependencies.
 #
 # Features:
-# - Node.js setup: Configures Node.js with specified version (defaults to 22)
+# - Node.js setup: Configures Node.js with specified version (defaults to 24)
 # - pnpm integration: Sets up pnpm package manager for efficient monorepo support
 # - Dependency caching: Enables pnpm cache for faster subsequent runs
 # - Automatic installation: Installs all project dependencies
@@ -19,7 +19,7 @@
 #   - name: Setup Node.js and install dependencies
 #     uses: ./.github/workflows/actions/node-setup
 #     with:
-#       node-version: 22
+#       node-version: 24
 #
 #   - name: Run tests
 #     run: pnpm test
@@ -33,7 +33,7 @@
 # - Repository must be checked out before using this action
 #
 # Inputs:
-# - node-version: Node.js version to use (default: 22)
+# - node-version: Node.js version to use (default: 24)
 #
 # For more information about pnpm, see:
 # https://pnpm.io/
@@ -42,7 +42,7 @@ name: Setup Node
 Description: General setup of node
 inputs:
   node-version:
-    default: 22
+    default: 24
 
 runs:
   using: composite
