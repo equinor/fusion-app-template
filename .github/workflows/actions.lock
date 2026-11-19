@@ -99,7 +99,7 @@ dependencies:
         repo_id: 1134859832
     'equinor/fusion-action-app-publish@v2.2.2':
         ref: 'v2.2.2'
-        commit: 'sha1-c88d76012b79e374d0447915e84ba31e7b65d543'
+        commit: 'sha1-f10c214a7ae13239b6f70c1b2363633cdb58f802'
         owner_id: 525862
         repo_id: 1132819818
         uses:
