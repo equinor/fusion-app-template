@@ -24,3 +24,8 @@ packages:
 overrides:
   "minimatch@3": ^3.1.5
   "@remix-run/router@1": ^1.23.3
+
+allowBuilds:
+  "@azure/msal-node-extensions": false
+  esbuild: false
+  keytar: false

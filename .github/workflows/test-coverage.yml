@@ -6,7 +6,7 @@ on:
       NODE_VERSION:
         required: false
         type: string
-        default: '22'
+        default: '24'
 
 jobs:
   coverage:
@@ -27,7 +27,7 @@ jobs:
         id: test-coverage
         if: ${{ ! github.event.pull_request.draft }}
         run: |
-          pnpm test:coverage
+          pnpm -r test:coverage
           # Check if coverage files were actually generated
           if [ -f "coverage/coverage-summary.json" ]; then
             echo "coverage-exists=true" >> $GITHUB_OUTPUT
