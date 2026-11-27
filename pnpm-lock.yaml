@@ -205,10 +205,10 @@ importers:
   apps/bare:
     dependencies:
       '@equinor/fusion-framework-cli':
-        specifier: ^15.8.1
+        specifier: ^15.7.1
         version: 15.8.1(94f1d2568edd5c044b45af9baaae928a)
       '@equinor/fusion-framework-react-app':
-        specifier: ^14.4.1
+        specifier: ^14.3.7
         version: 14.4.1(711234e53c2a56407acf494d31e21362)
       react:
         specifier: ^19.3.1
@@ -242,25 +242,25 @@ importers:
         specifier: ^2.3.2
         version: 2.3.2
       '@equinor/fusion-framework-cli':
-        specifier: ^15.8.1
+        specifier: ^15.7.1
         version: 15.8.1(902fde2a2b12dffc724c57f807f13eb9)
       '@equinor/fusion-framework-module-http':
-        specifier: ^8.1.6
+        specifier: ^8.1.4
         version: 8.1.6(@equinor/fusion-framework-module-telemetry@8.0.1(@equinor/fusion-framework-module-event@6.1.5(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.2.1(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.7(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@types/semver@7.7.1)(semver@7.8.5)(typescript@7.0.2)
       '@equinor/fusion-framework-module-navigation':
         specifier: ^8.0.1
         version: 8.0.1(@equinor/fusion-framework-module@6.2.1(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.7(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.4)(rxjs@7.8.2)
       '@equinor/fusion-framework-react-ag-grid':
-        specifier: ^37.1.6
+        specifier: ^37.1.4
         version: 37.1.6(@equinor/eds-tokens@2.3.2)(@equinor/fusion-framework-module-telemetry@8.0.1(@equinor/fusion-framework-module-event@6.1.5(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.2.1(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.7(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.2.1(@types/semver@7.7.1))(@equinor/fusion-framework-react-module@4.0.8(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(ag-charts-enterprise@14.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@equinor/fusion-framework-react-app':
-        specifier: ^14.4.1
+        specifier: ^14.3.7
         version: 14.4.1(7f938cf6db7cde33eb1a0d3881ce27b2)
       '@equinor/fusion-framework-react-module-context':
-        specifier: ^7.0.8
+        specifier: ^7.0.6
         version: 7.0.8(@equinor/fusion-framework-module-telemetry@8.0.1(@equinor/fusion-framework-module-event@6.1.5(@types/semver@7.7.1))(@equinor/fusion-framework-module@6.2.1(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.7(@types/react@19.3.0)(react@19.3.1))(@opentelemetry/api-logs@0.223.0)(@opentelemetry/resources@2.12.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-logs@0.223.0(@opentelemetry/api@1.9.1)))(@equinor/fusion-framework-module@6.2.1(@types/semver@7.7.1))(@types/react@19.3.0)(@types/semver@7.7.1)(chalk@6.0.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(semver@7.8.5)
       '@equinor/fusion-framework-react-router':
-        specifier: ^2.4.9
+        specifier: ^2.4.7
         version: 2.4.9(@equinor/fusion-framework-module@6.2.1(@types/semver@7.7.1))(@equinor/fusion-observable@9.2.7(@types/react@19.3.0)(react@19.3.1))(@remix-run/router@1.23.4)(@types/react@19.3.0)(@types/semver@7.7.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)(vite@8.3.5(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
       '@equinor/fusion-observable':
         specifier: ^9.2.6

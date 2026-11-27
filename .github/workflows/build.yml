@@ -67,6 +67,9 @@ jobs:
   build-pack:
     name: 🛠️ Build and Pack Application ${{ inputs.app-name }}
     runs-on: ubuntu-latest
+    env:
+      FUSION_CLI_TELEMETRY_OPTOUT: '1'
+      DO_NOT_TRACK: '1'
     steps:
 
       - name: Checkout
@@ -102,6 +105,9 @@ jobs:
   config: 
     name: 🛠️ Generate Configuration for ${{ inputs.app-name }}
     runs-on: ubuntu-latest
+    env:
+      FUSION_CLI_TELEMETRY_OPTOUT: '1'
+      DO_NOT_TRACK: '1'
     strategy:
       matrix:
         env: ${{ fromJson(inputs.environment) }}
