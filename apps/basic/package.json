@@ -46,7 +46,7 @@
     "@equinor/eds-tokens": "^2.3.2",
     "@equinor/fusion-framework-cli": "^15.7.1",
     "@equinor/fusion-framework-module-http": "^8.1.4",
-    "@equinor/fusion-framework-module-navigation": "^7.0.12",
+    "@equinor/fusion-framework-module-navigation": "^8.0.1",
     "@equinor/fusion-framework-react-ag-grid": "^37.1.4",
     "@equinor/fusion-framework-react-app": "^14.3.7",
     "@equinor/fusion-framework-react-router": "^2.4.7",
